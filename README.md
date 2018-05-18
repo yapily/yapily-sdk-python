@@ -20,11 +20,20 @@ by adding it to your dependencies
 
 #### pip
 
+```bash
 pip install git+https://github.com/yapily/yapily-sdk-python.git#subdirectory=sdk
+```
 
 ## Usage
 
 Sample usage of the SDK can be seen in the `examples` folder.
+
+- Configure the application credentials
+```python
+configuration = Configuration()
+configuration.username = 'The key of your application'
+configuration.password = 'The secret of your application'
+```
 
 - Retrieve a list of available financial institutions to connect to
 
