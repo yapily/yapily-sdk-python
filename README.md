@@ -1,5 +1,5 @@
 # Yapily Python SDK
-[![GitHub version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=gh&type=6&v=2.3.1-SNAPSHOT)](http://badge.fury.io/gh/boennemann%2Fbadges)
+[![GitHub version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=gh&type=6&v=0.1.2-SNAPSHOT)](http://badge.fury.io/gh/boennemann%2Fbadges)
 
 This SDK can be used as a module or an example of how to connect
 to any financial institution integrated by Yapily.
@@ -14,26 +14,17 @@ your API requests.
 
 ## Installation
 
-The SDK is currently available in the Yapily github repository and 
+The SDK is currently available in the Yapily maven repository and 
 can be included in your project 
 by adding it to your dependencies
 
 #### pip
 
-```bash
-pip install git+https://github.com/yapily/yapily-sdk-python.git#subdirectory=sdk
-```
+pip install git+https://bitbucket.org/yapily/yapily-sdk-python.git#subdirectory=sdk
 
 ## Usage
 
 Sample usage of the SDK can be seen in the `examples` folder.
-
-- Configure the application credentials
-```python
-configuration = Configuration()
-configuration.username = 'The key of your application'
-configuration.password = 'The secret of your application'
-```
 
 - Retrieve a list of available financial institutions to connect to
 
