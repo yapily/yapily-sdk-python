@@ -14,7 +14,7 @@ your API requests.
 
 ## Installation
 
-The SDK is currently available in the Yapily maven repository and 
+The SDK is currently available in the Yapily github repository and 
 can be included in your project 
 by adding it to your dependencies
 
