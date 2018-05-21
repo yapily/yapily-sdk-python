@@ -14,13 +14,13 @@ your API requests.
 
 ## Installation
 
-The SDK is currently available in the Yapily maven repository and 
+The SDK is currently available in the Yapily github repository and 
 can be included in your project 
 by adding it to your dependencies
 
 #### pip
 
-pip install git+https://bitbucket.org/yapily/yapily-sdk-python.git#subdirectory=sdk
+pip install git+https://github.com/yapily/yapily-sdk-python.git#subdirectory=sdk
 
 ## Usage
 

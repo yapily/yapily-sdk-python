@@ -28,7 +28,7 @@ def main():
 
     print("Created user",created_user._uuid)
 
-    institution_id = "lloyds-sandbox";
+    institution_id = "bbva-sandbox";
     app_user_uuid = created_user._uuid
 
     redirect_url = auth_direct_url(constants.APPLICATION_ID,app_user_uuid,institution_id,constants.CALLBACK_URL,"account")
