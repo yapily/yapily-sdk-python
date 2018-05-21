@@ -15,7 +15,7 @@
 from __future__ import absolute_import
 
 # import apis into sdk package
-from auth import auth_direct_url
+from yapily.auth import auth_direct_url
 from yapily.api.accounts_api import AccountsApi
 from yapily.api.application_users_api import ApplicationUsersApi
 from yapily.api.consents_api import ConsentsApi
