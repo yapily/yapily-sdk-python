@@ -1,14 +1,14 @@
 import uuid,constants,webbrowser
-from auth import auth_direct_url
-from yapily.api_client import ApiClient
-from yapily.configuration import Configuration
-from yapily.api.application_users_api import ApplicationUsersApi
-from yapily.models.application_user import ApplicationUser
+from yapily import auth_direct_url
+from yapily import ApiClient
+from yapily import Configuration
+from yapily import ApplicationUsersApi
+from yapily import ApplicationUser
 
-from yapily.api.accounts_api import AccountsApi
-from yapily.api.consents_api import ConsentsApi
-from yapily.api.identity_api import IdentityApi
-from yapily.api.transactions_api import TransactionsApi
+from yapily import AccountsApi
+from yapily import ConsentsApi
+from yapily import IdentityApi
+from yapily import TransactionsApi
 
 
 def main():
@@ -28,7 +28,7 @@ def main():
 
     print("Created user",created_user._uuid)
 
-    institution_id = "lloyds-sandbox";
+    institution_id = "bbva-sandbox";
     app_user_uuid = created_user._uuid
 
     redirect_url = auth_direct_url(constants.APPLICATION_ID,app_user_uuid,institution_id,constants.CALLBACK_URL,"account")

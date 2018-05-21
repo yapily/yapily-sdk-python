@@ -1,7 +1,7 @@
 import constants
-from yapily.api.institutions_api import InstitutionsApi
-from yapily.api_client import ApiClient
-from yapily.configuration import Configuration
+from yapily import InstitutionsApi
+from yapily import ApiClient
+from yapily import Configuration
 
 if __name__ == '__main__':
 

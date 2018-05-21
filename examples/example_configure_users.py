@@ -1,10 +1,10 @@
 import uuid
 
 import constants
-from yapily.api_client import ApiClient
-from yapily.configuration import Configuration
-from yapily.api.application_users_api import ApplicationUsersApi
-from yapily.models.application_user import ApplicationUser
+from yapily import ApiClient
+from yapily import Configuration
+from yapily import ApplicationUsersApi
+from yapily import ApplicationUser
 
 def main():
 
