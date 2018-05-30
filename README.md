@@ -20,7 +20,9 @@ by adding it to your dependencies
 
 #### pip
 
+```
 pip install git+https://github.com/yapily/yapily-sdk-python.git#subdirectory=sdk
+```
 
 ## Usage
 
