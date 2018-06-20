@@ -76,5 +76,3 @@ identity =  identity_api.identity_using_get()
 
 For more information on how to get connected, visit the
 [Yapily developer resources](https://github.com/yapily/developer-resources) repo.
-
-###### [Website](https://yapily.com) | [Legal](https://yapily.com/legal-policies) | [Contact Us](mailto:info@yapily.com) 
