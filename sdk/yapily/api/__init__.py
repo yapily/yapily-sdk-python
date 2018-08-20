@@ -12,3 +12,4 @@ from yapily.api.institutions_api import InstitutionsApi
 from yapily.api.institutions_open_data_api import InstitutionsOpenDataApi
 from yapily.api.payments_api import PaymentsApi
 from yapily.api.transactions_api import TransactionsApi
+from yapily.api.transfers_api import TransfersApi

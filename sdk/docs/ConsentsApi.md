@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_using_delete**
-> ResponseEntity delete_using_delete(user_uuid, consent_token)
+> object delete_using_delete(user_uuid, consent_token)
 
 Delete consent
 
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+**object**
 
 ### Authorization
 

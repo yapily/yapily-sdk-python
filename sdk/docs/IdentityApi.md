@@ -4,11 +4,11 @@ All URIs are relative to *https://api.yapily.com:443*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**identity_using_get**](IdentityApi.md#identity_using_get) | **GET** /identity | Get identity
+[**get_identity_using_get**](IdentityApi.md#get_identity_using_get) | **GET** /identity | Get identity
 
 
-# **identity_using_get**
-> ApiResponseOfIdentity identity_using_get(consent)
+# **get_identity_using_get**
+> ApiResponseOfIdentity get_identity_using_get(consent)
 
 Get identity
 
@@ -31,10 +31,10 @@ consent = 'consent_example' # str | Consent Token
 
 try:
     # Get identity
-    api_response = api_instance.identity_using_get(consent)
+    api_response = api_instance.get_identity_using_get(consent)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling IdentityApi->identity_using_get: %s\n" % e)
+    print("Exception when calling IdentityApi->get_identity_using_get: %s\n" % e)
 ```
 
 ### Parameters

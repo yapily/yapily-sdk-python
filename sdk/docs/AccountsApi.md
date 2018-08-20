@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **get_account_using_get**
-> ApiResponseOfAccount get_account_using_get(account_id, consent)
+> ApiResponseOfAccount get_account_using_get(consent, account_id)
 
 Get account
 
@@ -28,12 +28,12 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = yapily.AccountsApi(yapily.ApiClient(configuration))
-account_id = 'account_id_example' # str | accountId
 consent = 'consent_example' # str | Consent Token
+account_id = 'account_id_example' # str | accountId
 
 try:
     # Get account
-    api_response = api_instance.get_account_using_get(account_id, consent)
+    api_response = api_instance.get_account_using_get(consent, account_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountsApi->get_account_using_get: %s\n" % e)
@@ -43,8 +43,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **str**| accountId | 
  **consent** | **str**| Consent Token | 
+ **account_id** | **str**| accountId | 
 
 ### Return type
 
