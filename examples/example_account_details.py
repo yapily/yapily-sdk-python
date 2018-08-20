@@ -37,22 +37,22 @@ def main():
     input("Press enter to continue")
 
     consent = ConsentsApi(apiClient).get_user_consents_using_get(app_user_uuid)[0]
-
-    identity_api = IdentityApi(ApiClient(configuration,"CONSENT",consent._consent_token))
-    identity =  identity_api.identity_using_get()
+    print("Consent: " + consent.consent_token);
+    identity_api = IdentityApi(ApiClient(configuration))
+    identity =  identity_api.identity_using_get(consent.consent_token)
 
     print("**************IDENTITY******************")
     print(identity)
     print("****************************************")
 
-    accounts =  AccountsApi(ApiClient(configuration,"CONSENT",consent._consent_token)).get_accounts_using_get()
+    accounts =  AccountsApi(ApiClient(configuration)).get_accounts_using_get(consent.consent_token)
 
     print("**************ACCOUNTS******************")
     print(accounts)
     print("****************************************")
 
-    transactionsApi = TransactionsApi(ApiClient(configuration,"CONSENT",consent._consent_token))
-    transactions = transactionsApi.get_transactions_using_get(accounts[0]._id)
+    transactionsApi = TransactionsApi(ApiClient(configuration))
+    transactions = transactionsApi.get_transactions_using_get(consent.consent_token, accounts.data[0]._id)
 
     print("**************TRANSACTIONS**************");
     print(transactions);
