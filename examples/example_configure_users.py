@@ -5,6 +5,7 @@ from yapily import ApiClient
 from yapily import Configuration
 from yapily import ApplicationUsersApi
 from yapily import ApplicationUser
+from yapily import NewApplicationUser
 
 def main():
 
@@ -46,8 +47,8 @@ def main():
         print(application_user._app_user_id)
 
 def new_application_user():
-    application_user = ApplicationUser()
-    application_user.uuid = str(uuid.uuid4())
+    application_user = NewApplicationUser()
+    application_user.reference_id = str(uuid.uuid4())
     return application_user
 
 
