@@ -4,11 +4,11 @@ All URIs are relative to *https://api.yapily.com:443*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_payment_using_put**](TransfersApi.md#create_payment_using_put) | **PUT** /accounts/{accountId}/transfer | Transfer money from one account to another account accessible with the same consent
+[**transfer_using_put**](TransfersApi.md#transfer_using_put) | **PUT** /accounts/{accountId}/transfer | Transfer money from one account to another account accessible with the same consent
 
 
-# **create_payment_using_put**
-> ApiResponseOfTransferResponse create_payment_using_put(consent, account_id, transfer_request=transfer_request, raw=raw)
+# **transfer_using_put**
+> ApiResponseOfTransferResponse transfer_using_put(consent, account_id, transfer_request=transfer_request)
 
 Transfer money from one account to another account accessible with the same consent
 
@@ -30,14 +30,13 @@ api_instance = yapily.TransfersApi(yapily.ApiClient(configuration))
 consent = 'consent_example' # str | Consent Token
 account_id = 'account_id_example' # str | accountId
 transfer_request = yapily.TransferRequest() # TransferRequest | transferRequest (optional)
-raw = true # bool | raw (optional)
 
 try:
     # Transfer money from one account to another account accessible with the same consent
-    api_response = api_instance.create_payment_using_put(consent, account_id, transfer_request=transfer_request, raw=raw)
+    api_response = api_instance.transfer_using_put(consent, account_id, transfer_request=transfer_request)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling TransfersApi->create_payment_using_put: %s\n" % e)
+    print("Exception when calling TransfersApi->transfer_using_put: %s\n" % e)
 ```
 
 ### Parameters
@@ -47,7 +46,6 @@ Name | Type | Description  | Notes
  **consent** | **str**| Consent Token | 
  **account_id** | **str**| accountId | 
  **transfer_request** | [**TransferRequest**](TransferRequest.md)| transferRequest | [optional] 
- **raw** | **bool**| raw | [optional] 
 
 ### Return type
 

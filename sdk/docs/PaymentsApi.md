@@ -32,8 +32,8 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = yapily.PaymentsApi(yapily.ApiClient(configuration))
 institution = 'institution_example' # str | institution
 payment_request = yapily.SortCodePaymentRequest() # SortCodePaymentRequest | paymentRequest (optional)
-user_uuid = yapily.Object() # Object | user-uuid (optional)
-param_callback = yapily.Object() # Object | callback (optional)
+user_uuid = 'user_uuid_example' # str | user-uuid (optional)
+param_callback = 'param_callback_example' # str | callback (optional)
 
 try:
     # Initiate a new single payment for user to authorise
@@ -49,8 +49,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **institution** | **str**| institution | 
  **payment_request** | [**SortCodePaymentRequest**](SortCodePaymentRequest.md)| paymentRequest | [optional] 
- **user_uuid** | [**Object**](.md)| user-uuid | [optional] 
- **param_callback** | [**Object**](.md)| callback | [optional] 
+ **user_uuid** | **str**| user-uuid | [optional] 
+ **param_callback** | **str**| callback | [optional] 
 
 ### Return type
 
