@@ -35,10 +35,9 @@ institutions = institutionsApi.get_institutions_using_get()
 
 - Creating users and retrieving users for your application registered in the Yapily Dashboard
 ```python
-application_user = ApplicationUser()
-application_user.uuid = str(uuid.uuid4())
+application_user = NewApplicationUser(str(uuid.uuid4()))
 user_api = ApplicationUsersApi(ApiClient(Configuration()))
-user_api.add_user_using_post_with_http_info(application_user)
+user_api.add_user_using_post(application_user)
 ```
 
 - Receiving an authorisation URL your users to log into their institution
