@@ -7,10 +7,8 @@ from yapily import ApplicationUser
 
 from yapily import AccountsApi
 from yapily import ConsentsApi
-from yapily import IdentityApi
 from yapily import TransactionsApi
 from yapily import TransfersApi
-from yapily import TransferRequest
 
 def main():
 
@@ -38,18 +36,18 @@ def main():
     input("Press enter to continue")
 
     consent = ConsentsApi(apiClient).get_user_consents_using_get(app_user_uuid)[0]
-    print("Consent: " + consent.consent_token);
-    identity_api = IdentityApi(ApiClient(configuration))
-    identity =  identity_api.get_identity_using_get(consent.consent_token)
+    consent_token = consent.consent_token
 
-    accounts =  AccountsApi(ApiClient(configuration)).get_accounts_using_get(consent.consent_token)
+    print("Consent: " + consent_token);
+
+    accounts =  AccountsApi(ApiClient(configuration)).get_accounts_using_get(consent_token)
 
     print("**************ACCOUNTS******************")
     print(accounts)
     print("****************************************")
 
     transactions_api = TransactionsApi(ApiClient(configuration))
-    transactions = transactions_api.get_transactions_using_get(consent.consent_token, accounts.data[0]._id)
+    transactions = transactions_api.get_transactions_using_get(consent_token, accounts.data[0]._id)
 
     print("**************TRANSACTIONS**************");
     print(transactions);
@@ -57,8 +55,34 @@ def main():
 
     transfers_api = TransfersApi(ApiClient(configuration))
 
-    transfer_request = TransferRequest("{{destination-account-id}}",0.50,"GBP","Your transaction with yapily",str(uuid.uuid4()))
-    transfer_response = transfers_api.transfer_using_put(transfer_request)
+    path_params = {"accountId": "{{account-id}}"}
+    header_params = {
+        "consent": consent_token,
+        "Accept": 'application/json;charset=utf-8', 'Content-Type': 'application/json;charset=utf-8'}
+
+    body = {
+        "accountId": "{{destination-account-id}}",
+        "amount": 0.50,
+        "currency": "GBP",
+        "reference": "Your transaction with yapily",
+        "transferReferenceId": str(uuid.uuid4())
+    }
+
+    transfer_response = transfers_api.api_client.call_api(
+        "/accounts/{accountId}/transfer", "PUT",
+        path_params,
+        query_params=[],
+        header_params=header_params,
+        body=body,
+        post_params=[],
+        files={},
+        response_type="ApiResponseOfTransferResponse",  # noqa: E501
+        auth_settings=["basicAuth"],
+        asyncRequest=None,
+        _return_http_data_only=True,
+        _preload_content=True,
+        _request_timeout=None,
+        collection_formats={})
 
     print("**************TRANSFERS**************");
     print(transfer_response);
