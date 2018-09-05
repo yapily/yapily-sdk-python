@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import yapily
-from yapily.models.credit_interest import CreditInterest  # noqa: E501
+from yapily.models.merchant import Merchant  # noqa: E501
 from yapily.rest import ApiException
 
 
-class TestCreditInterest(unittest.TestCase):
-    """CreditInterest unit test stubs"""
+class TestMerchant(unittest.TestCase):
+    """Merchant unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestCreditInterest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testCreditInterest(self):
-        """Test CreditInterest"""
+    def testMerchant(self):
+        """Test Merchant"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = yapily.models.credit_interest.CreditInterest()  # noqa: E501
+        # model = yapily.models.merchant.Merchant()  # noqa: E501
         pass
 
 

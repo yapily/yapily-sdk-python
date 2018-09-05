@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**add_consent_using_post**](ConsentsApi.md#add_consent_using_post) | **POST** /users/{userUuid}/consents | Post consent
 [**delete_using_delete**](ConsentsApi.md#delete_using_delete) | **DELETE** /users/{userUuid}/consents/{consentToken} | Delete consent
-[**get_user_consents_using_get**](ConsentsApi.md#get_user_consents_using_get) | **GET** /users/{userUuid}/consents | Get consent
+[**get_user_consents_using_get**](ConsentsApi.md#get_user_consents_using_get) | **GET** /users/{userUuid}/consents | Get user consents
 
 
 # **add_consent_using_post**
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 # **get_user_consents_using_get**
 > list[Consent] get_user_consents_using_get(user_uuid, institution_id=institution_id)
 
-Get consent
+Get user consents
 
 ### Example
 ```python
@@ -139,7 +139,7 @@ user_uuid = 'user_uuid_example' # str | userUuid
 institution_id = 'institution_id_example' # str | institutionId (optional)
 
 try:
-    # Get consent
+    # Get user consents
     api_response = api_instance.get_user_consents_using_get(user_uuid, institution_id=institution_id)
     pprint(api_response)
 except ApiException as e:

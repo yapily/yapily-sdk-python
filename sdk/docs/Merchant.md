@@ -1,14 +1,9 @@
-# Transaction
+# Merchant
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | [optional] 
-**date** | **datetime** |  | [optional] 
-**amount** | **float** |  | [optional] 
-**currency** | **str** |  | [optional] 
-**description** | **str** |  | [optional] 
-**merchant** | [**Merchant**](Merchant.md) |  | [optional] 
+**merchant_name** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

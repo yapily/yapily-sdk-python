@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get_transactions_using_get**
-> ApiListResponseOfTransaction get_transactions_using_get(consent, account_id)
+> ApiListResponseOfTransaction get_transactions_using_get(consent, account_id, _with=_with)
 
 Get account transactions
 
@@ -29,10 +29,11 @@ configuration.password = 'YOUR_PASSWORD'
 api_instance = yapily.TransactionsApi(yapily.ApiClient(configuration))
 consent = 'consent_example' # str | Consent Token
 account_id = 'account_id_example' # str | accountId
+_with = ['_with_example'] # list[str] | with (optional)
 
 try:
     # Get account transactions
-    api_response = api_instance.get_transactions_using_get(consent, account_id)
+    api_response = api_instance.get_transactions_using_get(consent, account_id, _with=_with)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TransactionsApi->get_transactions_using_get: %s\n" % e)
@@ -44,6 +45,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **consent** | **str**| Consent Token | 
  **account_id** | **str**| accountId | 
+ **_with** | [**list[str]**](str.md)| with | [optional] 
 
 ### Return type
 
