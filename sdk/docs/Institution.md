@@ -3,14 +3,14 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**countries** | [**list[Country]**](Country.md) |  | [optional] 
-**credentials_type** | **str** |  | [optional] 
-**environment_type** | **str** |  | [optional] 
-**features** | **list[str]** |  | [optional] 
-**full_name** | **str** |  | [optional] 
 **id** | **str** |  | [optional] 
-**media** | [**list[Media]**](Media.md) |  | [optional] 
 **name** | **str** |  | [optional] 
+**full_name** | **str** |  | [optional] 
+**countries** | [**list[Country]**](Country.md) |  | [optional] 
+**environment_type** | **str** |  | [optional] 
+**credentials_type** | **str** |  | [optional] 
+**media** | [**list[Media]**](Media.md) |  | [optional] 
+**features** | **list[str]** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

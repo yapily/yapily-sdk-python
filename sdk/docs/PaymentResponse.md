@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **reference** | **str** |  | [optional] 
 **amount** | **float** |  | [optional] 
 **currency** | **str** |  | [optional] 
-**auth_url** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
