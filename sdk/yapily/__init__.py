@@ -63,7 +63,7 @@ from yapily.models.application_user import ApplicationUser
 from yapily.models.consent import Consent
 from yapily.models.core_product import CoreProduct
 from yapily.models.country import Country
-from yapily.models.create_consent_api_key import CreateConsentApiKey
+from yapily.models.create_consent_access_token import CreateConsentAccessToken
 from yapily.models.credit_check import CreditCheck
 from yapily.models.credit_interest import CreditInterest
 from yapily.models.credit_interest_credit_interest_eligibility import CreditInterestCreditInterestEligibility
