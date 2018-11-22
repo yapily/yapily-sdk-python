@@ -1,6 +1,6 @@
 # yapily.AccountsApi
 
-All URIs are relative to *https://api.yapily.com:443*
+All URIs are relative to *https://api.yapily.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
