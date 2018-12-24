@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **create_payment_initiation_using_post**
-> ApiResponseOfAuthorisationRequestResponse create_payment_initiation_using_post(payment_auth_request=payment_auth_request)
+> ApiResponseOfAuthorisationRequestResponse create_payment_initiation_using_post(payment_auth_request)
 
 Initiate a new single payment for user to authorise
 
@@ -29,11 +29,11 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = yapily.PaymentsApi(yapily.ApiClient(configuration))
-payment_auth_request = yapily.SortCodePaymentAuthRequest() # SortCodePaymentAuthRequest | paymentAuthRequest (optional)
+payment_auth_request = yapily.SortCodePaymentAuthRequest() # SortCodePaymentAuthRequest | paymentAuthRequest
 
 try:
     # Initiate a new single payment for user to authorise
-    api_response = api_instance.create_payment_initiation_using_post(payment_auth_request=payment_auth_request)
+    api_response = api_instance.create_payment_initiation_using_post(payment_auth_request)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PaymentsApi->create_payment_initiation_using_post: %s\n" % e)
@@ -43,7 +43,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payment_auth_request** | [**SortCodePaymentAuthRequest**](SortCodePaymentAuthRequest.md)| paymentAuthRequest | [optional] 
+ **payment_auth_request** | [**SortCodePaymentAuthRequest**](SortCodePaymentAuthRequest.md)| paymentAuthRequest | 
 
 ### Return type
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_payment_using_post**
-> ApiResponseOfPaymentResponse create_payment_using_post(consent, payment_request=payment_request)
+> ApiResponseOfPaymentResponse create_payment_using_post(consent, payment_request)
 
 Create a new single payment
 
@@ -81,11 +81,11 @@ configuration.password = 'YOUR_PASSWORD'
 # create an instance of the API class
 api_instance = yapily.PaymentsApi(yapily.ApiClient(configuration))
 consent = 'consent_example' # str | Consent Token
-payment_request = yapily.SortCodePaymentRequest() # SortCodePaymentRequest | paymentRequest (optional)
+payment_request = yapily.SortCodePaymentRequest() # SortCodePaymentRequest | paymentRequest
 
 try:
     # Create a new single payment
-    api_response = api_instance.create_payment_using_post(consent, payment_request=payment_request)
+    api_response = api_instance.create_payment_using_post(consent, payment_request)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PaymentsApi->create_payment_using_post: %s\n" % e)
@@ -96,7 +96,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **consent** | **str**| Consent Token | 
- **payment_request** | [**SortCodePaymentRequest**](SortCodePaymentRequest.md)| paymentRequest | [optional] 
+ **payment_request** | [**SortCodePaymentRequest**](SortCodePaymentRequest.md)| paymentRequest | 
 
 ### Return type
 
