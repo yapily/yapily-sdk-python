@@ -24,6 +24,9 @@ from pprint import pprint
 configuration = yapily.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
+# Configure OAuth2 access token for authorization: tokenAuth
+configuration = yapily.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = yapily.TransfersApi(yapily.ApiClient(configuration))
@@ -53,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basicAuth](../README.md#basicAuth)
+[basicAuth](../README.md#basicAuth), [tokenAuth](../README.md#tokenAuth)
 
 ### HTTP request headers
 
