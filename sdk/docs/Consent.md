@@ -9,7 +9,8 @@ Name | Type | Description | Notes
 **status** | **str** |  | [optional] 
 **created_at** | **datetime** |  | [optional] 
 **expires_at** | **datetime** |  | [optional] 
-**time_to_expire_in_millis** | **int** |  | [optional] 
+**time_to_expire** | [**Duration**](Duration.md) |  | [optional] 
+**time_to_expire_in_millis** | **int** | Deprecated. Use &#x60;timeToExpire&#x60; instead. | [optional] 
 **feature_scope** | **list[str]** |  | [optional] 
 **consent_token** | **str** |  | [optional] 
 
