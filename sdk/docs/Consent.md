@@ -8,9 +8,11 @@ Name | Type | Description | Notes
 **institution_id** | **str** |  | [optional] 
 **status** | **str** |  | [optional] 
 **created_at** | **datetime** |  | [optional] 
+**transaction_from** | **datetime** |  | [optional] 
+**time_to_expire_in_millis** | **int** | Deprecated. Use &#x60;timeToExpire&#x60; instead. | [optional] 
+**transaction_to** | **datetime** |  | [optional] 
 **expires_at** | **datetime** |  | [optional] 
 **time_to_expire** | **str** | Represent Java Time Duration as String | [optional] 
-**time_to_expire_in_millis** | **int** | Deprecated. Use &#x60;timeToExpire&#x60; instead. | [optional] 
 **feature_scope** | **list[str]** |  | [optional] 
 **consent_token** | **str** |  | [optional] 
 
