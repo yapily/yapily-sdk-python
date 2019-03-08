@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**add_consent_using_post**](ConsentsApi.md#add_consent_using_post) | **POST** /users/{userUuid}/consents | Post consent
 [**delete_using_delete**](ConsentsApi.md#delete_using_delete) | **DELETE** /consents/{consentId} | Delete consent
 [**get_consent_by_id_using_get**](ConsentsApi.md#get_consent_by_id_using_get) | **GET** /consents/{consentId} | Get consent
+[**get_consent_by_single_access_consent_using_post**](ConsentsApi.md#get_consent_by_single_access_consent_using_post) | **POST** /consents/one-time-token | Post one time token
 [**get_user_consents_using_get**](ConsentsApi.md#get_user_consents_using_get) | **GET** /users/{userUuid}/consents | Get user consents
 
 
@@ -162,6 +163,60 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiResponseOfConsent**](ApiResponseOfConsent.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_consent_by_single_access_consent_using_post**
+> Consent get_consent_by_single_access_consent_using_post(one_time_token)
+
+Post one time token
+
+### Example
+```python
+from __future__ import print_function
+import time
+import yapily
+from yapily.rest import ApiException
+from pprint import pprint
+
+# Configure HTTP basic authorization: basicAuth
+configuration = yapily.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+# Configure OAuth2 access token for authorization: tokenAuth
+configuration = yapily.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = yapily.ConsentsApi(yapily.ApiClient(configuration))
+one_time_token = yapily.OneTimeTokenRequest() # OneTimeTokenRequest | oneTimeToken
+
+try:
+    # Post one time token
+    api_response = api_instance.get_consent_by_single_access_consent_using_post(one_time_token)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConsentsApi->get_consent_by_single_access_consent_using_post: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **one_time_token** | [**OneTimeTokenRequest**](OneTimeTokenRequest.md)| oneTimeToken | 
+
+### Return type
+
+[**Consent**](Consent.md)
 
 ### Authorization
 

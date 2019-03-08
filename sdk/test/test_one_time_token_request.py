@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import yapily
-from yapily.models.personal_current_account_pca_marketing_state import PersonalCurrentAccountPCAMarketingState  # noqa: E501
+from yapily.models.one_time_token_request import OneTimeTokenRequest  # noqa: E501
 from yapily.rest import ApiException
 
 
-class TestPersonalCurrentAccountPCAMarketingState(unittest.TestCase):
-    """PersonalCurrentAccountPCAMarketingState unit test stubs"""
+class TestOneTimeTokenRequest(unittest.TestCase):
+    """OneTimeTokenRequest unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestPersonalCurrentAccountPCAMarketingState(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testPersonalCurrentAccountPCAMarketingState(self):
-        """Test PersonalCurrentAccountPCAMarketingState"""
+    def testOneTimeTokenRequest(self):
+        """Test OneTimeTokenRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = yapily.models.personal_current_account_pca_marketing_state.PersonalCurrentAccountPCAMarketingState()  # noqa: E501
+        # model = yapily.models.one_time_token_request.OneTimeTokenRequest()  # noqa: E501
         pass
 
 
