@@ -5,9 +5,10 @@ All URIs are relative to *https://api.yapily.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**add_consent_using_post**](ConsentsApi.md#add_consent_using_post) | **POST** /users/{userUuid}/consents | Post consent
+[**create_consent_with_code_using_post**](ConsentsApi.md#create_consent_with_code_using_post) | **POST** /consent-auth-code | Post auth-code and auth-state
 [**delete_using_delete**](ConsentsApi.md#delete_using_delete) | **DELETE** /consents/{consentId} | Delete consent
 [**get_consent_by_id_using_get**](ConsentsApi.md#get_consent_by_id_using_get) | **GET** /consents/{consentId} | Get consent
-[**get_consent_by_single_access_consent_using_post**](ConsentsApi.md#get_consent_by_single_access_consent_using_post) | **POST** /consents/one-time-token | Post one time token
+[**get_consent_by_single_access_consent_using_post**](ConsentsApi.md#get_consent_by_single_access_consent_using_post) | **POST** /consent-one-time-token | Post one time token
 [**get_user_consents_using_get**](ConsentsApi.md#get_user_consents_using_get) | **GET** /users/{userUuid}/consents | Get user consents
 
 
@@ -51,6 +52,60 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_uuid** | **str**| userUuid | 
  **create_consent_access_token** | [**CreateConsentAccessToken**](CreateConsentAccessToken.md)| createConsentAccessToken | 
+
+### Return type
+
+[**Consent**](Consent.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_consent_with_code_using_post**
+> Consent create_consent_with_code_using_post(consent_by_auth_code)
+
+Post auth-code and auth-state
+
+### Example
+```python
+from __future__ import print_function
+import time
+import yapily
+from yapily.rest import ApiException
+from pprint import pprint
+
+# Configure HTTP basic authorization: basicAuth
+configuration = yapily.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+# Configure OAuth2 access token for authorization: tokenAuth
+configuration = yapily.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = yapily.ConsentsApi(yapily.ApiClient(configuration))
+consent_by_auth_code = yapily.ConsentAuthCodeRequest() # ConsentAuthCodeRequest | consentByAuthCode
+
+try:
+    # Post auth-code and auth-state
+    api_response = api_instance.create_consent_with_code_using_post(consent_by_auth_code)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConsentsApi->create_consent_with_code_using_post: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **consent_by_auth_code** | [**ConsentAuthCodeRequest**](ConsentAuthCodeRequest.md)| consentByAuthCode | 
 
 ### Return type
 

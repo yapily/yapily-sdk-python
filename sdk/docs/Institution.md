@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **credentials_type** | **str** |  | [optional] 
 **media** | [**list[Media]**](Media.md) |  | [optional] 
 **features** | **list[str]** |  | [optional] 
+**monitoring** | [**dict(str, MonitoringFeatureStatus)**](MonitoringFeatureStatus.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
