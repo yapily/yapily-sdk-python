@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get_transactions_using_get**
-> ApiListResponseOfTransaction get_transactions_using_get(consent, account_id, _with=_with, _from=_from, before=before, limit=limit, sort=sort)
+> ApiListResponseOfTransaction get_transactions_using_get(consent, account_id, _with=_with, _from=_from, before=before, limit=limit, sort=sort, offset=offset)
 
 Get account transactions
 
@@ -37,10 +37,11 @@ _from = '_from_example' # str | from (optional)
 before = 'before_example' # str | before (optional)
 limit = 56 # int | limit (optional)
 sort = 'sort_example' # str | sort (optional)
+offset = 56 # int | offset (optional)
 
 try:
     # Get account transactions
-    api_response = api_instance.get_transactions_using_get(consent, account_id, _with=_with, _from=_from, before=before, limit=limit, sort=sort)
+    api_response = api_instance.get_transactions_using_get(consent, account_id, _with=_with, _from=_from, before=before, limit=limit, sort=sort, offset=offset)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TransactionsApi->get_transactions_using_get: %s\n" % e)
@@ -57,6 +58,7 @@ Name | Type | Description  | Notes
  **before** | **str**| before | [optional] 
  **limit** | **int**| limit | [optional] 
  **sort** | **str**| sort | [optional] 
+ **offset** | **int**| offset | [optional] 
 
 ### Return type
 
