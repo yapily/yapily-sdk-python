@@ -1,4 +1,4 @@
-# ApiListResponseOfAccount
+# ClientBasedApiListResponseOfAccount
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# ApiListResponseOfTransaction
+# ClientBasedApiListResponseOfTransaction
 
 ## Properties
 Name | Type | Description | Notes

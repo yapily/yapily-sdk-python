@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get_transactions_using_get**
-> ApiListResponseOfTransaction get_transactions_using_get(consent, account_id, _with=_with, _from=_from, before=before, limit=limit, sort=sort, offset=offset)
+> ClientBasedApiListResponseOfTransaction get_transactions_using_get(consent, account_id, _with=_with, _from=_from, before=before, limit=limit, sort=sort, offset=offset)
 
 Get account transactions
 
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiListResponseOfTransaction**](ApiListResponseOfTransaction.md)
+[**ClientBasedApiListResponseOfTransaction**](ClientBasedApiListResponseOfTransaction.md)
 
 ### Authorization
 
