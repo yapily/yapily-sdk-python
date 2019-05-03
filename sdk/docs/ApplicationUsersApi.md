@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_user_using_delete**
-> object delete_user_using_delete(user_uuid)
+> ApiResponseOfUserDeleteResponse delete_user_using_delete(user_uuid)
 
 Delete an application user
 
@@ -105,7 +105,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**ApiResponseOfUserDeleteResponse**](ApiResponseOfUserDeleteResponse.md)
 
 ### Authorization
 

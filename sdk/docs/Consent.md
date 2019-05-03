@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [optional] 
 **user_uuid** | **str** |  | [optional] 
+**application_user_id** | **str** |  | [optional] 
 **reference_id** | **str** |  | [optional] 
 **institution_id** | **str** |  | [optional] 
 **status** | **str** |  | [optional] 

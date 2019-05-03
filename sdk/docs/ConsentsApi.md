@@ -123,7 +123,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_using_delete**
-> object delete_using_delete(consent_id)
+> ApiResponseOfConsentDeleteResponse delete_using_delete(consent_id, force_delete=force_delete)
 
 Delete consent
 
@@ -146,10 +146,11 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = yapily.ConsentsApi(yapily.ApiClient(configuration))
 consent_id = 'consent_id_example' # str | consentId
+force_delete = true # bool | forceDelete (optional)
 
 try:
     # Delete consent
-    api_response = api_instance.delete_using_delete(consent_id)
+    api_response = api_instance.delete_using_delete(consent_id, force_delete=force_delete)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConsentsApi->delete_using_delete: %s\n" % e)
@@ -160,10 +161,11 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **consent_id** | **str**| consentId | 
+ **force_delete** | **bool**| forceDelete | [optional] 
 
 ### Return type
 
-**object**
+[**ApiResponseOfConsentDeleteResponse**](ApiResponseOfConsentDeleteResponse.md)
 
 ### Authorization
 

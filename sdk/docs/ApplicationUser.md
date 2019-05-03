@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **uuid** | **str** | User UUID | [optional] 
 **application_uuid** | **str** |  | [optional] 
+**application_user_id** | **str** |  | [optional] 
 **reference_id** | **str** |  | [optional] 
 **institution_consents** | [**list[InstitutionConsent]**](InstitutionConsent.md) |  | [optional] 
 
