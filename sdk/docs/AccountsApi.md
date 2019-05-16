@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_accounts_using_get**
-> ClientBasedApiListResponseOfAccount get_accounts_using_get(consent)
+> ApiListResponseOfAccount get_accounts_using_get(consent)
 
 Get accounts
 
@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ClientBasedApiListResponseOfAccount**](ClientBasedApiListResponseOfAccount.md)
+[**ApiListResponseOfAccount**](ApiListResponseOfAccount.md)
 
 ### Authorization
 

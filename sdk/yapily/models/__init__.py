@@ -34,6 +34,7 @@ from yapily.models.account_authorisation_request import AccountAuthorisationRequ
 from yapily.models.account_request import AccountRequest
 from yapily.models.address import Address
 from yapily.models.age_eligibility import AgeEligibility
+from yapily.models.api_list_response_of_account import ApiListResponseOfAccount
 from yapily.models.api_list_response_of_feature_details import ApiListResponseOfFeatureDetails
 from yapily.models.api_list_response_of_institution import ApiListResponseOfInstitution
 from yapily.models.api_list_response_of_transaction import ApiListResponseOfTransaction
@@ -50,7 +51,6 @@ from yapily.models.api_response_of_user_delete_response import ApiResponseOfUser
 from yapily.models.application import Application
 from yapily.models.application_user import ApplicationUser
 from yapily.models.authorisation_request_response import AuthorisationRequestResponse
-from yapily.models.client_based_api_list_response_of_account import ClientBasedApiListResponseOfAccount
 from yapily.models.consent import Consent
 from yapily.models.consent_auth_code_request import ConsentAuthCodeRequest
 from yapily.models.consent_delete_response import ConsentDeleteResponse

@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import yapily
-from yapily.models.client_based_api_list_response_of_account import ClientBasedApiListResponseOfAccount  # noqa: E501
+from yapily.models.api_list_response_of_account import ApiListResponseOfAccount  # noqa: E501
 from yapily.rest import ApiException
 
 
-class TestClientBasedApiListResponseOfAccount(unittest.TestCase):
-    """ClientBasedApiListResponseOfAccount unit test stubs"""
+class TestApiListResponseOfAccount(unittest.TestCase):
+    """ApiListResponseOfAccount unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestClientBasedApiListResponseOfAccount(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testClientBasedApiListResponseOfAccount(self):
-        """Test ClientBasedApiListResponseOfAccount"""
+    def testApiListResponseOfAccount(self):
+        """Test ApiListResponseOfAccount"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = yapily.models.client_based_api_list_response_of_account.ClientBasedApiListResponseOfAccount()  # noqa: E501
+        # model = yapily.models.api_list_response_of_account.ApiListResponseOfAccount()  # noqa: E501
         pass
 
 

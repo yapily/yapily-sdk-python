@@ -148,7 +148,7 @@ class AccountsApi(object):
 
         :param async bool
         :param str consent: Consent Token (required)
-        :return: ClientBasedApiListResponseOfAccount
+        :return: ApiListResponseOfAccount
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -169,7 +169,7 @@ class AccountsApi(object):
 
         :param async bool
         :param str consent: Consent Token (required)
-        :return: ClientBasedApiListResponseOfAccount
+        :return: ApiListResponseOfAccount
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -227,7 +227,7 @@ class AccountsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='ClientBasedApiListResponseOfAccount',  # noqa: E501
+            response_type='ApiListResponseOfAccount',  # noqa: E501
             auth_settings=auth_settings,
             asyncRequest=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
