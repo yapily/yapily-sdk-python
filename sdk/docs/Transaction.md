@@ -5,8 +5,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** | Transaction Id returned by the institution if present | [optional] 
 **date** | **datetime** | Transaction date as defined by the institution | [optional] 
-**booking_date_time** | **datetime** | The actual or expected booking (settled) timestamp | [optional] 
-**value_date_time** | **datetime** | Definition varies according to the institution | [optional] 
+**booking_date_time** | **datetime** | Date and (if available) time that transaction is posted | [optional] 
+**value_date_time** | **datetime** | The actual or expected date and time transaction is cleared | [optional] 
 **status** | **str** | The status of the transaction | [optional] 
 **amount** | **float** | Deprecated. Use the amount value in &#x60;transactionAmount&#x60; instead | [optional] 
 **currency** | **str** | Deprecated. Use the currency value in &#x60;transactionAmount&#x60; instead | [optional] 
