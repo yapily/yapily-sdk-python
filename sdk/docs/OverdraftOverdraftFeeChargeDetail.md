@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **other_fee_rate_type** | [**OtherFeeRateType**](OtherFeeRateType.md) |  | [optional] 
 **other_fee_type** | [**OtherFeeType**](OtherFeeType.md) |  | [optional] 
 **overdraft_control_indicator** | **bool** |  | [optional] 
-**overdraft_fee_applicable_range** | [**OverdraftFeeApplicableRange**](OverdraftFeeApplicableRange.md) |  | [optional] 
+**overdraft_fee_charge_cap** | [**OverdraftOverdraftFeeChargeCap**](OverdraftOverdraftFeeChargeCap.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

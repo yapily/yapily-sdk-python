@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**delete_using_delete**](ConsentsApi.md#delete_using_delete) | **DELETE** /consents/{consentId} | Delete consent
 [**get_consent_by_id_using_get**](ConsentsApi.md#get_consent_by_id_using_get) | **GET** /consents/{consentId} | Get consent
 [**get_consent_by_single_access_consent_using_post**](ConsentsApi.md#get_consent_by_single_access_consent_using_post) | **POST** /consent-one-time-token | Post one time token
+[**get_consents_using_get**](ConsentsApi.md#get_consents_using_get) | **GET** /consents | Get consents
 [**get_user_consents_using_get**](ConsentsApi.md#get_user_consents_using_get) | **GET** /users/{userUuid}/consents | Get user consents
 
 
@@ -286,8 +287,66 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_consents_using_get**
+> ApiListResponseOfConsent get_consents_using_get(filter_application_user_id=filter_application_user_id, filter_user_uuid=filter_user_uuid, filter_institution=filter_institution)
+
+Get consents
+
+### Example
+```python
+from __future__ import print_function
+import time
+import yapily
+from yapily.rest import ApiException
+from pprint import pprint
+
+# Configure HTTP basic authorization: basicAuth
+configuration = yapily.Configuration()
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+# Configure OAuth2 access token for authorization: tokenAuth
+configuration = yapily.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = yapily.ConsentsApi(yapily.ApiClient(configuration))
+filter_application_user_id = 'filter_application_user_id_example' # str | Filter consents by applicationUserId (optional)
+filter_user_uuid = 'filter_user_uuid_example' # str | Filter consents by userUuid (optional)
+filter_institution = 'filter_institution_example' # str | Use this parameter to filter consent by institution, using the Yapily institution Id (optional)
+
+try:
+    # Get consents
+    api_response = api_instance.get_consents_using_get(filter_application_user_id=filter_application_user_id, filter_user_uuid=filter_user_uuid, filter_institution=filter_institution)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConsentsApi->get_consents_using_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter_application_user_id** | **str**| Filter consents by applicationUserId | [optional] 
+ **filter_user_uuid** | **str**| Filter consents by userUuid | [optional] 
+ **filter_institution** | **str**| Use this parameter to filter consent by institution, using the Yapily institution Id | [optional] 
+
+### Return type
+
+[**ApiListResponseOfConsent**](ApiListResponseOfConsent.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json;charset=UTF-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_user_consents_using_get**
-> list[Consent] get_user_consents_using_get(user_uuid, institution_id=institution_id)
+> list[Consent] get_user_consents_using_get(user_uuid, filter_institution=filter_institution)
 
 Get user consents
 
@@ -310,11 +369,11 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = yapily.ConsentsApi(yapily.ApiClient(configuration))
 user_uuid = 'user_uuid_example' # str | userUuid
-institution_id = 'institution_id_example' # str | institutionId (optional)
+filter_institution = 'filter_institution_example' # str | Use this parameter to filter consent by institution, using the Yapily institution Id. This replaces the deprecated `institutionId` query param. (optional)
 
 try:
     # Get user consents
-    api_response = api_instance.get_user_consents_using_get(user_uuid, institution_id=institution_id)
+    api_response = api_instance.get_user_consents_using_get(user_uuid, filter_institution=filter_institution)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConsentsApi->get_user_consents_using_get: %s\n" % e)
@@ -325,7 +384,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_uuid** | **str**| userUuid | 
- **institution_id** | **str**| institutionId | [optional] 
+ **filter_institution** | **str**| Use this parameter to filter consent by institution, using the Yapily institution Id. This replaces the deprecated &#x60;institutionId&#x60; query param. | [optional] 
 
 ### Return type
 

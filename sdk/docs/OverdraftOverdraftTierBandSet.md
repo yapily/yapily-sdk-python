@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **authorised_indicator** | **bool** |  | [optional] 
 **buffer_amount** | **str** |  | [optional] 
 **identification** | **str** |  | [optional] 
+**minimum_arranged_overdraft_amount** | **str** |  | [optional] 
 **notes** | **list[str]** |  | [optional] 
 **overdraft_fees_charges** | [**list[OverdraftOverdraftFeesCharges1]**](OverdraftOverdraftFeesCharges1.md) |  | [optional] 
 **overdraft_tier_band** | [**list[OverdraftOverdraftTierBand]**](OverdraftOverdraftTierBand.md) |  | [optional] 

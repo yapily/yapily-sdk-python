@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**notes** | **str** |  | [optional] 
+**notes** | **list[str]** |  | [optional] 
 **overdraft_tier_band_set** | [**list[OverdraftOverdraftTierBandSet]**](OverdraftOverdraftTierBandSet.md) |  | [optional] 
 **tcs_and_cs_url** | **str** |  | [optional] 
 
