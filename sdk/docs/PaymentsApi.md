@@ -4,13 +4,13 @@ All URIs are relative to *https://api.yapily.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_payment_initiation_using_post**](PaymentsApi.md#create_payment_initiation_using_post) | **POST** /payment-sortcode-auth-requests | Initiate a new single payment for user to authorise
-[**create_payment_using_post**](PaymentsApi.md#create_payment_using_post) | **POST** /payment-sortcode | Create a new single payment
+[**create_payment_authorisation_with_sort_code_using_post**](PaymentsApi.md#create_payment_authorisation_with_sort_code_using_post) | **POST** /payment-sortcode-auth-requests | Initiate a new single payment for user to authorise
+[**create_payment_with_sort_code_using_post**](PaymentsApi.md#create_payment_with_sort_code_using_post) | **POST** /payment-sortcode | Create a new single payment
 [**get_payment_status_using_get**](PaymentsApi.md#get_payment_status_using_get) | **GET** /payments/{paymentId} | Get status of a payment
 
 
-# **create_payment_initiation_using_post**
-> ApiResponseOfAuthorisationRequestResponse create_payment_initiation_using_post(payment_auth_request)
+# **create_payment_authorisation_with_sort_code_using_post**
+> ApiResponseOfAuthorisationRequestResponse create_payment_authorisation_with_sort_code_using_post(payment_auth_request)
 
 Initiate a new single payment for user to authorise
 
@@ -36,10 +36,10 @@ payment_auth_request = yapily.SortCodePaymentAuthRequest() # SortCodePaymentAuth
 
 try:
     # Initiate a new single payment for user to authorise
-    api_response = api_instance.create_payment_initiation_using_post(payment_auth_request)
+    api_response = api_instance.create_payment_authorisation_with_sort_code_using_post(payment_auth_request)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling PaymentsApi->create_payment_initiation_using_post: %s\n" % e)
+    print("Exception when calling PaymentsApi->create_payment_authorisation_with_sort_code_using_post: %s\n" % e)
 ```
 
 ### Parameters
@@ -63,8 +63,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create_payment_using_post**
-> ApiResponseOfPaymentResponse create_payment_using_post(consent, payment_request)
+# **create_payment_with_sort_code_using_post**
+> ApiResponseOfPaymentResponse create_payment_with_sort_code_using_post(consent, payment_request)
 
 Create a new single payment
 
@@ -91,10 +91,10 @@ payment_request = yapily.SortCodePaymentRequest() # SortCodePaymentRequest | pay
 
 try:
     # Create a new single payment
-    api_response = api_instance.create_payment_using_post(consent, payment_request)
+    api_response = api_instance.create_payment_with_sort_code_using_post(consent, payment_request)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling PaymentsApi->create_payment_using_post: %s\n" % e)
+    print("Exception when calling PaymentsApi->create_payment_with_sort_code_using_post: %s\n" % e)
 ```
 
 ### Parameters
