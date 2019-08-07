@@ -288,7 +288,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_consents_using_get**
-> ApiListResponseOfConsent get_consents_using_get(filter_application_user_id=filter_application_user_id, filter_user_uuid=filter_user_uuid, filter_institution=filter_institution)
+> ApiListResponseOfConsent get_consents_using_get(filter_application_user_id=filter_application_user_id, filter_institution=filter_institution)
 
 Get consents
 
@@ -310,13 +310,12 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = yapily.ConsentsApi(yapily.ApiClient(configuration))
-filter_application_user_id = 'filter_application_user_id_example' # str | Filter consents by applicationUserId (optional)
-filter_user_uuid = 'filter_user_uuid_example' # str | Filter consents by userUuid (optional)
-filter_institution = 'filter_institution_example' # str | Use this parameter to filter consent by institution, using the Yapily institution Id (optional)
+filter_application_user_id = ['filter_application_user_id_example'] # list[str] | Filter consents by applicationUserId (optional)
+filter_institution = ['filter_institution_example'] # list[str] | Use this parameter to filter consent by institution, using the Yapily institution Id (optional)
 
 try:
     # Get consents
-    api_response = api_instance.get_consents_using_get(filter_application_user_id=filter_application_user_id, filter_user_uuid=filter_user_uuid, filter_institution=filter_institution)
+    api_response = api_instance.get_consents_using_get(filter_application_user_id=filter_application_user_id, filter_institution=filter_institution)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConsentsApi->get_consents_using_get: %s\n" % e)
@@ -326,9 +325,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter_application_user_id** | **str**| Filter consents by applicationUserId | [optional] 
- **filter_user_uuid** | **str**| Filter consents by userUuid | [optional] 
- **filter_institution** | **str**| Use this parameter to filter consent by institution, using the Yapily institution Id | [optional] 
+ **filter_application_user_id** | [**list[str]**](str.md)| Filter consents by applicationUserId | [optional] 
+ **filter_institution** | [**list[str]**](str.md)| Use this parameter to filter consent by institution, using the Yapily institution Id | [optional] 
 
 ### Return type
 
