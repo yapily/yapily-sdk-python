@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **starts_at** | **datetime** |  | [optional] 
 **total_max_amount** | **float** |  | [optional] 
 **max_amount_per_request** | **float** |  | [optional] 
+**allow_overdraft** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
