@@ -9,8 +9,8 @@ Method | HTTP request | Description
 [**delete_using_delete**](ConsentsApi.md#delete_using_delete) | **DELETE** /consents/{consentId} | Delete consent
 [**get_consent_by_id_using_get**](ConsentsApi.md#get_consent_by_id_using_get) | **GET** /consents/{consentId} | Get consent
 [**get_consent_by_single_access_consent_using_post**](ConsentsApi.md#get_consent_by_single_access_consent_using_post) | **POST** /consent-one-time-token | Post one time token
-[**get_consents_using_get**](ConsentsApi.md#get_consents_using_get) | **GET** /consents | Get consents
-[**get_user_consents_using_get**](ConsentsApi.md#get_user_consents_using_get) | **GET** /users/{userUuid}/consents | Get user consents
+[**get_consents_using_get**](ConsentsApi.md#get_consents_using_get) | **GET** /consents | Get consents sorted by creation date
+[**get_user_consents_using_get**](ConsentsApi.md#get_user_consents_using_get) | **GET** /users/{userUuid}/consents | Get latest user consents
 
 
 # **add_consent_using_post**
@@ -288,9 +288,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_consents_using_get**
-> ApiListResponseOfConsent get_consents_using_get(filter_application_user_id=filter_application_user_id, filter_institution=filter_institution)
+> ApiListResponseOfConsent get_consents_using_get(filter_application_user_id=filter_application_user_id, filter_user_uuid=filter_user_uuid, filter_institution=filter_institution, filter_status=filter_status, _from=_from, before=before, limit=limit, offset=offset)
 
-Get consents
+Get consents sorted by creation date
 
 ### Example
 ```python
@@ -310,12 +310,18 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = yapily.ConsentsApi(yapily.ApiClient(configuration))
-filter_application_user_id = ['filter_application_user_id_example'] # list[str] | Filter consents by applicationUserId (optional)
+filter_application_user_id = ['filter_application_user_id_example'] # list[str] | Filter consents by your application user Id (applicationUserId) (optional)
+filter_user_uuid = ['filter_user_uuid_example'] # list[str] | Filter consents by Yapily user Id (userUuid) (optional)
 filter_institution = ['filter_institution_example'] # list[str] | Use this parameter to filter consent by institution, using the Yapily institution Id (optional)
+filter_status = ['filter_status_example'] # list[str] | Use this parameter to filter consent by status (optional)
+_from = '_from_example' # str | Use this parameter to filter consents created after the date specified (optional)
+before = 'before_example' # str | Use this parameter to filter consents created before the date specified (optional)
+limit = 56 # int | Use this parameter to limit consent results, max limit is 20 (optional)
+offset = 0 # int | Use this parameter to specify the offset of the results (optional) (default to 0)
 
 try:
-    # Get consents
-    api_response = api_instance.get_consents_using_get(filter_application_user_id=filter_application_user_id, filter_institution=filter_institution)
+    # Get consents sorted by creation date
+    api_response = api_instance.get_consents_using_get(filter_application_user_id=filter_application_user_id, filter_user_uuid=filter_user_uuid, filter_institution=filter_institution, filter_status=filter_status, _from=_from, before=before, limit=limit, offset=offset)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConsentsApi->get_consents_using_get: %s\n" % e)
@@ -325,8 +331,14 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter_application_user_id** | [**list[str]**](str.md)| Filter consents by applicationUserId | [optional] 
+ **filter_application_user_id** | [**list[str]**](str.md)| Filter consents by your application user Id (applicationUserId) | [optional] 
+ **filter_user_uuid** | [**list[str]**](str.md)| Filter consents by Yapily user Id (userUuid) | [optional] 
  **filter_institution** | [**list[str]**](str.md)| Use this parameter to filter consent by institution, using the Yapily institution Id | [optional] 
+ **filter_status** | [**list[str]**](str.md)| Use this parameter to filter consent by status | [optional] 
+ **_from** | **str**| Use this parameter to filter consents created after the date specified | [optional] 
+ **before** | **str**| Use this parameter to filter consents created before the date specified | [optional] 
+ **limit** | **int**| Use this parameter to limit consent results, max limit is 20 | [optional] 
+ **offset** | **int**| Use this parameter to specify the offset of the results | [optional] [default to 0]
 
 ### Return type
 
@@ -344,9 +356,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_user_consents_using_get**
-> list[Consent] get_user_consents_using_get(user_uuid, filter_institution=filter_institution)
+> list[Consent] get_user_consents_using_get(user_uuid, filter_institution=filter_institution, limit=limit)
 
-Get user consents
+Get latest user consents
 
 ### Example
 ```python
@@ -368,10 +380,11 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = yapily.ConsentsApi(yapily.ApiClient(configuration))
 user_uuid = 'user_uuid_example' # str | userUuid
 filter_institution = 'filter_institution_example' # str | Use this parameter to filter consent by institution, using the Yapily institution Id. This replaces the deprecated `institutionId` query param. (optional)
+limit = 56 # int | Use this parameter to limit consent results, max limit is 20 (optional)
 
 try:
-    # Get user consents
-    api_response = api_instance.get_user_consents_using_get(user_uuid, filter_institution=filter_institution)
+    # Get latest user consents
+    api_response = api_instance.get_user_consents_using_get(user_uuid, filter_institution=filter_institution, limit=limit)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConsentsApi->get_user_consents_using_get: %s\n" % e)
@@ -383,6 +396,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_uuid** | **str**| userUuid | 
  **filter_institution** | **str**| Use this parameter to filter consent by institution, using the Yapily institution Id. This replaces the deprecated &#x60;institutionId&#x60; query param. | [optional] 
+ **limit** | **int**| Use this parameter to limit consent results, max limit is 20 | [optional] 
 
 ### Return type
 
