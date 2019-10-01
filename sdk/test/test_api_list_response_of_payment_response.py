@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import yapily
-from yapily.models.currency_exchange import CurrencyExchange  # noqa: E501
+from yapily.models.api_list_response_of_payment_response import ApiListResponseOfPaymentResponse  # noqa: E501
 from yapily.rest import ApiException
 
 
-class TestCurrencyExchange(unittest.TestCase):
-    """CurrencyExchange unit test stubs"""
+class TestApiListResponseOfPaymentResponse(unittest.TestCase):
+    """ApiListResponseOfPaymentResponse unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestCurrencyExchange(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testCurrencyExchange(self):
-        """Test CurrencyExchange"""
+    def testApiListResponseOfPaymentResponse(self):
+        """Test ApiListResponseOfPaymentResponse"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = yapily.models.currency_exchange.CurrencyExchange()  # noqa: E501
+        # model = yapily.models.api_list_response_of_payment_response.ApiListResponseOfPaymentResponse()  # noqa: E501
         pass
 
 
