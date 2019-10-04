@@ -5,7 +5,7 @@ All URIs are relative to *https://api.yapily.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_account_direct_debits_using_get**](AccountsApi.md#get_account_direct_debits_using_get) | **GET** /accounts/{accountId}/direct-debits | Get account direct debits
-[**get_account_periodic_payment_order_using_get**](AccountsApi.md#get_account_periodic_payment_order_using_get) | **GET** /accounts/{accountId}/periodic-payment-orders | Get account payments detail
+[**get_account_periodic_payments_using_get**](AccountsApi.md#get_account_periodic_payments_using_get) | **GET** /accounts/{accountId}/periodic-payments | Get account payments detail
 [**get_account_scheduled_payments_using_get**](AccountsApi.md#get_account_scheduled_payments_using_get) | **GET** /accounts/{accountId}/scheduled-payments | Get account scheduled payments
 [**get_account_using_get**](AccountsApi.md#get_account_using_get) | **GET** /accounts/{accountId} | Get account
 [**get_accounts_using_get**](AccountsApi.md#get_accounts_using_get) | **GET** /accounts | Get accounts
@@ -71,8 +71,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_account_periodic_payment_order_using_get**
-> ApiListResponseOfPaymentResponse get_account_periodic_payment_order_using_get(account_id, consent, limit=limit)
+# **get_account_periodic_payments_using_get**
+> ApiListResponseOfPaymentResponse get_account_periodic_payments_using_get(account_id, consent, limit=limit)
 
 Get account payments detail
 
@@ -100,10 +100,10 @@ limit = 56 # int | Use this parameter to limit account's periodic payment order 
 
 try:
     # Get account payments detail
-    api_response = api_instance.get_account_periodic_payment_order_using_get(account_id, consent, limit=limit)
+    api_response = api_instance.get_account_periodic_payments_using_get(account_id, consent, limit=limit)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling AccountsApi->get_account_periodic_payment_order_using_get: %s\n" % e)
+    print("Exception when calling AccountsApi->get_account_periodic_payments_using_get: %s\n" % e)
 ```
 
 ### Parameters
