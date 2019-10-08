@@ -27,7 +27,7 @@ configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = yapily.OAuthApi(yapily.ApiClient(configuration))
-grant_type = yapily.Object() # Object | Grant type (default to client_credentials)
+grant_type = 'client_credentials' # str | Grant type (default to client_credentials)
 
 try:
     # Retrieve Access Token
@@ -41,7 +41,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **grant_type** | [**Object**](.md)| Grant type | [default to client_credentials]
+ **grant_type** | **str**| Grant type | [default to client_credentials]
 
 ### Return type
 
