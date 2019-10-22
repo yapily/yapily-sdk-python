@@ -19,7 +19,6 @@ import six
 from yapily.models.address_details import AddressDetails  # noqa: F401,E501
 from yapily.models.amount import Amount  # noqa: F401,E501
 from yapily.models.balance import Balance  # noqa: F401,E501
-from yapily.models.categorisation import Categorisation  # noqa: F401,E501
 from yapily.models.charge_details import ChargeDetails  # noqa: F401,E501
 from yapily.models.currency_exchange import CurrencyExchange  # noqa: F401,E501
 from yapily.models.iso_bank_transaction_code import IsoBankTransactionCode  # noqa: F401,E501
@@ -60,8 +59,7 @@ class Transaction(object):
         'iso_bank_transaction_code': 'IsoBankTransactionCode',
         'proprietary_bank_transaction_code': 'ProprietaryBankTransactionCode',
         'balance': 'Balance',
-        'merchant': 'Merchant',
-        'categorisation': 'Categorisation'
+        'merchant': 'Merchant'
     }
 
     attribute_map = {
@@ -83,11 +81,10 @@ class Transaction(object):
         'iso_bank_transaction_code': 'isoBankTransactionCode',
         'proprietary_bank_transaction_code': 'proprietaryBankTransactionCode',
         'balance': 'balance',
-        'merchant': 'merchant',
-        'categorisation': 'categorisation'
+        'merchant': 'merchant'
     }
 
-    def __init__(self, id=None, date=None, booking_date_time=None, value_date_time=None, status=None, amount=None, currency=None, transaction_amount=None, currency_exchange=None, charge_details=None, reference=None, statement_references=None, description=None, transaction_information=None, address_details=None, iso_bank_transaction_code=None, proprietary_bank_transaction_code=None, balance=None, merchant=None, categorisation=None):  # noqa: E501
+    def __init__(self, id=None, date=None, booking_date_time=None, value_date_time=None, status=None, amount=None, currency=None, transaction_amount=None, currency_exchange=None, charge_details=None, reference=None, statement_references=None, description=None, transaction_information=None, address_details=None, iso_bank_transaction_code=None, proprietary_bank_transaction_code=None, balance=None, merchant=None):  # noqa: E501
         """Transaction - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -109,7 +106,6 @@ class Transaction(object):
         self._proprietary_bank_transaction_code = None
         self._balance = None
         self._merchant = None
-        self._categorisation = None
         self.discriminator = None
 
         if id is not None:
@@ -150,8 +146,6 @@ class Transaction(object):
             self.balance = balance
         if merchant is not None:
             self.merchant = merchant
-        if categorisation is not None:
-            self.categorisation = categorisation
 
     @property
     def id(self):
@@ -583,29 +577,6 @@ class Transaction(object):
         """
 
         self._merchant = merchant
-
-    @property
-    def categorisation(self):
-        """Gets the categorisation of this Transaction.  # noqa: E501
-
-        Categorisation  # noqa: E501
-
-        :return: The categorisation of this Transaction.  # noqa: E501
-        :rtype: Categorisation
-        """
-        return self._categorisation
-
-    @categorisation.setter
-    def categorisation(self, categorisation):
-        """Sets the categorisation of this Transaction.
-
-        Categorisation  # noqa: E501
-
-        :param categorisation: The categorisation of this Transaction.  # noqa: E501
-        :type: Categorisation
-        """
-
-        self._categorisation = categorisation
 
     def to_dict(self):
         """Returns the model properties as a dict"""

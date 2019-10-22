@@ -167,8 +167,6 @@ Class | Method | HTTP request | Description
  - [Branch](docs/Branch.md)
  - [BulkUserDelete](docs/BulkUserDelete.md)
  - [BulkUserDeleteDetails](docs/BulkUserDeleteDetails.md)
- - [Categorisation](docs/Categorisation.md)
- - [Category](docs/Category.md)
  - [ChargeDetails](docs/ChargeDetails.md)
  - [Consent](docs/Consent.md)
  - [ConsentAuthCodeRequest](docs/ConsentAuthCodeRequest.md)

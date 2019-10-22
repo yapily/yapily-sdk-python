@@ -59,8 +59,6 @@ from yapily.models.balance import Balance
 from yapily.models.branch import Branch
 from yapily.models.bulk_user_delete import BulkUserDelete
 from yapily.models.bulk_user_delete_details import BulkUserDeleteDetails
-from yapily.models.categorisation import Categorisation
-from yapily.models.category import Category
 from yapily.models.charge_details import ChargeDetails
 from yapily.models.consent import Consent
 from yapily.models.consent_auth_code_request import ConsentAuthCodeRequest
