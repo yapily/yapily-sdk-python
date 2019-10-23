@@ -7,7 +7,7 @@ to financial institutions integrated with Yapily.
 ## Requirements
 
 To connect to the Yapily API, you will need to register your 
-application at [https://dashboard.yapily.com]().
+application at https://dashboard.yapily.com .
 
 These application credentials can then be used to authorise all
 your API requests.
