@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **create_payment_authorisation_using_post**
-> ApiResponseOfAuthorisationRequestResponse create_payment_authorisation_using_post(payment_auth_request)
+> ApiResponseOfPaymentAuthorisationRequestResponse create_payment_authorisation_using_post(payment_auth_request)
 
 Initiate a payment for user to authorise
 
@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiResponseOfAuthorisationRequestResponse**](ApiResponseOfAuthorisationRequestResponse.md)
+[**ApiResponseOfPaymentAuthorisationRequestResponse**](ApiResponseOfPaymentAuthorisationRequestResponse.md)
 
 ### Authorization
 

@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **type** | **str** |  | [optional] 
 **payment_date_time** | **datetime** |  | [optional] 
 **payee** | [**Payee**](Payee.md) |  | 
+**periodic_payments** | [**PeriodicPaymentRequest**](PeriodicPaymentRequest.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
