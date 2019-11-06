@@ -260,7 +260,7 @@ class AuthorisationRequestResponse(object):
         :param status: The status of this AuthorisationRequestResponse.  # noqa: E501
         :type: str
         """
-        allowed_values = ["AWAITING_AUTHORIZATION", "AWAITING_FURTHER_AUTHORIZATION", "AWAITING_RE_AUTHORIZATION", "AUTHORIZED", "CONSUMED", "REJECTED", "REVOKED", "FAILED", "EXPIRED", "UNKNOWN"]  # noqa: E501
+        allowed_values = ["AWAITING_AUTHORIZATION", "AWAITING_FURTHER_AUTHORIZATION", "AWAITING_RE_AUTHORIZATION", "AUTHORIZED", "CONSUMED", "REJECTED", "REVOKED", "FAILED", "EXPIRED", "UNKNOWN", "INVALID"]  # noqa: E501
         if status not in allowed_values:
             raise ValueError(
                 "Invalid value for `status` ({0}), must be one of {1}"  # noqa: E501
