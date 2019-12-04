@@ -76,6 +76,8 @@ from yapily.models.credit_line import CreditLine
 from yapily.models.currency_exchange import CurrencyExchange
 from yapily.models.eligibility import Eligibility
 from yapily.models.eligibility_other_eligibility import EligibilityOtherEligibility
+from yapily.models.exchange_rate_information import ExchangeRateInformation
+from yapily.models.exchange_rate_information_response import ExchangeRateInformationResponse
 from yapily.models.feature_details import FeatureDetails
 from yapily.models.filter_and_sort import FilterAndSort
 from yapily.models.frequency_request import FrequencyRequest
@@ -90,6 +92,7 @@ from yapily.models.inline_response2001_other_atm_services import InlineResponse2
 from yapily.models.inline_response2001_other_accessibility import InlineResponse2001OtherAccessibility
 from yapily.models.institution import Institution
 from yapily.models.institution_consent import InstitutionConsent
+from yapily.models.international_payment_request import InternationalPaymentRequest
 from yapily.models.iso_bank_transaction_code import IsoBankTransactionCode
 from yapily.models.iso_code_details import IsoCodeDetails
 from yapily.models.location import Location

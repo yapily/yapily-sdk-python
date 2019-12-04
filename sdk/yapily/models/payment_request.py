@@ -18,6 +18,7 @@ import six
 
 from yapily.models.account_identification import AccountIdentification  # noqa: F401,E501
 from yapily.models.amount import Amount  # noqa: F401,E501
+from yapily.models.international_payment_request import InternationalPaymentRequest  # noqa: F401,E501
 from yapily.models.payee import Payee  # noqa: F401,E501
 from yapily.models.periodic_payment_request import PeriodicPaymentRequest  # noqa: F401,E501
 
@@ -44,7 +45,8 @@ class PaymentRequest(object):
         'type': 'str',
         'payment_date_time': 'datetime',
         'payee': 'Payee',
-        'periodic_payments': 'PeriodicPaymentRequest'
+        'periodic_payment': 'PeriodicPaymentRequest',
+        'international_payment': 'InternationalPaymentRequest'
     }
 
     attribute_map = {
@@ -56,10 +58,11 @@ class PaymentRequest(object):
         'type': 'type',
         'payment_date_time': 'paymentDateTime',
         'payee': 'payee',
-        'periodic_payments': 'periodicPayments'
+        'periodic_payment': 'periodicPayment',
+        'international_payment': 'internationalPayment'
     }
 
-    def __init__(self, payment_idempotency_id=None, payer_account_identifications=None, amount=None, reference=None, context_type=None, type=None, payment_date_time=None, payee=None, periodic_payments=None):  # noqa: E501
+    def __init__(self, payment_idempotency_id=None, payer_account_identifications=None, amount=None, reference=None, context_type=None, type=None, payment_date_time=None, payee=None, periodic_payment=None, international_payment=None):  # noqa: E501
         """PaymentRequest - a model defined in Swagger"""  # noqa: E501
 
         self._payment_idempotency_id = None
@@ -70,10 +73,12 @@ class PaymentRequest(object):
         self._type = None
         self._payment_date_time = None
         self._payee = None
-        self._periodic_payments = None
+        self._periodic_payment = None
+        self._international_payment = None
         self.discriminator = None
 
-        self.payment_idempotency_id = payment_idempotency_id
+        if payment_idempotency_id is not None:
+            self.payment_idempotency_id = payment_idempotency_id
         if payer_account_identifications is not None:
             self.payer_account_identifications = payer_account_identifications
         if amount is not None:
@@ -82,13 +87,14 @@ class PaymentRequest(object):
             self.reference = reference
         if context_type is not None:
             self.context_type = context_type
-        if type is not None:
-            self.type = type
+        self.type = type
         if payment_date_time is not None:
             self.payment_date_time = payment_date_time
         self.payee = payee
-        if periodic_payments is not None:
-            self.periodic_payments = periodic_payments
+        if periodic_payment is not None:
+            self.periodic_payment = periodic_payment
+        if international_payment is not None:
+            self.international_payment = international_payment
 
     @property
     def payment_idempotency_id(self):
@@ -108,8 +114,6 @@ class PaymentRequest(object):
         :param payment_idempotency_id: The payment_idempotency_id of this PaymentRequest.  # noqa: E501
         :type: str
         """
-        if payment_idempotency_id is None:
-            raise ValueError("Invalid value for `payment_idempotency_id`, must not be `None`")  # noqa: E501
 
         self._payment_idempotency_id = payment_idempotency_id
 
@@ -221,7 +225,9 @@ class PaymentRequest(object):
         :param type: The type of this PaymentRequest.  # noqa: E501
         :type: str
         """
-        allowed_values = ["DOMESTIC_PAYMENT", "DOMESTIC_VARIABLE_RECURRING_PAYMENT", "DOMESTIC_SCHEDULED_PAYMENT", "DOMESTIC_PERIODIC_PAYMENT"]  # noqa: E501
+        if type is None:
+            raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
+        allowed_values = ["DOMESTIC_PAYMENT", "DOMESTIC_VARIABLE_RECURRING_PAYMENT", "DOMESTIC_SCHEDULED_PAYMENT", "DOMESTIC_PERIODIC_PAYMENT", "INTERNATIONAL_PAYMENT"]  # noqa: E501
         if type not in allowed_values:
             raise ValueError(
                 "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501
@@ -275,25 +281,46 @@ class PaymentRequest(object):
         self._payee = payee
 
     @property
-    def periodic_payments(self):
-        """Gets the periodic_payments of this PaymentRequest.  # noqa: E501
+    def periodic_payment(self):
+        """Gets the periodic_payment of this PaymentRequest.  # noqa: E501
 
 
-        :return: The periodic_payments of this PaymentRequest.  # noqa: E501
+        :return: The periodic_payment of this PaymentRequest.  # noqa: E501
         :rtype: PeriodicPaymentRequest
         """
-        return self._periodic_payments
+        return self._periodic_payment
 
-    @periodic_payments.setter
-    def periodic_payments(self, periodic_payments):
-        """Sets the periodic_payments of this PaymentRequest.
+    @periodic_payment.setter
+    def periodic_payment(self, periodic_payment):
+        """Sets the periodic_payment of this PaymentRequest.
 
 
-        :param periodic_payments: The periodic_payments of this PaymentRequest.  # noqa: E501
+        :param periodic_payment: The periodic_payment of this PaymentRequest.  # noqa: E501
         :type: PeriodicPaymentRequest
         """
 
-        self._periodic_payments = periodic_payments
+        self._periodic_payment = periodic_payment
+
+    @property
+    def international_payment(self):
+        """Gets the international_payment of this PaymentRequest.  # noqa: E501
+
+
+        :return: The international_payment of this PaymentRequest.  # noqa: E501
+        :rtype: InternationalPaymentRequest
+        """
+        return self._international_payment
+
+    @international_payment.setter
+    def international_payment(self, international_payment):
+        """Sets the international_payment of this PaymentRequest.
+
+
+        :param international_payment: The international_payment of this PaymentRequest.  # noqa: E501
+        :type: InternationalPaymentRequest
+        """
+
+        self._international_payment = international_payment
 
     def to_dict(self):
         """Returns the model properties as a dict"""

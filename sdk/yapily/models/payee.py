@@ -37,36 +37,36 @@ class Payee(object):
         'name': 'str',
         'address': 'Address',
         'account_identifications': 'list[AccountIdentification]',
-        'merchant_category_code': 'str',
-        'merchant_id': 'str'
+        'merchant_id': 'str',
+        'merchant_category_code': 'str'
     }
 
     attribute_map = {
         'name': 'name',
         'address': 'address',
         'account_identifications': 'accountIdentifications',
-        'merchant_category_code': 'merchantCategoryCode',
-        'merchant_id': 'merchantId'
+        'merchant_id': 'merchantId',
+        'merchant_category_code': 'merchantCategoryCode'
     }
 
-    def __init__(self, name=None, address=None, account_identifications=None, merchant_category_code=None, merchant_id=None):  # noqa: E501
+    def __init__(self, name=None, address=None, account_identifications=None, merchant_id=None, merchant_category_code=None):  # noqa: E501
         """Payee - a model defined in Swagger"""  # noqa: E501
 
         self._name = None
         self._address = None
         self._account_identifications = None
-        self._merchant_category_code = None
         self._merchant_id = None
+        self._merchant_category_code = None
         self.discriminator = None
 
         self.name = name
         if address is not None:
             self.address = address
         self.account_identifications = account_identifications
-        if merchant_category_code is not None:
-            self.merchant_category_code = merchant_category_code
         if merchant_id is not None:
             self.merchant_id = merchant_id
+        if merchant_category_code is not None:
+            self.merchant_category_code = merchant_category_code
 
     @property
     def name(self):
@@ -136,27 +136,6 @@ class Payee(object):
         self._account_identifications = account_identifications
 
     @property
-    def merchant_category_code(self):
-        """Gets the merchant_category_code of this Payee.  # noqa: E501
-
-
-        :return: The merchant_category_code of this Payee.  # noqa: E501
-        :rtype: str
-        """
-        return self._merchant_category_code
-
-    @merchant_category_code.setter
-    def merchant_category_code(self, merchant_category_code):
-        """Sets the merchant_category_code of this Payee.
-
-
-        :param merchant_category_code: The merchant_category_code of this Payee.  # noqa: E501
-        :type: str
-        """
-
-        self._merchant_category_code = merchant_category_code
-
-    @property
     def merchant_id(self):
         """Gets the merchant_id of this Payee.  # noqa: E501
 
@@ -176,6 +155,27 @@ class Payee(object):
         """
 
         self._merchant_id = merchant_id
+
+    @property
+    def merchant_category_code(self):
+        """Gets the merchant_category_code of this Payee.  # noqa: E501
+
+
+        :return: The merchant_category_code of this Payee.  # noqa: E501
+        :rtype: str
+        """
+        return self._merchant_category_code
+
+    @merchant_category_code.setter
+    def merchant_category_code(self, merchant_category_code):
+        """Sets the merchant_category_code of this Payee.
+
+
+        :param merchant_category_code: The merchant_category_code of this Payee.  # noqa: E501
+        :type: str
+        """
+
+        self._merchant_category_code = merchant_category_code
 
     def to_dict(self):
         """Returns the model properties as a dict"""

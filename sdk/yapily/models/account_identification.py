@@ -70,7 +70,7 @@ class AccountIdentification(object):
         """
         if type is None:
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
-        allowed_values = ["SORT_CODE", "ACCOUNT_NUMBER", "IBAN", "BBAN", "SWIFT", "BIC", "PAN", "MASKED_PAN", "MSISDN", "ABA", "ABA_WIRE", "ABA_ACH"]  # noqa: E501
+        allowed_values = ["SORT_CODE", "ACCOUNT_NUMBER", "IBAN", "BBAN", "BIC", "PAN", "MASKED_PAN", "MSISDN", "BSB", "NCC", "ABA", "ABA_WIRE", "ABA_ACH"]  # noqa: E501
         if type not in allowed_values:
             raise ValueError(
                 "Invalid value for `type` ({0}), must be one of {1}"  # noqa: E501

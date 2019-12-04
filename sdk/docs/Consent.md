@@ -16,10 +16,6 @@ Name | Type | Description | Notes
 **time_to_expire_in_millis** | **int** | Deprecated. Use &#x60;timeToExpire&#x60; instead. | [optional] 
 **time_to_expire** | **str** | ISO 8601 duration | [optional] 
 **feature_scope** | **list[str]** |  | [optional] 
-**starts_at** | **datetime** |  | [optional] 
-**total_max_amount** | **float** |  | [optional] 
-**max_amount_per_request** | **float** |  | [optional] 
-**allow_overdraft** | **bool** |  | [optional] 
 **consent_token** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

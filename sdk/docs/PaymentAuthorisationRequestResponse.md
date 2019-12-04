@@ -16,10 +16,8 @@ Name | Type | Description | Notes
 **time_to_expire_in_millis** | **int** | Deprecated. Use &#x60;timeToExpire&#x60; instead. | [optional] 
 **time_to_expire** | **str** | ISO 8601 duration | [optional] 
 **feature_scope** | **list[str]** |  | [optional] 
-**starts_at** | **datetime** |  | [optional] 
-**total_max_amount** | **float** |  | [optional] 
-**max_amount_per_request** | **float** |  | [optional] 
-**allow_overdraft** | **bool** |  | [optional] 
+**charges** | [**list[ChargeDetails]**](ChargeDetails.md) |  | [optional] 
+**exchange_rate_information** | [**ExchangeRateInformationResponse**](ExchangeRateInformationResponse.md) |  | [optional] 
 **consent_token** | **str** |  | [optional] 
 **authorisation_url** | **str** |  | [optional] 
 

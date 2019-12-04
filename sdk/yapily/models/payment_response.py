@@ -18,6 +18,7 @@ import six
 
 from yapily.models.amount import Amount  # noqa: F401,E501
 from yapily.models.charge_details import ChargeDetails  # noqa: F401,E501
+from yapily.models.exchange_rate_information_response import ExchangeRateInformationResponse  # noqa: F401,E501
 from yapily.models.frequency_response import FrequencyResponse  # noqa: F401,E501
 from yapily.models.payee import Payee  # noqa: F401,E501
 from yapily.models.payment_status_details import PaymentStatusDetails  # noqa: F401,E501
@@ -55,12 +56,17 @@ class PaymentResponse(object):
         'final_payment_amount': 'Amount',
         'final_payment_date_time': 'datetime',
         'created_at': 'datetime',
+        'number_of_payments': 'int',
         'previous_payment_amount': 'Amount',
         'previous_payment_date_time': 'datetime',
         'charge_details': 'list[ChargeDetails]',
         'scheduled_payment_type': 'str',
         'scheduled_payment_date_time': 'datetime',
-        'frequency': 'FrequencyResponse'
+        'frequency': 'FrequencyResponse',
+        'currency_of_transfer': 'str',
+        'purpose': 'str',
+        'priority': 'str',
+        'exchange_rate': 'ExchangeRateInformationResponse'
     }
 
     attribute_map = {
@@ -82,15 +88,20 @@ class PaymentResponse(object):
         'final_payment_amount': 'finalPaymentAmount',
         'final_payment_date_time': 'finalPaymentDateTime',
         'created_at': 'createdAt',
+        'number_of_payments': 'numberOfPayments',
         'previous_payment_amount': 'previousPaymentAmount',
         'previous_payment_date_time': 'previousPaymentDateTime',
         'charge_details': 'chargeDetails',
         'scheduled_payment_type': 'scheduledPaymentType',
         'scheduled_payment_date_time': 'scheduledPaymentDateTime',
-        'frequency': 'frequency'
+        'frequency': 'frequency',
+        'currency_of_transfer': 'currencyOfTransfer',
+        'purpose': 'purpose',
+        'priority': 'priority',
+        'exchange_rate': 'exchangeRate'
     }
 
-    def __init__(self, id=None, institution_consent_id=None, payment_idempotency_id=None, payment_lifecycle_id=None, status=None, status_details=None, payee_details=None, reference=None, amount=None, currency=None, amount_details=None, first_payment_amount=None, first_payment_date_time=None, next_payment_amount=None, next_payment_date_time=None, final_payment_amount=None, final_payment_date_time=None, created_at=None, previous_payment_amount=None, previous_payment_date_time=None, charge_details=None, scheduled_payment_type=None, scheduled_payment_date_time=None, frequency=None):  # noqa: E501
+    def __init__(self, id=None, institution_consent_id=None, payment_idempotency_id=None, payment_lifecycle_id=None, status=None, status_details=None, payee_details=None, reference=None, amount=None, currency=None, amount_details=None, first_payment_amount=None, first_payment_date_time=None, next_payment_amount=None, next_payment_date_time=None, final_payment_amount=None, final_payment_date_time=None, created_at=None, number_of_payments=None, previous_payment_amount=None, previous_payment_date_time=None, charge_details=None, scheduled_payment_type=None, scheduled_payment_date_time=None, frequency=None, currency_of_transfer=None, purpose=None, priority=None, exchange_rate=None):  # noqa: E501
         """PaymentResponse - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -111,12 +122,17 @@ class PaymentResponse(object):
         self._final_payment_amount = None
         self._final_payment_date_time = None
         self._created_at = None
+        self._number_of_payments = None
         self._previous_payment_amount = None
         self._previous_payment_date_time = None
         self._charge_details = None
         self._scheduled_payment_type = None
         self._scheduled_payment_date_time = None
         self._frequency = None
+        self._currency_of_transfer = None
+        self._purpose = None
+        self._priority = None
+        self._exchange_rate = None
         self.discriminator = None
 
         if id is not None:
@@ -155,6 +171,8 @@ class PaymentResponse(object):
             self.final_payment_date_time = final_payment_date_time
         if created_at is not None:
             self.created_at = created_at
+        if number_of_payments is not None:
+            self.number_of_payments = number_of_payments
         if previous_payment_amount is not None:
             self.previous_payment_amount = previous_payment_amount
         if previous_payment_date_time is not None:
@@ -167,6 +185,14 @@ class PaymentResponse(object):
             self.scheduled_payment_date_time = scheduled_payment_date_time
         if frequency is not None:
             self.frequency = frequency
+        if currency_of_transfer is not None:
+            self.currency_of_transfer = currency_of_transfer
+        if purpose is not None:
+            self.purpose = purpose
+        if priority is not None:
+            self.priority = priority
+        if exchange_rate is not None:
+            self.exchange_rate = exchange_rate
 
     @property
     def id(self):
@@ -553,6 +579,27 @@ class PaymentResponse(object):
         self._created_at = created_at
 
     @property
+    def number_of_payments(self):
+        """Gets the number_of_payments of this PaymentResponse.  # noqa: E501
+
+
+        :return: The number_of_payments of this PaymentResponse.  # noqa: E501
+        :rtype: int
+        """
+        return self._number_of_payments
+
+    @number_of_payments.setter
+    def number_of_payments(self, number_of_payments):
+        """Sets the number_of_payments of this PaymentResponse.
+
+
+        :param number_of_payments: The number_of_payments of this PaymentResponse.  # noqa: E501
+        :type: int
+        """
+
+        self._number_of_payments = number_of_payments
+
+    @property
     def previous_payment_amount(self):
         """Gets the previous_payment_amount of this PaymentResponse.  # noqa: E501
 
@@ -677,6 +724,96 @@ class PaymentResponse(object):
         """
 
         self._frequency = frequency
+
+    @property
+    def currency_of_transfer(self):
+        """Gets the currency_of_transfer of this PaymentResponse.  # noqa: E501
+
+
+        :return: The currency_of_transfer of this PaymentResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._currency_of_transfer
+
+    @currency_of_transfer.setter
+    def currency_of_transfer(self, currency_of_transfer):
+        """Sets the currency_of_transfer of this PaymentResponse.
+
+
+        :param currency_of_transfer: The currency_of_transfer of this PaymentResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._currency_of_transfer = currency_of_transfer
+
+    @property
+    def purpose(self):
+        """Gets the purpose of this PaymentResponse.  # noqa: E501
+
+
+        :return: The purpose of this PaymentResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._purpose
+
+    @purpose.setter
+    def purpose(self, purpose):
+        """Sets the purpose of this PaymentResponse.
+
+
+        :param purpose: The purpose of this PaymentResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._purpose = purpose
+
+    @property
+    def priority(self):
+        """Gets the priority of this PaymentResponse.  # noqa: E501
+
+
+        :return: The priority of this PaymentResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._priority
+
+    @priority.setter
+    def priority(self, priority):
+        """Sets the priority of this PaymentResponse.
+
+
+        :param priority: The priority of this PaymentResponse.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["NORMAL", "URGENT"]  # noqa: E501
+        if priority not in allowed_values:
+            raise ValueError(
+                "Invalid value for `priority` ({0}), must be one of {1}"  # noqa: E501
+                .format(priority, allowed_values)
+            )
+
+        self._priority = priority
+
+    @property
+    def exchange_rate(self):
+        """Gets the exchange_rate of this PaymentResponse.  # noqa: E501
+
+
+        :return: The exchange_rate of this PaymentResponse.  # noqa: E501
+        :rtype: ExchangeRateInformationResponse
+        """
+        return self._exchange_rate
+
+    @exchange_rate.setter
+    def exchange_rate(self, exchange_rate):
+        """Sets the exchange_rate of this PaymentResponse.
+
+
+        :param exchange_rate: The exchange_rate of this PaymentResponse.  # noqa: E501
+        :type: ExchangeRateInformationResponse
+        """
+
+        self._exchange_rate = exchange_rate
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -44,10 +44,6 @@ class Consent(object):
         'time_to_expire_in_millis': 'int',
         'time_to_expire': 'str',
         'feature_scope': 'list[str]',
-        'starts_at': 'datetime',
-        'total_max_amount': 'float',
-        'max_amount_per_request': 'float',
-        'allow_overdraft': 'bool',
         'consent_token': 'str'
     }
 
@@ -65,14 +61,10 @@ class Consent(object):
         'time_to_expire_in_millis': 'timeToExpireInMillis',
         'time_to_expire': 'timeToExpire',
         'feature_scope': 'featureScope',
-        'starts_at': 'startsAt',
-        'total_max_amount': 'totalMaxAmount',
-        'max_amount_per_request': 'maxAmountPerRequest',
-        'allow_overdraft': 'allowOverdraft',
         'consent_token': 'consentToken'
     }
 
-    def __init__(self, id=None, user_uuid=None, application_user_id=None, reference_id=None, institution_id=None, status=None, created_at=None, transaction_from=None, transaction_to=None, expires_at=None, time_to_expire_in_millis=None, time_to_expire=None, feature_scope=None, starts_at=None, total_max_amount=None, max_amount_per_request=None, allow_overdraft=None, consent_token=None):  # noqa: E501
+    def __init__(self, id=None, user_uuid=None, application_user_id=None, reference_id=None, institution_id=None, status=None, created_at=None, transaction_from=None, transaction_to=None, expires_at=None, time_to_expire_in_millis=None, time_to_expire=None, feature_scope=None, consent_token=None):  # noqa: E501
         """Consent - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -88,10 +80,6 @@ class Consent(object):
         self._time_to_expire_in_millis = None
         self._time_to_expire = None
         self._feature_scope = None
-        self._starts_at = None
-        self._total_max_amount = None
-        self._max_amount_per_request = None
-        self._allow_overdraft = None
         self._consent_token = None
         self.discriminator = None
 
@@ -121,14 +109,6 @@ class Consent(object):
             self.time_to_expire = time_to_expire
         if feature_scope is not None:
             self.feature_scope = feature_scope
-        if starts_at is not None:
-            self.starts_at = starts_at
-        if total_max_amount is not None:
-            self.total_max_amount = total_max_amount
-        if max_amount_per_request is not None:
-            self.max_amount_per_request = max_amount_per_request
-        if allow_overdraft is not None:
-            self.allow_overdraft = allow_overdraft
         if consent_token is not None:
             self.consent_token = consent_token
 
@@ -412,7 +392,7 @@ class Consent(object):
         :param feature_scope: The feature_scope of this Consent.  # noqa: E501
         :type: list[str]
         """
-        allowed_values = ["INITIATE_ACCOUNT_REQUEST", "ACCOUNT_REQUEST_DETAILS", "ACCOUNTS", "ACCOUNT", "ACCOUNT_TRANSACTIONS", "ACCOUNT_STATEMENTS", "ACCOUNT_STATEMENT", "ACCOUNT_STATEMENT_FILE", "ACCOUNT_SCHEDULED_PAYMENTS", "ACCOUNT_DIRECT_DEBITS", "ACCOUNT_PERIODIC_PAYMENTS", "ACCOUNT_TRANSACTIONS_WITH_MERCHANT", "IDENTITY", "INITIATE_SINGLE_PAYMENT_SORTCODE", "EXISTING_PAYMENT_INITIATION_DETAILS", "CREATE_SINGLE_PAYMENT_SORTCODE", "EXISTING_PAYMENTS_DETAILS", "INITIATE_PAYMENT", "CREATE_PAYMENT", "INITIATE_DOMESTIC_VARIABLE_RECURRING_PAYMENT", "CREATE_DOMESTIC_VARIABLE_RECURRING_PAYMENT", "INITIATE_DOMESTIC_SCHEDULED_PAYMENT", "CREATE_DOMESTIC_SCHEDULED_PAYMENT", "INITIATE_DOMESTIC_PERIODIC_PAYMENT", "CREATE_DOMESTIC_PERIODIC_PAYMENT", "PERIODIC_PAYMENT_FREQUENCY_EXTENDED", "INITIATE_INTERNATIONAL_VARIABLE_RECURRING_PAYMENT", "CREATE_INTERNATIONAL_VARIABLE_RECURRING_PAYMENT", "INITIATE_INTERNATIONAL_SCHEDULED_PAYMENT", "CREATE_INTERNATIONAL_SCHEDULED_PAYMENT", "INITIATE_INTERNATIONAL_PERIODIC_PAYMENT_ORDER", "CREATE_INTERNATIONAL_PERIODIC_PAYMENT_ORDER", "INITIATE_INTERNATIONAL_PAYMENT", "CREATE_INTERNATIONAL_PAYMENT", "TRANSFER", "OPEN_DATA_PERSONAL_CURRENT_ACCOUNTS", "OPEN_DATA_ATMS"]  # noqa: E501
+        allowed_values = ["INITIATE_ACCOUNT_REQUEST", "ACCOUNT_REQUEST_DETAILS", "ACCOUNTS", "ACCOUNT", "ACCOUNT_TRANSACTIONS", "ACCOUNT_STATEMENTS", "ACCOUNT_STATEMENT", "ACCOUNT_STATEMENT_FILE", "ACCOUNT_SCHEDULED_PAYMENTS", "ACCOUNT_DIRECT_DEBITS", "ACCOUNT_PERIODIC_PAYMENTS", "ACCOUNT_TRANSACTIONS_WITH_MERCHANT", "IDENTITY", "INITIATE_SINGLE_PAYMENT_SORTCODE", "EXISTING_PAYMENT_INITIATION_DETAILS", "CREATE_SINGLE_PAYMENT_SORTCODE", "EXISTING_PAYMENTS_DETAILS", "INITIATE_DOMESTIC_SINGLE_PAYMENT", "CREATE_DOMESTIC_SINGLE_PAYMENT", "INITIATE_DOMESTIC_VARIABLE_RECURRING_PAYMENT", "CREATE_DOMESTIC_VARIABLE_RECURRING_PAYMENT", "INITIATE_DOMESTIC_SCHEDULED_PAYMENT", "CREATE_DOMESTIC_SCHEDULED_PAYMENT", "INITIATE_DOMESTIC_PERIODIC_PAYMENT", "CREATE_DOMESTIC_PERIODIC_PAYMENT", "PERIODIC_PAYMENT_FREQUENCY_EXTENDED", "INITIATE_INTERNATIONAL_VARIABLE_RECURRING_PAYMENT", "CREATE_INTERNATIONAL_VARIABLE_RECURRING_PAYMENT", "INITIATE_INTERNATIONAL_SCHEDULED_PAYMENT", "CREATE_INTERNATIONAL_SCHEDULED_PAYMENT", "INITIATE_INTERNATIONAL_PERIODIC_PAYMENT_ORDER", "CREATE_INTERNATIONAL_PERIODIC_PAYMENT_ORDER", "INITIATE_INTERNATIONAL_SINGLE_PAYMENT", "CREATE_INTERNATIONAL_SINGLE_PAYMENT", "TRANSFER", "OPEN_DATA_PERSONAL_CURRENT_ACCOUNTS", "OPEN_DATA_ATMS"]  # noqa: E501
         if not set(feature_scope).issubset(set(allowed_values)):
             raise ValueError(
                 "Invalid values for `feature_scope` [{0}], must be a subset of [{1}]"  # noqa: E501
@@ -421,90 +401,6 @@ class Consent(object):
             )
 
         self._feature_scope = feature_scope
-
-    @property
-    def starts_at(self):
-        """Gets the starts_at of this Consent.  # noqa: E501
-
-
-        :return: The starts_at of this Consent.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._starts_at
-
-    @starts_at.setter
-    def starts_at(self, starts_at):
-        """Sets the starts_at of this Consent.
-
-
-        :param starts_at: The starts_at of this Consent.  # noqa: E501
-        :type: datetime
-        """
-
-        self._starts_at = starts_at
-
-    @property
-    def total_max_amount(self):
-        """Gets the total_max_amount of this Consent.  # noqa: E501
-
-
-        :return: The total_max_amount of this Consent.  # noqa: E501
-        :rtype: float
-        """
-        return self._total_max_amount
-
-    @total_max_amount.setter
-    def total_max_amount(self, total_max_amount):
-        """Sets the total_max_amount of this Consent.
-
-
-        :param total_max_amount: The total_max_amount of this Consent.  # noqa: E501
-        :type: float
-        """
-
-        self._total_max_amount = total_max_amount
-
-    @property
-    def max_amount_per_request(self):
-        """Gets the max_amount_per_request of this Consent.  # noqa: E501
-
-
-        :return: The max_amount_per_request of this Consent.  # noqa: E501
-        :rtype: float
-        """
-        return self._max_amount_per_request
-
-    @max_amount_per_request.setter
-    def max_amount_per_request(self, max_amount_per_request):
-        """Sets the max_amount_per_request of this Consent.
-
-
-        :param max_amount_per_request: The max_amount_per_request of this Consent.  # noqa: E501
-        :type: float
-        """
-
-        self._max_amount_per_request = max_amount_per_request
-
-    @property
-    def allow_overdraft(self):
-        """Gets the allow_overdraft of this Consent.  # noqa: E501
-
-
-        :return: The allow_overdraft of this Consent.  # noqa: E501
-        :rtype: bool
-        """
-        return self._allow_overdraft
-
-    @allow_overdraft.setter
-    def allow_overdraft(self, allow_overdraft):
-        """Sets the allow_overdraft of this Consent.
-
-
-        :param allow_overdraft: The allow_overdraft of this Consent.  # noqa: E501
-        :type: bool
-        """
-
-        self._allow_overdraft = allow_overdraft
 
     @property
     def consent_token(self):

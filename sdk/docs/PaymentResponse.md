@@ -21,12 +21,17 @@ Name | Type | Description | Notes
 **final_payment_amount** | [**Amount**](Amount.md) |  | [optional] 
 **final_payment_date_time** | **datetime** |  | [optional] 
 **created_at** | **datetime** |  | [optional] 
+**number_of_payments** | **int** |  | [optional] 
 **previous_payment_amount** | [**Amount**](Amount.md) |  | [optional] 
 **previous_payment_date_time** | **datetime** |  | [optional] 
 **charge_details** | [**list[ChargeDetails]**](ChargeDetails.md) |  | [optional] 
 **scheduled_payment_type** | **str** |  | [optional] 
 **scheduled_payment_date_time** | **datetime** |  | [optional] 
 **frequency** | [**FrequencyResponse**](FrequencyResponse.md) |  | [optional] 
+**currency_of_transfer** | **str** |  | [optional] 
+**purpose** | **str** |  | [optional] 
+**priority** | **str** |  | [optional] 
+**exchange_rate** | [**ExchangeRateInformationResponse**](ExchangeRateInformationResponse.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
