@@ -79,6 +79,7 @@ from yapily.models.eligibility_other_eligibility import EligibilityOtherEligibil
 from yapily.models.exchange_rate_information import ExchangeRateInformation
 from yapily.models.exchange_rate_information_response import ExchangeRateInformationResponse
 from yapily.models.feature_details import FeatureDetails
+from yapily.models.file import File
 from yapily.models.filter_and_sort import FilterAndSort
 from yapily.models.frequency_request import FrequencyRequest
 from yapily.models.frequency_response import FrequencyResponse
@@ -90,6 +91,7 @@ from yapily.models.identity_address import IdentityAddress
 from yapily.models.inline_response2001_atm import InlineResponse2001ATM
 from yapily.models.inline_response2001_other_atm_services import InlineResponse2001OtherATMServices
 from yapily.models.inline_response2001_other_accessibility import InlineResponse2001OtherAccessibility
+from yapily.models.input_stream import InputStream
 from yapily.models.institution import Institution
 from yapily.models.institution_consent import InstitutionConsent
 from yapily.models.international_payment_request import InternationalPaymentRequest
@@ -136,6 +138,7 @@ from yapily.models.personal_current_account_pca_marketing_state import PersonalC
 from yapily.models.postal_address1 import PostalAddress1
 from yapily.models.proprietary_bank_transaction_code import ProprietaryBankTransactionCode
 from yapily.models.residency_eligibility import ResidencyEligibility
+from yapily.models.resource import Resource
 from yapily.models.response_entity import ResponseEntity
 from yapily.models.response_list_meta import ResponseListMeta
 from yapily.models.response_meta import ResponseMeta
@@ -146,6 +149,8 @@ from yapily.models.statement_reference import StatementReference
 from yapily.models.transaction import Transaction
 from yapily.models.transfer_request import TransferRequest
 from yapily.models.transfer_response import TransferResponse
+from yapily.models.uri import URI
+from yapily.models.url import URL
 from yapily.models.user_delete_request import UserDeleteRequest
 from yapily.models.user_delete_response import UserDeleteResponse
 from yapily.models.yapily_access_token import YapilyAccessToken
