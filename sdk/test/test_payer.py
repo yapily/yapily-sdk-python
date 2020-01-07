@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import yapily
-from yapily.models.id_verification_check import IDVerificationCheck  # noqa: E501
+from yapily.models.payer import Payer  # noqa: E501
 from yapily.rest import ApiException
 
 
-class TestIDVerificationCheck(unittest.TestCase):
-    """IDVerificationCheck unit test stubs"""
+class TestPayer(unittest.TestCase):
+    """Payer unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestIDVerificationCheck(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testIDVerificationCheck(self):
-        """Test IDVerificationCheck"""
+    def testPayer(self):
+        """Test Payer"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = yapily.models.id_verification_check.IDVerificationCheck()  # noqa: E501
+        # model = yapily.models.payer.Payer()  # noqa: E501
         pass
 
 

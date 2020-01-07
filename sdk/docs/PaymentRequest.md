@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **payment_idempotency_id** | **str** |  | [optional] 
-**payer_account_identifications** | [**list[AccountIdentification]**](AccountIdentification.md) |  | [optional] 
+**payer** | [**Payer**](Payer.md) |  | [optional] 
 **amount** | [**Amount**](Amount.md) |  | [optional] 
 **reference** | **str** |  | [optional] 
 **context_type** | **str** |  | [optional] 
