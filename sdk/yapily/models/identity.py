@@ -36,6 +36,7 @@ class Identity(object):
         'id': 'str',
         'first_name': 'str',
         'last_name': 'str',
+        'full_name': 'str',
         'gender': 'str',
         'birthdate': 'str',
         'email': 'str',
@@ -47,6 +48,7 @@ class Identity(object):
         'id': 'id',
         'first_name': 'firstName',
         'last_name': 'lastName',
+        'full_name': 'fullName',
         'gender': 'gender',
         'birthdate': 'birthdate',
         'email': 'email',
@@ -54,12 +56,13 @@ class Identity(object):
         'addresses': 'addresses'
     }
 
-    def __init__(self, id=None, first_name=None, last_name=None, gender=None, birthdate=None, email=None, phone=None, addresses=None):  # noqa: E501
+    def __init__(self, id=None, first_name=None, last_name=None, full_name=None, gender=None, birthdate=None, email=None, phone=None, addresses=None):  # noqa: E501
         """Identity - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
         self._first_name = None
         self._last_name = None
+        self._full_name = None
         self._gender = None
         self._birthdate = None
         self._email = None
@@ -73,6 +76,8 @@ class Identity(object):
             self.first_name = first_name
         if last_name is not None:
             self.last_name = last_name
+        if full_name is not None:
+            self.full_name = full_name
         if gender is not None:
             self.gender = gender
         if birthdate is not None:
@@ -146,6 +151,27 @@ class Identity(object):
         """
 
         self._last_name = last_name
+
+    @property
+    def full_name(self):
+        """Gets the full_name of this Identity.  # noqa: E501
+
+
+        :return: The full_name of this Identity.  # noqa: E501
+        :rtype: str
+        """
+        return self._full_name
+
+    @full_name.setter
+    def full_name(self, full_name):
+        """Sets the full_name of this Identity.
+
+
+        :param full_name: The full_name of this Identity.  # noqa: E501
+        :type: str
+        """
+
+        self._full_name = full_name
 
     @property
     def gender(self):

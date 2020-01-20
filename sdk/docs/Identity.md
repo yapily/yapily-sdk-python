@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **id** | **str** |  | [optional] 
 **first_name** | **str** |  | [optional] 
 **last_name** | **str** |  | [optional] 
+**full_name** | **str** |  | [optional] 
 **gender** | **str** |  | [optional] 
 **birthdate** | **str** |  | [optional] 
 **email** | **str** |  | [optional] 
