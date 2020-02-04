@@ -519,6 +519,7 @@ class ApplicationUsersApi(object):
         >>> result = thread.get()
 
         :param async bool
+        :param list[str] filter_application_user_id: Filter users by the provided application user Id (applicationUserId) when the user was created.
         :return: list[ApplicationUser]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -539,12 +540,13 @@ class ApplicationUsersApi(object):
         >>> result = thread.get()
 
         :param async bool
+        :param list[str] filter_application_user_id: Filter users by the provided application user Id (applicationUserId) when the user was created.
         :return: list[ApplicationUser]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = []  # noqa: E501
+        all_params = ['filter_application_user_id']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -565,6 +567,9 @@ class ApplicationUsersApi(object):
         path_params = {}
 
         query_params = []
+        if 'filter_application_user_id' in params:
+            query_params.append(('filter[applicationUserId]', params['filter_application_user_id']))  # noqa: E501
+            collection_formats['filter[applicationUserId]'] = 'multi'  # noqa: E501
 
         header_params = {}
 

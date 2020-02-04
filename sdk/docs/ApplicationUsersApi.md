@@ -280,7 +280,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_users_using_get**
-> list[ApplicationUser] get_users_using_get()
+> list[ApplicationUser] get_users_using_get(filter_application_user_id=filter_application_user_id)
 
 Get application users
 
@@ -302,17 +302,21 @@ configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = yapily.ApplicationUsersApi(yapily.ApiClient(configuration))
+filter_application_user_id = ['filter_application_user_id_example'] # list[str] | Filter users by the provided application user Id (applicationUserId) when the user was created. (optional)
 
 try:
     # Get application users
-    api_response = api_instance.get_users_using_get()
+    api_response = api_instance.get_users_using_get(filter_application_user_id=filter_application_user_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApplicationUsersApi->get_users_using_get: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter_application_user_id** | [**list[str]**](str.md)| Filter users by the provided application user Id (applicationUserId) when the user was created. | [optional] 
 
 ### Return type
 
