@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **feature_scope** | **list[str]** |  | [optional] 
 **authorisation_url** | **str** |  | [optional] 
 **consent_token** | **str** |  | [optional] 
+**qr_code_url** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
