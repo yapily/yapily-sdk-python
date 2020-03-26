@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **proprietary_bank_transaction_code** | [**ProprietaryBankTransactionCode**](ProprietaryBankTransactionCode.md) |  | [optional] 
 **balance** | [**Balance**](Balance.md) | Running account balance after transaction has been applied | [optional] 
 **merchant** | [**Merchant**](Merchant.md) | Merchant details | [optional] 
+**supplementary_data** | **str** | Additional information that can not be captured in the structured fields and/or any other specific block. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
