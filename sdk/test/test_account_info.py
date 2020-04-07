@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import yapily
-from yapily.models.iso_bank_transaction_code import IsoBankTransactionCode  # noqa: E501
+from yapily.models.account_info import AccountInfo  # noqa: E501
 from yapily.rest import ApiException
 
 
-class TestIsoBankTransactionCode(unittest.TestCase):
-    """IsoBankTransactionCode unit test stubs"""
+class TestAccountInfo(unittest.TestCase):
+    """AccountInfo unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestIsoBankTransactionCode(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testIsoBankTransactionCode(self):
-        """Test IsoBankTransactionCode"""
+    def testAccountInfo(self):
+        """Test AccountInfo"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = yapily.models.iso_bank_transaction_code.IsoBankTransactionCode()  # noqa: E501
+        # model = yapily.models.account_info.AccountInfo()  # noqa: E501
         pass
 
 
