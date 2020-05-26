@@ -1,5 +1,6 @@
 # OverdraftOverdraftFeeChargeDetail
 
+Details about the fees/charges
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **authority** | **str** |  | [optional] 
-**content** | **object** |  | [optional] 
+**content** | [**object**](.md) |  | [optional] 
 **default_port** | **int** |  | [optional] 
 **file** | **str** |  | [optional] 
 **host** | **str** |  | [optional] 

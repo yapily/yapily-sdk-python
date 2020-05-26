@@ -19,32 +19,71 @@ Method | HTTP request | Description
 Post consent
 
 ### Example
+
+* Basic Authentication (basicAuth):
 ```python
 from __future__ import print_function
 import time
 import yapily
 from yapily.rest import ApiException
 from pprint import pprint
-
-# Configure HTTP basic authorization: basicAuth
 configuration = yapily.Configuration()
+# Configure HTTP basic authorization: basicAuth
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
-# Configure OAuth2 access token for authorization: tokenAuth
 configuration = yapily.Configuration()
+# Configure OAuth2 access token for authorization: tokenAuth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
-api_instance = yapily.ConsentsApi(yapily.ApiClient(configuration))
-user_uuid = 'user_uuid_example' # str | userUuid
+# Defining host is optional and default to https://api.yapily.com
+configuration.host = "https://api.yapily.com"
+
+# Enter a context with an instance of the API client
+with yapily.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = yapily.ConsentsApi(api_client)
+    user_uuid = 'user_uuid_example' # str | userUuid
 create_consent_access_token = yapily.CreateConsentAccessToken() # CreateConsentAccessToken | createConsentAccessToken
 
-try:
-    # Post consent
-    api_response = api_instance.add_consent_using_post(user_uuid, create_consent_access_token)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ConsentsApi->add_consent_using_post: %s\n" % e)
+    try:
+        # Post consent
+        api_response = api_instance.add_consent_using_post(user_uuid, create_consent_access_token)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ConsentsApi->add_consent_using_post: %s\n" % e)
+```
+
+* OAuth Authentication (tokenAuth):
+```python
+from __future__ import print_function
+import time
+import yapily
+from yapily.rest import ApiException
+from pprint import pprint
+configuration = yapily.Configuration()
+# Configure HTTP basic authorization: basicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = yapily.Configuration()
+# Configure OAuth2 access token for authorization: tokenAuth
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Defining host is optional and default to https://api.yapily.com
+configuration.host = "https://api.yapily.com"
+
+# Enter a context with an instance of the API client
+with yapily.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = yapily.ConsentsApi(api_client)
+    user_uuid = 'user_uuid_example' # str | userUuid
+create_consent_access_token = yapily.CreateConsentAccessToken() # CreateConsentAccessToken | createConsentAccessToken
+
+    try:
+        # Post consent
+        api_response = api_instance.add_consent_using_post(user_uuid, create_consent_access_token)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ConsentsApi->add_consent_using_post: %s\n" % e)
 ```
 
 ### Parameters
@@ -67,6 +106,15 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**201** | Created |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_consent_with_code_using_post**
@@ -75,31 +123,69 @@ Name | Type | Description  | Notes
 Post auth-code and auth-state
 
 ### Example
+
+* Basic Authentication (basicAuth):
 ```python
 from __future__ import print_function
 import time
 import yapily
 from yapily.rest import ApiException
 from pprint import pprint
-
-# Configure HTTP basic authorization: basicAuth
 configuration = yapily.Configuration()
+# Configure HTTP basic authorization: basicAuth
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
-# Configure OAuth2 access token for authorization: tokenAuth
 configuration = yapily.Configuration()
+# Configure OAuth2 access token for authorization: tokenAuth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
-api_instance = yapily.ConsentsApi(yapily.ApiClient(configuration))
-consent_by_auth_code = yapily.ConsentAuthCodeRequest() # ConsentAuthCodeRequest | consentByAuthCode
+# Defining host is optional and default to https://api.yapily.com
+configuration.host = "https://api.yapily.com"
 
-try:
-    # Post auth-code and auth-state
-    api_response = api_instance.create_consent_with_code_using_post(consent_by_auth_code)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ConsentsApi->create_consent_with_code_using_post: %s\n" % e)
+# Enter a context with an instance of the API client
+with yapily.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = yapily.ConsentsApi(api_client)
+    consent_by_auth_code = yapily.ConsentAuthCodeRequest() # ConsentAuthCodeRequest | consentByAuthCode
+
+    try:
+        # Post auth-code and auth-state
+        api_response = api_instance.create_consent_with_code_using_post(consent_by_auth_code)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ConsentsApi->create_consent_with_code_using_post: %s\n" % e)
+```
+
+* OAuth Authentication (tokenAuth):
+```python
+from __future__ import print_function
+import time
+import yapily
+from yapily.rest import ApiException
+from pprint import pprint
+configuration = yapily.Configuration()
+# Configure HTTP basic authorization: basicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = yapily.Configuration()
+# Configure OAuth2 access token for authorization: tokenAuth
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Defining host is optional and default to https://api.yapily.com
+configuration.host = "https://api.yapily.com"
+
+# Enter a context with an instance of the API client
+with yapily.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = yapily.ConsentsApi(api_client)
+    consent_by_auth_code = yapily.ConsentAuthCodeRequest() # ConsentAuthCodeRequest | consentByAuthCode
+
+    try:
+        # Post auth-code and auth-state
+        api_response = api_instance.create_consent_with_code_using_post(consent_by_auth_code)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ConsentsApi->create_consent_with_code_using_post: %s\n" % e)
 ```
 
 ### Parameters
@@ -121,6 +207,15 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**201** | Created |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_using_delete**
@@ -129,32 +224,71 @@ Name | Type | Description  | Notes
 Delete consent
 
 ### Example
+
+* Basic Authentication (basicAuth):
 ```python
 from __future__ import print_function
 import time
 import yapily
 from yapily.rest import ApiException
 from pprint import pprint
-
-# Configure HTTP basic authorization: basicAuth
 configuration = yapily.Configuration()
+# Configure HTTP basic authorization: basicAuth
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
-# Configure OAuth2 access token for authorization: tokenAuth
 configuration = yapily.Configuration()
+# Configure OAuth2 access token for authorization: tokenAuth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
-api_instance = yapily.ConsentsApi(yapily.ApiClient(configuration))
-consent_id = 'consent_id_example' # str | consentId
-force_delete = true # bool | forceDelete (optional)
+# Defining host is optional and default to https://api.yapily.com
+configuration.host = "https://api.yapily.com"
 
-try:
-    # Delete consent
-    api_response = api_instance.delete_using_delete(consent_id, force_delete=force_delete)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ConsentsApi->delete_using_delete: %s\n" % e)
+# Enter a context with an instance of the API client
+with yapily.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = yapily.ConsentsApi(api_client)
+    consent_id = 'consent_id_example' # str | consentId
+force_delete = True # bool | forceDelete (optional)
+
+    try:
+        # Delete consent
+        api_response = api_instance.delete_using_delete(consent_id, force_delete=force_delete)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ConsentsApi->delete_using_delete: %s\n" % e)
+```
+
+* OAuth Authentication (tokenAuth):
+```python
+from __future__ import print_function
+import time
+import yapily
+from yapily.rest import ApiException
+from pprint import pprint
+configuration = yapily.Configuration()
+# Configure HTTP basic authorization: basicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = yapily.Configuration()
+# Configure OAuth2 access token for authorization: tokenAuth
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Defining host is optional and default to https://api.yapily.com
+configuration.host = "https://api.yapily.com"
+
+# Enter a context with an instance of the API client
+with yapily.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = yapily.ConsentsApi(api_client)
+    consent_id = 'consent_id_example' # str | consentId
+force_delete = True # bool | forceDelete (optional)
+
+    try:
+        # Delete consent
+        api_response = api_instance.delete_using_delete(consent_id, force_delete=force_delete)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ConsentsApi->delete_using_delete: %s\n" % e)
 ```
 
 ### Parameters
@@ -174,8 +308,16 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json;charset=UTF-8
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**204** | No Content |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -185,31 +327,69 @@ Name | Type | Description  | Notes
 Get consent
 
 ### Example
+
+* Basic Authentication (basicAuth):
 ```python
 from __future__ import print_function
 import time
 import yapily
 from yapily.rest import ApiException
 from pprint import pprint
-
-# Configure HTTP basic authorization: basicAuth
 configuration = yapily.Configuration()
+# Configure HTTP basic authorization: basicAuth
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
-# Configure OAuth2 access token for authorization: tokenAuth
 configuration = yapily.Configuration()
+# Configure OAuth2 access token for authorization: tokenAuth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
-api_instance = yapily.ConsentsApi(yapily.ApiClient(configuration))
-consent_id = 'consent_id_example' # str | consentId
+# Defining host is optional and default to https://api.yapily.com
+configuration.host = "https://api.yapily.com"
 
-try:
-    # Get consent
-    api_response = api_instance.get_consent_by_id_using_get(consent_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ConsentsApi->get_consent_by_id_using_get: %s\n" % e)
+# Enter a context with an instance of the API client
+with yapily.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = yapily.ConsentsApi(api_client)
+    consent_id = 'consent_id_example' # str | consentId
+
+    try:
+        # Get consent
+        api_response = api_instance.get_consent_by_id_using_get(consent_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ConsentsApi->get_consent_by_id_using_get: %s\n" % e)
+```
+
+* OAuth Authentication (tokenAuth):
+```python
+from __future__ import print_function
+import time
+import yapily
+from yapily.rest import ApiException
+from pprint import pprint
+configuration = yapily.Configuration()
+# Configure HTTP basic authorization: basicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = yapily.Configuration()
+# Configure OAuth2 access token for authorization: tokenAuth
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Defining host is optional and default to https://api.yapily.com
+configuration.host = "https://api.yapily.com"
+
+# Enter a context with an instance of the API client
+with yapily.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = yapily.ConsentsApi(api_client)
+    consent_id = 'consent_id_example' # str | consentId
+
+    try:
+        # Get consent
+        api_response = api_instance.get_consent_by_id_using_get(consent_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ConsentsApi->get_consent_by_id_using_get: %s\n" % e)
 ```
 
 ### Parameters
@@ -228,8 +408,16 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json;charset=UTF-8
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -239,31 +427,69 @@ Name | Type | Description  | Notes
 Post one time token
 
 ### Example
+
+* Basic Authentication (basicAuth):
 ```python
 from __future__ import print_function
 import time
 import yapily
 from yapily.rest import ApiException
 from pprint import pprint
-
-# Configure HTTP basic authorization: basicAuth
 configuration = yapily.Configuration()
+# Configure HTTP basic authorization: basicAuth
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
-# Configure OAuth2 access token for authorization: tokenAuth
 configuration = yapily.Configuration()
+# Configure OAuth2 access token for authorization: tokenAuth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
-api_instance = yapily.ConsentsApi(yapily.ApiClient(configuration))
-one_time_token = yapily.OneTimeTokenRequest() # OneTimeTokenRequest | oneTimeToken
+# Defining host is optional and default to https://api.yapily.com
+configuration.host = "https://api.yapily.com"
 
-try:
-    # Post one time token
-    api_response = api_instance.get_consent_by_single_access_consent_using_post(one_time_token)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ConsentsApi->get_consent_by_single_access_consent_using_post: %s\n" % e)
+# Enter a context with an instance of the API client
+with yapily.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = yapily.ConsentsApi(api_client)
+    one_time_token = yapily.OneTimeTokenRequest() # OneTimeTokenRequest | oneTimeToken
+
+    try:
+        # Post one time token
+        api_response = api_instance.get_consent_by_single_access_consent_using_post(one_time_token)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ConsentsApi->get_consent_by_single_access_consent_using_post: %s\n" % e)
+```
+
+* OAuth Authentication (tokenAuth):
+```python
+from __future__ import print_function
+import time
+import yapily
+from yapily.rest import ApiException
+from pprint import pprint
+configuration = yapily.Configuration()
+# Configure HTTP basic authorization: basicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = yapily.Configuration()
+# Configure OAuth2 access token for authorization: tokenAuth
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Defining host is optional and default to https://api.yapily.com
+configuration.host = "https://api.yapily.com"
+
+# Enter a context with an instance of the API client
+with yapily.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = yapily.ConsentsApi(api_client)
+    one_time_token = yapily.OneTimeTokenRequest() # OneTimeTokenRequest | oneTimeToken
+
+    try:
+        # Post one time token
+        api_response = api_instance.get_consent_by_single_access_consent_using_post(one_time_token)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ConsentsApi->get_consent_by_single_access_consent_using_post: %s\n" % e)
 ```
 
 ### Parameters
@@ -285,6 +511,15 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json;charset=UTF-8
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**201** | Created |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_consents_using_get**
@@ -293,24 +528,30 @@ Name | Type | Description  | Notes
 Get consents sorted by creation date
 
 ### Example
+
+* Basic Authentication (basicAuth):
 ```python
 from __future__ import print_function
 import time
 import yapily
 from yapily.rest import ApiException
 from pprint import pprint
-
-# Configure HTTP basic authorization: basicAuth
 configuration = yapily.Configuration()
+# Configure HTTP basic authorization: basicAuth
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
-# Configure OAuth2 access token for authorization: tokenAuth
 configuration = yapily.Configuration()
+# Configure OAuth2 access token for authorization: tokenAuth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
-api_instance = yapily.ConsentsApi(yapily.ApiClient(configuration))
-filter_application_user_id = ['filter_application_user_id_example'] # list[str] | Filter consents by your application user Id (applicationUserId) (optional)
+# Defining host is optional and default to https://api.yapily.com
+configuration.host = "https://api.yapily.com"
+
+# Enter a context with an instance of the API client
+with yapily.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = yapily.ConsentsApi(api_client)
+    filter_application_user_id = ['filter_application_user_id_example'] # list[str] | Filter consents by your application user Id (applicationUserId) (optional)
 filter_user_uuid = ['filter_user_uuid_example'] # list[str] | Filter consents by Yapily user Id (userUuid) (optional)
 filter_institution = ['filter_institution_example'] # list[str] | Use this parameter to filter consent by institution, using the Yapily institution Id (optional)
 filter_status = ['filter_status_example'] # list[str] | Use this parameter to filter consent by status (optional)
@@ -319,12 +560,51 @@ before = 'before_example' # str | Use this parameter to filter consents created 
 limit = 56 # int | Use this parameter to limit consent results, max limit is 20 (optional)
 offset = 0 # int | Use this parameter to specify the offset of the results (optional) (default to 0)
 
-try:
-    # Get consents sorted by creation date
-    api_response = api_instance.get_consents_using_get(filter_application_user_id=filter_application_user_id, filter_user_uuid=filter_user_uuid, filter_institution=filter_institution, filter_status=filter_status, _from=_from, before=before, limit=limit, offset=offset)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ConsentsApi->get_consents_using_get: %s\n" % e)
+    try:
+        # Get consents sorted by creation date
+        api_response = api_instance.get_consents_using_get(filter_application_user_id=filter_application_user_id, filter_user_uuid=filter_user_uuid, filter_institution=filter_institution, filter_status=filter_status, _from=_from, before=before, limit=limit, offset=offset)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ConsentsApi->get_consents_using_get: %s\n" % e)
+```
+
+* OAuth Authentication (tokenAuth):
+```python
+from __future__ import print_function
+import time
+import yapily
+from yapily.rest import ApiException
+from pprint import pprint
+configuration = yapily.Configuration()
+# Configure HTTP basic authorization: basicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = yapily.Configuration()
+# Configure OAuth2 access token for authorization: tokenAuth
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Defining host is optional and default to https://api.yapily.com
+configuration.host = "https://api.yapily.com"
+
+# Enter a context with an instance of the API client
+with yapily.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = yapily.ConsentsApi(api_client)
+    filter_application_user_id = ['filter_application_user_id_example'] # list[str] | Filter consents by your application user Id (applicationUserId) (optional)
+filter_user_uuid = ['filter_user_uuid_example'] # list[str] | Filter consents by Yapily user Id (userUuid) (optional)
+filter_institution = ['filter_institution_example'] # list[str] | Use this parameter to filter consent by institution, using the Yapily institution Id (optional)
+filter_status = ['filter_status_example'] # list[str] | Use this parameter to filter consent by status (optional)
+_from = '_from_example' # str | Use this parameter to filter consents created after the date specified (optional)
+before = 'before_example' # str | Use this parameter to filter consents created before the date specified (optional)
+limit = 56 # int | Use this parameter to limit consent results, max limit is 20 (optional)
+offset = 0 # int | Use this parameter to specify the offset of the results (optional) (default to 0)
+
+    try:
+        # Get consents sorted by creation date
+        api_response = api_instance.get_consents_using_get(filter_application_user_id=filter_application_user_id, filter_user_uuid=filter_user_uuid, filter_institution=filter_institution, filter_status=filter_status, _from=_from, before=before, limit=limit, offset=offset)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ConsentsApi->get_consents_using_get: %s\n" % e)
 ```
 
 ### Parameters
@@ -350,8 +630,16 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json;charset=UTF-8
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -361,33 +649,73 @@ Name | Type | Description  | Notes
 Get latest user consents
 
 ### Example
+
+* Basic Authentication (basicAuth):
 ```python
 from __future__ import print_function
 import time
 import yapily
 from yapily.rest import ApiException
 from pprint import pprint
-
-# Configure HTTP basic authorization: basicAuth
 configuration = yapily.Configuration()
+# Configure HTTP basic authorization: basicAuth
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
-# Configure OAuth2 access token for authorization: tokenAuth
 configuration = yapily.Configuration()
+# Configure OAuth2 access token for authorization: tokenAuth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
-api_instance = yapily.ConsentsApi(yapily.ApiClient(configuration))
-user_uuid = 'user_uuid_example' # str | userUuid
+# Defining host is optional and default to https://api.yapily.com
+configuration.host = "https://api.yapily.com"
+
+# Enter a context with an instance of the API client
+with yapily.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = yapily.ConsentsApi(api_client)
+    user_uuid = 'user_uuid_example' # str | userUuid
 filter_institution = 'filter_institution_example' # str | Use this parameter to filter consent by institution, using the Yapily institution Id. This replaces the deprecated `institutionId` query param. (optional)
 limit = 56 # int | Use this parameter to limit consent results, max limit is 20 (optional)
 
-try:
-    # Get latest user consents
-    api_response = api_instance.get_user_consents_using_get(user_uuid, filter_institution=filter_institution, limit=limit)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ConsentsApi->get_user_consents_using_get: %s\n" % e)
+    try:
+        # Get latest user consents
+        api_response = api_instance.get_user_consents_using_get(user_uuid, filter_institution=filter_institution, limit=limit)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ConsentsApi->get_user_consents_using_get: %s\n" % e)
+```
+
+* OAuth Authentication (tokenAuth):
+```python
+from __future__ import print_function
+import time
+import yapily
+from yapily.rest import ApiException
+from pprint import pprint
+configuration = yapily.Configuration()
+# Configure HTTP basic authorization: basicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = yapily.Configuration()
+# Configure OAuth2 access token for authorization: tokenAuth
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Defining host is optional and default to https://api.yapily.com
+configuration.host = "https://api.yapily.com"
+
+# Enter a context with an instance of the API client
+with yapily.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = yapily.ConsentsApi(api_client)
+    user_uuid = 'user_uuid_example' # str | userUuid
+filter_institution = 'filter_institution_example' # str | Use this parameter to filter consent by institution, using the Yapily institution Id. This replaces the deprecated `institutionId` query param. (optional)
+limit = 56 # int | Use this parameter to limit consent results, max limit is 20 (optional)
+
+    try:
+        # Get latest user consents
+        api_response = api_instance.get_user_consents_using_get(user_uuid, filter_institution=filter_institution, limit=limit)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ConsentsApi->get_user_consents_using_get: %s\n" % e)
 ```
 
 ### Parameters
@@ -408,8 +736,16 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json;charset=UTF-8
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

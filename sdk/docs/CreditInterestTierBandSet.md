@@ -1,5 +1,6 @@
 # CreditInterestTierBandSet
 
+The group of tiers or bands for which credit interest can be applied.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

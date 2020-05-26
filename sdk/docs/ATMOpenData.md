@@ -1,5 +1,6 @@
 # ATMOpenData
 
+Environment of the ATM.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

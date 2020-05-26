@@ -1,14 +1,16 @@
 import uuid,constants,webbrowser
-from yapily import auth_direct_url
 from yapily import ApiClient
 from yapily import Configuration
+from yapily import AccountAuthorisationRequest
 from yapily import ApplicationUsersApi
 from yapily import ApplicationUser
 
 from yapily import AccountsApi
 from yapily import ConsentsApi
+from yapily import InstitutionsApi
 from yapily import TransactionsApi
 from yapily import TransfersApi
+from yapily import TransferRequest
 
 def main():
 
@@ -20,74 +22,86 @@ def main():
 
     user_api = ApplicationUsersApi(apiClient)
 
-    application_user = ApplicationUser()
-    application_user._reference_id = str(uuid.uuid4())
+    users_exists = user_api.get_users_using_get(filter_application_user_id=[constants.APPLICATION_USER_ID])
+    if not users_exists:
+        application_user = ApplicationUser()
+        application_user._application_user_id = constants.APPLICATION_USER_ID
+        sdk_user = user_api.add_user_using_post_with_http_info(application_user)[0]
+        print("Created new sdk user:", sdk_user.application_user_id)
+    else:
+        sdk_user = users_exists[0]
+        print("Using existing sdk user:", constants.APPLICATION_USER_ID)
 
-    created_user = user_api.add_user_using_post_with_http_info(application_user)[0]
+    accounts_api = AccountsApi(apiClient)
+    account_authorisation_request = AccountAuthorisationRequest(
+        application_user_id=constants.APPLICATION_USER_ID, 
+        institution_id=constants.INSTITUTION_ID,
+        callback='',
+        one_time_token=''
+    )
 
-    print("Created user",created_user._uuid)
-
-    institution_id = "monzo";
-    app_user_uuid = created_user._uuid
-
-    redirect_url = auth_direct_url(constants.APPLICATION_ID,app_user_uuid,institution_id,create_callback_with_user_uuid(created_user._uuid),"account")
+    response = accounts_api.initiate_account_request_using_post(account_auth_request=account_authorisation_request)
+    
+    redirect_url = response.data.authorisation_url
     webbrowser.open(redirect_url)
 
-    input("Press enter to continue")
+    input("\nPress enter to continue")
+    
+    def filterByStatus(consent):
+        if (consent.status == "AUTHORIZED"):
+            return True
+        else:
+            return False
 
-    consent = ConsentsApi(apiClient).get_user_consents_using_get(app_user_uuid)[0]
+    consents = ConsentsApi(apiClient).get_consents_using_get(
+        filter_application_user_id=[constants.APPLICATION_USER_ID],
+        filter_institution=[constants.INSTITUTION_ID]
+    ).data
+
+    authorised_consents = list(filter(filterByStatus, consents))
+    consent = authorised_consents[0]
     consent_token = consent.consent_token
 
     print("Consent: " + consent_token);
 
-    accounts =  AccountsApi(ApiClient(configuration)).get_accounts_using_get(consent_token)
+    accounts = AccountsApi(ApiClient(configuration)).get_accounts_using_get(consent_token)
+
+    print("\nGetting accounts: ")
+    accounts = AccountsApi(apiClient).get_accounts_using_get(consent_token)
 
     print("**************ACCOUNTS******************")
     print(accounts)
     print("****************************************")
 
-    transactions_api = TransactionsApi(ApiClient(configuration))
-    transactions = transactions_api.get_transactions_using_get(consent_token, accounts.data[0]._id)
+    if (len(accounts.data) > 1):
 
-    print("**************TRANSACTIONS**************");
-    print(transactions);
-    print("****************************************");
+        institutions_api = InstitutionsApi(apiClient)
+        features = institutions_api.get_institution_using_get(constants.INSTITUTION_ID).features
+        if ("TRANSFER" in features):
+            account_id_1 = accounts.data[0].id
+            account_id_2 = accounts.data[1].id
+            print("\nExecuting a transfer from accout 1 [" + account_id_1 + "] to account 2 [" + account_id_2 + "]:")
+            transfers_api = TransfersApi(apiClient)
+            transfer = transfers_api.transfer_using_put(
+                consent=consent_token,
+                account_id=account_id_1,
+                transfer_request=TransferRequest(
+                    account_id=account_id_2,
+                    amount=15.00,
+                    currency='GBP',
+                    reference='Monthly savings',
+                    transfer_reference_id='123456'
+                )
+            )
 
-    transfers_api = TransfersApi(ApiClient(configuration))
+            print("**************TRANSFERS**************");
+            print(transfer);
+            print("****************************************");
+        else:
+            print("\nCan not execute transfer for institution '" + constants.INSTITUTION_ID + "' as it does not have the required feature: 'TRANSFER'")
 
-    path_params = {"accountId": "{{account-id}}"}
-    header_params = {
-        "consent": consent_token,
-        "Accept": 'application/json;charset=utf-8', 'Content-Type': 'application/json;charset=utf-8'}
-
-    body = {
-        "accountId": "{{destination-account-id}}",
-        "amount": 0.50,
-        "currency": "GBP",
-        "reference": "Your transaction with yapily",
-        "transferReferenceId": str(uuid.uuid4())
-    }
-
-    transfer_response = transfers_api.api_client.call_api(
-        "/accounts/{accountId}/transfer", "PUT",
-        path_params,
-        query_params=[],
-        header_params=header_params,
-        body=body,
-        post_params=[],
-        files={},
-        response_type="ApiResponseOfTransferResponse",  # noqa: E501
-        auth_settings=["basicAuth"],
-        asyncRequest=None,
-        _return_http_data_only=True,
-        _preload_content=True,
-        _request_timeout=None,
-        collection_formats={})
-
-    print("**************TRANSFERS**************");
-    print(transfer_response);
-    print("****************************************");
-
+    else:
+        print("\nYou need to have authorisation to 2 accounts but this Consent only has authorisation for 1. Not executing transfer.")
 
 def create_callback_with_user_uuid(user_uuid):
     return constants.CALLBACK_URL+ "?user_uuid="+user_uuid

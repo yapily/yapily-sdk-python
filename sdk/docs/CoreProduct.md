@@ -1,5 +1,6 @@
 # CoreProduct
 
+Core feature of the PCA product which can be associated to a particular Marketing State
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

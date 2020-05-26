@@ -1,5 +1,6 @@
 # IDVerificationCheck
 
+Identity verification criteria that the account holder will need to meet to take out the PCA product
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

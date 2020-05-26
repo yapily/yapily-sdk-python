@@ -15,30 +15,67 @@ Method | HTTP request | Description
 Returns the details of the application that owns the request credentials
 
 ### Example
+
+* Basic Authentication (basicAuth):
 ```python
 from __future__ import print_function
 import time
 import yapily
 from yapily.rest import ApiException
 from pprint import pprint
-
-# Configure HTTP basic authorization: basicAuth
 configuration = yapily.Configuration()
+# Configure HTTP basic authorization: basicAuth
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
-# Configure OAuth2 access token for authorization: tokenAuth
 configuration = yapily.Configuration()
+# Configure OAuth2 access token for authorization: tokenAuth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
-api_instance = yapily.ApplicationsApi(yapily.ApiClient(configuration))
+# Defining host is optional and default to https://api.yapily.com
+configuration.host = "https://api.yapily.com"
 
-try:
-    # Returns the details of the application that owns the request credentials
-    api_response = api_instance.get_application_me_using_get()
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ApplicationsApi->get_application_me_using_get: %s\n" % e)
+# Enter a context with an instance of the API client
+with yapily.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = yapily.ApplicationsApi(api_client)
+    
+    try:
+        # Returns the details of the application that owns the request credentials
+        api_response = api_instance.get_application_me_using_get()
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ApplicationsApi->get_application_me_using_get: %s\n" % e)
+```
+
+* OAuth Authentication (tokenAuth):
+```python
+from __future__ import print_function
+import time
+import yapily
+from yapily.rest import ApiException
+from pprint import pprint
+configuration = yapily.Configuration()
+# Configure HTTP basic authorization: basicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = yapily.Configuration()
+# Configure OAuth2 access token for authorization: tokenAuth
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Defining host is optional and default to https://api.yapily.com
+configuration.host = "https://api.yapily.com"
+
+# Enter a context with an instance of the API client
+with yapily.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = yapily.ApplicationsApi(api_client)
+    
+    try:
+        # Returns the details of the application that owns the request credentials
+        api_response = api_instance.get_application_me_using_get()
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ApplicationsApi->get_application_me_using_get: %s\n" % e)
 ```
 
 ### Parameters
@@ -54,8 +91,16 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json;charset=UTF-8
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -65,30 +110,67 @@ This endpoint does not need any parameter.
 JSON Web Key Set (JWKS) for authenticated application
 
 ### Example
+
+* Basic Authentication (basicAuth):
 ```python
 from __future__ import print_function
 import time
 import yapily
 from yapily.rest import ApiException
 from pprint import pprint
-
-# Configure HTTP basic authorization: basicAuth
 configuration = yapily.Configuration()
+# Configure HTTP basic authorization: basicAuth
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
-# Configure OAuth2 access token for authorization: tokenAuth
 configuration = yapily.Configuration()
+# Configure OAuth2 access token for authorization: tokenAuth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
-api_instance = yapily.ApplicationsApi(yapily.ApiClient(configuration))
+# Defining host is optional and default to https://api.yapily.com
+configuration.host = "https://api.yapily.com"
 
-try:
-    # JSON Web Key Set (JWKS) for authenticated application
-    api_response = api_instance.get_jwks_using_get()
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ApplicationsApi->get_jwks_using_get: %s\n" % e)
+# Enter a context with an instance of the API client
+with yapily.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = yapily.ApplicationsApi(api_client)
+    
+    try:
+        # JSON Web Key Set (JWKS) for authenticated application
+        api_response = api_instance.get_jwks_using_get()
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ApplicationsApi->get_jwks_using_get: %s\n" % e)
+```
+
+* OAuth Authentication (tokenAuth):
+```python
+from __future__ import print_function
+import time
+import yapily
+from yapily.rest import ApiException
+from pprint import pprint
+configuration = yapily.Configuration()
+# Configure HTTP basic authorization: basicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = yapily.Configuration()
+# Configure OAuth2 access token for authorization: tokenAuth
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Defining host is optional and default to https://api.yapily.com
+configuration.host = "https://api.yapily.com"
+
+# Enter a context with an instance of the API client
+with yapily.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = yapily.ApplicationsApi(api_client)
+    
+    try:
+        # JSON Web Key Set (JWKS) for authenticated application
+        api_response = api_instance.get_jwks_using_get()
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ApplicationsApi->get_jwks_using_get: %s\n" % e)
 ```
 
 ### Parameters
@@ -104,8 +186,16 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json;charset=UTF-8
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -115,30 +205,67 @@ This endpoint does not need any parameter.
 Revoke existing access tokens for application, which will also generate a new public key discoverable via /jwks
 
 ### Example
+
+* Basic Authentication (basicAuth):
 ```python
 from __future__ import print_function
 import time
 import yapily
 from yapily.rest import ApiException
 from pprint import pprint
-
-# Configure HTTP basic authorization: basicAuth
 configuration = yapily.Configuration()
+# Configure HTTP basic authorization: basicAuth
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
-# Configure OAuth2 access token for authorization: tokenAuth
 configuration = yapily.Configuration()
+# Configure OAuth2 access token for authorization: tokenAuth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
-api_instance = yapily.ApplicationsApi(yapily.ApiClient(configuration))
+# Defining host is optional and default to https://api.yapily.com
+configuration.host = "https://api.yapily.com"
 
-try:
-    # Revoke existing access tokens for application, which will also generate a new public key discoverable via /jwks
-    api_response = api_instance.revoke_tokens_using_post()
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ApplicationsApi->revoke_tokens_using_post: %s\n" % e)
+# Enter a context with an instance of the API client
+with yapily.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = yapily.ApplicationsApi(api_client)
+    
+    try:
+        # Revoke existing access tokens for application, which will also generate a new public key discoverable via /jwks
+        api_response = api_instance.revoke_tokens_using_post()
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ApplicationsApi->revoke_tokens_using_post: %s\n" % e)
+```
+
+* OAuth Authentication (tokenAuth):
+```python
+from __future__ import print_function
+import time
+import yapily
+from yapily.rest import ApiException
+from pprint import pprint
+configuration = yapily.Configuration()
+# Configure HTTP basic authorization: basicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = yapily.Configuration()
+# Configure OAuth2 access token for authorization: tokenAuth
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Defining host is optional and default to https://api.yapily.com
+configuration.host = "https://api.yapily.com"
+
+# Enter a context with an instance of the API client
+with yapily.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = yapily.ApplicationsApi(api_client)
+    
+    try:
+        # Revoke existing access tokens for application, which will also generate a new public key discoverable via /jwks
+        api_response = api_instance.revoke_tokens_using_post()
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ApplicationsApi->revoke_tokens_using_post: %s\n" % e)
 ```
 
 ### Parameters
@@ -154,8 +281,17 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json;charset=UTF-8
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**201** | Created |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

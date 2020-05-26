@@ -14,10 +14,11 @@ if __name__ == '__main__':
     institutionsApi = InstitutionsApi(apiClient)
     institutions = institutionsApi.get_institutions_using_get()
 
+    print("GET /institutions")
     for institution in institutions.data:
         print(institution._id)
 
-
+    print("\nGET /institution/{{institution-id}}")
     institution = institutionsApi.get_institution_using_get(institutions.data[0]._id)
 
     print(institution._id)

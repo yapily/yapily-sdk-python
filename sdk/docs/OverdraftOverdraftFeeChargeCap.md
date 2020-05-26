@@ -1,5 +1,6 @@
 # OverdraftOverdraftFeeChargeCap
 
+Details about any caps (maximum charges) that apply to a particular fee/charge
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

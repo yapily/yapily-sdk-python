@@ -1,5 +1,6 @@
 # AgeEligibility
 
+Age eligibility that a person should be to hold this account
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

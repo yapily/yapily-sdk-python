@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **currency** | **str** | Deprecated. Use the currency value in &#x60;transactionAmount&#x60; instead | [optional] 
 **transaction_amount** | [**Amount**](Amount.md) |  | [optional] 
 **currency_exchange** | [**CurrencyExchange**](CurrencyExchange.md) |  | [optional] 
-**charge_details** | [**ChargeDetails**](ChargeDetails.md) | If present, contains details of any charges applied during this transaction | [optional] 
+**charge_details** | [**ChargeDetails**](ChargeDetails.md) |  | [optional] 
 **reference** | **str** | Transaction reference | [optional] 
 **statement_references** | [**list[StatementReference]**](StatementReference.md) |  | [optional] 
 **description** | **str** | Unstructured text containing details of the transaction. Usage varies according to the institution | [optional] 
@@ -20,8 +20,8 @@ Name | Type | Description | Notes
 **address_details** | [**AddressDetails**](AddressDetails.md) |  | [optional] 
 **iso_bank_transaction_code** | [**IsoBankTransactionCode**](IsoBankTransactionCode.md) |  | [optional] 
 **proprietary_bank_transaction_code** | [**ProprietaryBankTransactionCode**](ProprietaryBankTransactionCode.md) |  | [optional] 
-**balance** | [**Balance**](Balance.md) | Running account balance after transaction has been applied | [optional] 
-**merchant** | [**Merchant**](Merchant.md) | Merchant details | [optional] 
+**balance** | [**Balance**](Balance.md) |  | [optional] 
+**merchant** | [**Merchant**](Merchant.md) |  | [optional] 
 **supplementary_data** | **str** | Additional information that can not be captured in the structured fields and/or any other specific block. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -1,5 +1,6 @@
 # OtherType
 
+Non-standard eligibility type code.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

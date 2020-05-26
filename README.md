@@ -18,9 +18,13 @@ The SDK is currently available in the Yapily github repository and
 can be included in your project 
 by adding it to your dependencies
 
-#### pip
+#### pip install
 
 pip3 install git+https://github.com/yapily/yapily-sdk-python.git#subdirectory=sdk
+
+#### pip upgrade
+
+pip3 install --upgrade git+https://github.com/yapily/yapily-sdk-python.git#subdirectory=sdk
 
 ## Usage
 
@@ -29,46 +33,75 @@ Sample usage of the SDK can be seen in the `examples` folder.
 - Retrieve a list of available financial institutions to connect to
 
 ```python
-institutionsApi = InstitutionsApi(ApiClient(Configuration()))
+configuration = Configuration()
+configuration.username = constants.APPLICATION_ID
+configuration.password = constants.APPLICATION_SECRET
+
+apiClient = ApiClient(configuration)
+institutionsApi = InstitutionsApi(apiClient)
 institutions = institutionsApi.get_institutions_using_get()
 ```
 
 - Creating users and retrieving users for your application registered in the Yapily Dashboard
 ```python
-application_user = NewApplicationUser(str(uuid.uuid4()))
-user_api = ApplicationUsersApi(ApiClient(Configuration()))
+application_user = NewApplicationUser(application_user_id=app_user_id)
+user_api = ApplicationUsersApi(apiClient)
 user_api.add_user_using_post(application_user)
 ```
 
-- Receiving an authorisation URL your users to log into their institution
+- Create an authorisation URL for your users to use to log into their institution
 
 ```python
-redirect_url = auth_direct_url(constants.APPLICATION_ID,app_user_uuid,institution_id,constants.CALLBACK_URL,"account")
-```
+account_authorisation_request = AccountAuthorisationRequest(
+    application_user_id=constants.APPLICATION_USER_ID, 
+    institution_id=constants.INSTITUTION_ID,
+    callback='',
+    one_time_token=''
+)
 
-- Receiving consents issued by your user authorizing
-```python
-consents = ConsentsApi(apiClient).get_user_consents_using_get(app_user_uuid)
+response = accounts_api.initiate_account_request_using_post(account_auth_request=account_authorisation_request)
+redirect_url = response.data.authorisation_url
 ```
  
-- Returning user account details
+- Obtaining a valid consent for financial data
 
 ```python
-accounts_api =  AccountsApi(ApiClient(configuration,"CONSENT","consent-token"))
-accounts = accounts_api.get_accounts_using_get()
+def filterByStatus(consent):
+    if (consent.status == "AUTHORIZED"):
+        return True
+    else:
+        return False
+
+consents = ConsentsApi(apiClient).get_consents_using_get(
+    filter_application_user_id=[constants.APPLICATION_USER_ID],
+    filter_institution=[constants.INSTITUTION_ID]
+).data
+
+authorised_consents = list(filter(filterByStatus, consents))
+consent = authorised_consents[0]
+consent_token = consent.consent_token
+```
+
+- Returning user account details
+```python
+accountsApi = AccountsApi(apiClient)
+accounts = accountsApi.get_accounts_using_get(consent_token)
 ```
 
 - Returning user transaction details
 
 ```python
-transactionsApi = TransactionsApi(ApiClient(configuration,"CONSENT","consent-token"))
-transactions = transactionsApi.get_transactions_using_get("account_id")
+transactionsApi = TransactionsApi(apiClient)
+transactions = transactionsApi.get_transactions_using_get(consent_token, accounts.data[0]._id)
 ```
 
 - Returning user identity details
 ```python
-identity_api = IdentityApi(ApiClient(configuration,"CONSENT","consent-token"))
-identity =  identity_api.identity_using_get()
+institutions_api = InstitutionsApi(apiClient)
+features = institutions_api.get_institution_using_get(constants.INSTITUTION_ID).features
+if ("IDENTITY" in features):
+    identity_api = IdentityApi(apiClient)
+    identity = identity_api.get_identity_using_get(consent_token)
 ```
 
 ## Further information

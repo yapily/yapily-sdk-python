@@ -1,5 +1,6 @@
 # OverdraftOverdraftTierBand
 
+Provides overdraft details for a specific tier or band
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

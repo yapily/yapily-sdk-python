@@ -1,5 +1,6 @@
 # Eligibility
 
+Eligibility details for this product i.e. the criteria that an accountholder has to meet in order to be eligible for the PCA product.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

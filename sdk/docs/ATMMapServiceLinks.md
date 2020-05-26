@@ -1,5 +1,6 @@
 # ATMMapServiceLinks
 
+Links on popular map services pointing the ATM Location on the earth.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,5 +1,6 @@
 # InlineResponse2001OtherAccessibility
 
+Enter a new code , name and description for any other ATM accessibility options
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

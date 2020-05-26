@@ -1,5 +1,6 @@
 # LocationOtherLocationCategory
 
+Enter a new code , name and description for any other location category
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

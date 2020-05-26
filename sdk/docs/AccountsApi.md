@@ -19,33 +19,73 @@ Method | HTTP request | Description
 Get account direct debits
 
 ### Example
+
+* Basic Authentication (basicAuth):
 ```python
 from __future__ import print_function
 import time
 import yapily
 from yapily.rest import ApiException
 from pprint import pprint
-
-# Configure HTTP basic authorization: basicAuth
 configuration = yapily.Configuration()
+# Configure HTTP basic authorization: basicAuth
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
-# Configure OAuth2 access token for authorization: tokenAuth
 configuration = yapily.Configuration()
+# Configure OAuth2 access token for authorization: tokenAuth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
-api_instance = yapily.AccountsApi(yapily.ApiClient(configuration))
-account_id = 'account_id_example' # str | accountId
+# Defining host is optional and default to https://api.yapily.com
+configuration.host = "https://api.yapily.com"
+
+# Enter a context with an instance of the API client
+with yapily.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = yapily.AccountsApi(api_client)
+    account_id = 'account_id_example' # str | accountId
 consent = 'consent_example' # str | Consent Token
 limit = 56 # int | Use this parameter to limit account's direct debit results (optional)
 
-try:
-    # Get account direct debits
-    api_response = api_instance.get_account_direct_debits_using_get(account_id, consent, limit=limit)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AccountsApi->get_account_direct_debits_using_get: %s\n" % e)
+    try:
+        # Get account direct debits
+        api_response = api_instance.get_account_direct_debits_using_get(account_id, consent, limit=limit)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AccountsApi->get_account_direct_debits_using_get: %s\n" % e)
+```
+
+* OAuth Authentication (tokenAuth):
+```python
+from __future__ import print_function
+import time
+import yapily
+from yapily.rest import ApiException
+from pprint import pprint
+configuration = yapily.Configuration()
+# Configure HTTP basic authorization: basicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = yapily.Configuration()
+# Configure OAuth2 access token for authorization: tokenAuth
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Defining host is optional and default to https://api.yapily.com
+configuration.host = "https://api.yapily.com"
+
+# Enter a context with an instance of the API client
+with yapily.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = yapily.AccountsApi(api_client)
+    account_id = 'account_id_example' # str | accountId
+consent = 'consent_example' # str | Consent Token
+limit = 56 # int | Use this parameter to limit account's direct debit results (optional)
+
+    try:
+        # Get account direct debits
+        api_response = api_instance.get_account_direct_debits_using_get(account_id, consent, limit=limit)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AccountsApi->get_account_direct_debits_using_get: %s\n" % e)
 ```
 
 ### Parameters
@@ -66,8 +106,16 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json;charset=UTF-8
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -77,33 +125,73 @@ Name | Type | Description  | Notes
 Get account payments detail
 
 ### Example
+
+* Basic Authentication (basicAuth):
 ```python
 from __future__ import print_function
 import time
 import yapily
 from yapily.rest import ApiException
 from pprint import pprint
-
-# Configure HTTP basic authorization: basicAuth
 configuration = yapily.Configuration()
+# Configure HTTP basic authorization: basicAuth
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
-# Configure OAuth2 access token for authorization: tokenAuth
 configuration = yapily.Configuration()
+# Configure OAuth2 access token for authorization: tokenAuth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
-api_instance = yapily.AccountsApi(yapily.ApiClient(configuration))
-account_id = 'account_id_example' # str | accountId
+# Defining host is optional and default to https://api.yapily.com
+configuration.host = "https://api.yapily.com"
+
+# Enter a context with an instance of the API client
+with yapily.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = yapily.AccountsApi(api_client)
+    account_id = 'account_id_example' # str | accountId
 consent = 'consent_example' # str | Consent Token
 limit = 56 # int | Use this parameter to limit account's periodic payment order results (optional)
 
-try:
-    # Get account payments detail
-    api_response = api_instance.get_account_periodic_payments_using_get(account_id, consent, limit=limit)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AccountsApi->get_account_periodic_payments_using_get: %s\n" % e)
+    try:
+        # Get account payments detail
+        api_response = api_instance.get_account_periodic_payments_using_get(account_id, consent, limit=limit)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AccountsApi->get_account_periodic_payments_using_get: %s\n" % e)
+```
+
+* OAuth Authentication (tokenAuth):
+```python
+from __future__ import print_function
+import time
+import yapily
+from yapily.rest import ApiException
+from pprint import pprint
+configuration = yapily.Configuration()
+# Configure HTTP basic authorization: basicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = yapily.Configuration()
+# Configure OAuth2 access token for authorization: tokenAuth
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Defining host is optional and default to https://api.yapily.com
+configuration.host = "https://api.yapily.com"
+
+# Enter a context with an instance of the API client
+with yapily.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = yapily.AccountsApi(api_client)
+    account_id = 'account_id_example' # str | accountId
+consent = 'consent_example' # str | Consent Token
+limit = 56 # int | Use this parameter to limit account's periodic payment order results (optional)
+
+    try:
+        # Get account payments detail
+        api_response = api_instance.get_account_periodic_payments_using_get(account_id, consent, limit=limit)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AccountsApi->get_account_periodic_payments_using_get: %s\n" % e)
 ```
 
 ### Parameters
@@ -124,8 +212,16 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json;charset=UTF-8
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -135,33 +231,73 @@ Name | Type | Description  | Notes
 Get account scheduled payments
 
 ### Example
+
+* Basic Authentication (basicAuth):
 ```python
 from __future__ import print_function
 import time
 import yapily
 from yapily.rest import ApiException
 from pprint import pprint
-
-# Configure HTTP basic authorization: basicAuth
 configuration = yapily.Configuration()
+# Configure HTTP basic authorization: basicAuth
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
-# Configure OAuth2 access token for authorization: tokenAuth
 configuration = yapily.Configuration()
+# Configure OAuth2 access token for authorization: tokenAuth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
-api_instance = yapily.AccountsApi(yapily.ApiClient(configuration))
-account_id = 'account_id_example' # str | accountId
+# Defining host is optional and default to https://api.yapily.com
+configuration.host = "https://api.yapily.com"
+
+# Enter a context with an instance of the API client
+with yapily.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = yapily.AccountsApi(api_client)
+    account_id = 'account_id_example' # str | accountId
 consent = 'consent_example' # str | Consent Token
 limit = 56 # int | Use this parameter to limit account's scheduled payment results (optional)
 
-try:
-    # Get account scheduled payments
-    api_response = api_instance.get_account_scheduled_payments_using_get(account_id, consent, limit=limit)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AccountsApi->get_account_scheduled_payments_using_get: %s\n" % e)
+    try:
+        # Get account scheduled payments
+        api_response = api_instance.get_account_scheduled_payments_using_get(account_id, consent, limit=limit)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AccountsApi->get_account_scheduled_payments_using_get: %s\n" % e)
+```
+
+* OAuth Authentication (tokenAuth):
+```python
+from __future__ import print_function
+import time
+import yapily
+from yapily.rest import ApiException
+from pprint import pprint
+configuration = yapily.Configuration()
+# Configure HTTP basic authorization: basicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = yapily.Configuration()
+# Configure OAuth2 access token for authorization: tokenAuth
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Defining host is optional and default to https://api.yapily.com
+configuration.host = "https://api.yapily.com"
+
+# Enter a context with an instance of the API client
+with yapily.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = yapily.AccountsApi(api_client)
+    account_id = 'account_id_example' # str | accountId
+consent = 'consent_example' # str | Consent Token
+limit = 56 # int | Use this parameter to limit account's scheduled payment results (optional)
+
+    try:
+        # Get account scheduled payments
+        api_response = api_instance.get_account_scheduled_payments_using_get(account_id, consent, limit=limit)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AccountsApi->get_account_scheduled_payments_using_get: %s\n" % e)
 ```
 
 ### Parameters
@@ -182,8 +318,16 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json;charset=UTF-8
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -193,32 +337,71 @@ Name | Type | Description  | Notes
 Get account
 
 ### Example
+
+* Basic Authentication (basicAuth):
 ```python
 from __future__ import print_function
 import time
 import yapily
 from yapily.rest import ApiException
 from pprint import pprint
-
-# Configure HTTP basic authorization: basicAuth
 configuration = yapily.Configuration()
+# Configure HTTP basic authorization: basicAuth
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
-# Configure OAuth2 access token for authorization: tokenAuth
 configuration = yapily.Configuration()
+# Configure OAuth2 access token for authorization: tokenAuth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
-api_instance = yapily.AccountsApi(yapily.ApiClient(configuration))
-consent = 'consent_example' # str | Consent Token
+# Defining host is optional and default to https://api.yapily.com
+configuration.host = "https://api.yapily.com"
+
+# Enter a context with an instance of the API client
+with yapily.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = yapily.AccountsApi(api_client)
+    consent = 'consent_example' # str | Consent Token
 account_id = 'account_id_example' # str | accountId
 
-try:
-    # Get account
-    api_response = api_instance.get_account_using_get(consent, account_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AccountsApi->get_account_using_get: %s\n" % e)
+    try:
+        # Get account
+        api_response = api_instance.get_account_using_get(consent, account_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AccountsApi->get_account_using_get: %s\n" % e)
+```
+
+* OAuth Authentication (tokenAuth):
+```python
+from __future__ import print_function
+import time
+import yapily
+from yapily.rest import ApiException
+from pprint import pprint
+configuration = yapily.Configuration()
+# Configure HTTP basic authorization: basicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = yapily.Configuration()
+# Configure OAuth2 access token for authorization: tokenAuth
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Defining host is optional and default to https://api.yapily.com
+configuration.host = "https://api.yapily.com"
+
+# Enter a context with an instance of the API client
+with yapily.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = yapily.AccountsApi(api_client)
+    consent = 'consent_example' # str | Consent Token
+account_id = 'account_id_example' # str | accountId
+
+    try:
+        # Get account
+        api_response = api_instance.get_account_using_get(consent, account_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AccountsApi->get_account_using_get: %s\n" % e)
 ```
 
 ### Parameters
@@ -238,8 +421,16 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json;charset=UTF-8
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -249,31 +440,69 @@ Name | Type | Description  | Notes
 Get accounts
 
 ### Example
+
+* Basic Authentication (basicAuth):
 ```python
 from __future__ import print_function
 import time
 import yapily
 from yapily.rest import ApiException
 from pprint import pprint
-
-# Configure HTTP basic authorization: basicAuth
 configuration = yapily.Configuration()
+# Configure HTTP basic authorization: basicAuth
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
-# Configure OAuth2 access token for authorization: tokenAuth
 configuration = yapily.Configuration()
+# Configure OAuth2 access token for authorization: tokenAuth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
-api_instance = yapily.AccountsApi(yapily.ApiClient(configuration))
-consent = 'consent_example' # str | Consent Token
+# Defining host is optional and default to https://api.yapily.com
+configuration.host = "https://api.yapily.com"
 
-try:
-    # Get accounts
-    api_response = api_instance.get_accounts_using_get(consent)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AccountsApi->get_accounts_using_get: %s\n" % e)
+# Enter a context with an instance of the API client
+with yapily.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = yapily.AccountsApi(api_client)
+    consent = 'consent_example' # str | Consent Token
+
+    try:
+        # Get accounts
+        api_response = api_instance.get_accounts_using_get(consent)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AccountsApi->get_accounts_using_get: %s\n" % e)
+```
+
+* OAuth Authentication (tokenAuth):
+```python
+from __future__ import print_function
+import time
+import yapily
+from yapily.rest import ApiException
+from pprint import pprint
+configuration = yapily.Configuration()
+# Configure HTTP basic authorization: basicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = yapily.Configuration()
+# Configure OAuth2 access token for authorization: tokenAuth
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Defining host is optional and default to https://api.yapily.com
+configuration.host = "https://api.yapily.com"
+
+# Enter a context with an instance of the API client
+with yapily.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = yapily.AccountsApi(api_client)
+    consent = 'consent_example' # str | Consent Token
+
+    try:
+        # Get accounts
+        api_response = api_instance.get_accounts_using_get(consent)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AccountsApi->get_accounts_using_get: %s\n" % e)
 ```
 
 ### Parameters
@@ -292,8 +521,16 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json;charset=UTF-8
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -303,31 +540,69 @@ Name | Type | Description  | Notes
 Initiate a new account request for user to authorize
 
 ### Example
+
+* Basic Authentication (basicAuth):
 ```python
 from __future__ import print_function
 import time
 import yapily
 from yapily.rest import ApiException
 from pprint import pprint
-
-# Configure HTTP basic authorization: basicAuth
 configuration = yapily.Configuration()
+# Configure HTTP basic authorization: basicAuth
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
-# Configure OAuth2 access token for authorization: tokenAuth
 configuration = yapily.Configuration()
+# Configure OAuth2 access token for authorization: tokenAuth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
-api_instance = yapily.AccountsApi(yapily.ApiClient(configuration))
-account_auth_request = yapily.AccountAuthorisationRequest() # AccountAuthorisationRequest | accountAuthRequest
+# Defining host is optional and default to https://api.yapily.com
+configuration.host = "https://api.yapily.com"
 
-try:
-    # Initiate a new account request for user to authorize
-    api_response = api_instance.initiate_account_request_using_post(account_auth_request)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AccountsApi->initiate_account_request_using_post: %s\n" % e)
+# Enter a context with an instance of the API client
+with yapily.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = yapily.AccountsApi(api_client)
+    account_auth_request = yapily.AccountAuthorisationRequest() # AccountAuthorisationRequest | accountAuthRequest
+
+    try:
+        # Initiate a new account request for user to authorize
+        api_response = api_instance.initiate_account_request_using_post(account_auth_request)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AccountsApi->initiate_account_request_using_post: %s\n" % e)
+```
+
+* OAuth Authentication (tokenAuth):
+```python
+from __future__ import print_function
+import time
+import yapily
+from yapily.rest import ApiException
+from pprint import pprint
+configuration = yapily.Configuration()
+# Configure HTTP basic authorization: basicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = yapily.Configuration()
+# Configure OAuth2 access token for authorization: tokenAuth
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Defining host is optional and default to https://api.yapily.com
+configuration.host = "https://api.yapily.com"
+
+# Enter a context with an instance of the API client
+with yapily.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = yapily.AccountsApi(api_client)
+    account_auth_request = yapily.AccountAuthorisationRequest() # AccountAuthorisationRequest | accountAuthRequest
+
+    try:
+        # Initiate a new account request for user to authorize
+        api_response = api_instance.initiate_account_request_using_post(account_auth_request)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AccountsApi->initiate_account_request_using_post: %s\n" % e)
 ```
 
 ### Parameters
@@ -349,6 +624,15 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json;charset=UTF-8
  - **Accept**: application/json;charset=UTF-8
 
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**201** | Created |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **re_authorise_account_using_patch**
@@ -357,31 +641,69 @@ Name | Type | Description  | Notes
 Re-authorize account request
 
 ### Example
+
+* Basic Authentication (basicAuth):
 ```python
 from __future__ import print_function
 import time
 import yapily
 from yapily.rest import ApiException
 from pprint import pprint
-
-# Configure HTTP basic authorization: basicAuth
 configuration = yapily.Configuration()
+# Configure HTTP basic authorization: basicAuth
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
-# Configure OAuth2 access token for authorization: tokenAuth
 configuration = yapily.Configuration()
+# Configure OAuth2 access token for authorization: tokenAuth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# create an instance of the API class
-api_instance = yapily.AccountsApi(yapily.ApiClient(configuration))
-consent = 'consent_example' # str | Consent Token
+# Defining host is optional and default to https://api.yapily.com
+configuration.host = "https://api.yapily.com"
 
-try:
-    # Re-authorize account request
-    api_response = api_instance.re_authorise_account_using_patch(consent)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AccountsApi->re_authorise_account_using_patch: %s\n" % e)
+# Enter a context with an instance of the API client
+with yapily.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = yapily.AccountsApi(api_client)
+    consent = 'consent_example' # str | Consent Token
+
+    try:
+        # Re-authorize account request
+        api_response = api_instance.re_authorise_account_using_patch(consent)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AccountsApi->re_authorise_account_using_patch: %s\n" % e)
+```
+
+* OAuth Authentication (tokenAuth):
+```python
+from __future__ import print_function
+import time
+import yapily
+from yapily.rest import ApiException
+from pprint import pprint
+configuration = yapily.Configuration()
+# Configure HTTP basic authorization: basicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = yapily.Configuration()
+# Configure OAuth2 access token for authorization: tokenAuth
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Defining host is optional and default to https://api.yapily.com
+configuration.host = "https://api.yapily.com"
+
+# Enter a context with an instance of the API client
+with yapily.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = yapily.AccountsApi(api_client)
+    consent = 'consent_example' # str | Consent Token
+
+    try:
+        # Re-authorize account request
+        api_response = api_instance.re_authorise_account_using_patch(consent)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AccountsApi->re_authorise_account_using_patch: %s\n" % e)
 ```
 
 ### Parameters
@@ -400,8 +722,16 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json;charset=UTF-8
+ - **Content-Type**: Not defined
  - **Accept**: application/json;charset=UTF-8
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**204** | No Content |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

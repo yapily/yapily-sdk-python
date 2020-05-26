@@ -1,5 +1,6 @@
 # InlineResponse2001ATM
 
+ATM information.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

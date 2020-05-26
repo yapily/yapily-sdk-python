@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**body** | **object** |  | [optional] 
+**body** | [**object**](.md) |  | [optional] 
 **status_code** | **str** |  | [optional] 
 **status_code_value** | **int** |  | [optional] 
 

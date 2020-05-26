@@ -1,5 +1,6 @@
 # GeoLocation1
 
+Geographic location of the ATM specified by geographic coordinates or UTM coordinates.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -16,22 +16,29 @@ def main():
     apiClient = ApiClient(configuration)
 
     user_api = ApplicationUsersApi(apiClient)
-    user_api.add_user_using_post(new_application_user())
+    app_user_id = "A"
+    
+    print("\nCreated User with application user Id '" + app_user_id + "':")
+    user = user_api.add_user_using_post(new_application_user(app_user_id))
+    print(user)
 
-    print("Created User")
-
-    application_users = user_api.get_users_using_get()
-
+    print("\nGetting all users with the application user id: '" + app_user_id + "':")
+    application_users = user_api.get_users_using_get(
+        filter_application_user_id=[app_user_id]
+    )
     print(application_users)
 
-    user_api.delete_user_using_delete(application_users[-1]._uuid)
+    print("\nDeleting the user with application user id '" + app_user_id + "'")
+    user_api.delete_user_using_delete(user._uuid)
 
-    for user in user_api.get_users_using_get():
+    for user in user_api.get_users_using_get(filter_application_user_id=[app_user_id]):
         print(user._uuid)
 
 
-def new_application_user():
-    application_user = NewApplicationUser(str(uuid.uuid4()))
+def new_application_user(application_user_uuid):
+    application_user = NewApplicationUser(
+        application_user_id=application_user_uuid
+    )
     return application_user
 
 

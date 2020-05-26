@@ -1,5 +1,6 @@
 # Overdraft
 
+Borrowing details
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

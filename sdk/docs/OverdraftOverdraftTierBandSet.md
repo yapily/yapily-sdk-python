@@ -1,5 +1,6 @@
 # OverdraftOverdraftTierBandSet
 
+Tier band set details
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

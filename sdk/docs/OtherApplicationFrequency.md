@@ -1,5 +1,6 @@
 # OtherApplicationFrequency
 
+Other application frequencies that are not available in the standard code list
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

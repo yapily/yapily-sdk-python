@@ -1,5 +1,6 @@
 # CreditInterest
 
+Details about the interest that may be payable to the PCA account holders
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

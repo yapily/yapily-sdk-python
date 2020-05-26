@@ -1,5 +1,6 @@
 # EligibilityOtherEligibility
 
+Other eligibility which is not covered by the main eligibility of the PCA product
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

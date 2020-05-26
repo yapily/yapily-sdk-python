@@ -1,5 +1,6 @@
 # OtherResidencyType
 
+Other residency type which is not available in standard code list.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

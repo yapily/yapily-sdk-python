@@ -1,5 +1,6 @@
 # Site
 
+Used by a Financial Institution internally to identify the location of an ATM.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

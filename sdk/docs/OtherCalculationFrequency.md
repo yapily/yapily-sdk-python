@@ -1,5 +1,6 @@
 # OtherCalculationFrequency
 
+Other calculation frequency which is not available in the standard code set.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

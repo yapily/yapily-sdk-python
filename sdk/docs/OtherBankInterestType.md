@@ -1,5 +1,6 @@
 # OtherBankInterestType
 
+Other interest rate types which are not available in the standard code list
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

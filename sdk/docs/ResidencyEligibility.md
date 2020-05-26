@@ -1,5 +1,6 @@
 # ResidencyEligibility
 
+Countries in which an accountholder can reside and, therefore, be eligible to open an account
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

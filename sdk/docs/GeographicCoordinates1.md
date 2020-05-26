@@ -1,5 +1,6 @@
 # GeographicCoordinates1
 
+Location on the earth specified by two numbers representing vertical and horizontal position.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

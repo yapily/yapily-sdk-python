@@ -1,5 +1,6 @@
 # ATMOpenDataBrand
 
+Brand of the Acquirer of transactions captured by the ATM
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

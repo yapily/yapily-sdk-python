@@ -1,5 +1,6 @@
 # OtherFeeType
 
+Other Fee type which is not available in the standard code set
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

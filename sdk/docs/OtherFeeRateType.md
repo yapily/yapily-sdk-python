@@ -1,5 +1,6 @@
 # OtherFeeRateType
 
+Other fee rate type code which is not available in the standard code set
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

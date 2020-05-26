@@ -13,35 +13,41 @@ Method | HTTP request | Description
 Retrieve Access Token
 
 ### Example
+
+* Basic Authentication (basicAuth):
 ```python
 from __future__ import print_function
 import time
 import yapily
 from yapily.rest import ApiException
 from pprint import pprint
-
-# Configure HTTP basic authorization: basicAuth
 configuration = yapily.Configuration()
+# Configure HTTP basic authorization: basicAuth
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
-# create an instance of the API class
-api_instance = yapily.OAuthApi(yapily.ApiClient(configuration))
-grant_type = 'client_credentials' # str | Grant type (default to client_credentials)
+# Defining host is optional and default to https://api.yapily.com
+configuration.host = "https://api.yapily.com"
 
-try:
-    # Retrieve Access Token
-    api_response = api_instance.oauth_token(grant_type)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling OAuthApi->oauth_token: %s\n" % e)
+# Enter a context with an instance of the API client
+with yapily.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = yapily.OAuthApi(api_client)
+    grant_type = 'client_credentials' # str | Grant type (default to 'client_credentials')
+
+    try:
+        # Retrieve Access Token
+        api_response = api_instance.oauth_token(grant_type)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling OAuthApi->oauth_token: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **grant_type** | **str**| Grant type | [default to client_credentials]
+ **grant_type** | **str**| Grant type | [default to &#39;client_credentials&#39;]
 
 ### Return type
 
@@ -55,6 +61,11 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/x-www-form-urlencoded
  - **Accept**: application/json, application/xml
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

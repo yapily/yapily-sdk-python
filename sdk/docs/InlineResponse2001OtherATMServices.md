@@ -1,5 +1,6 @@
 # InlineResponse2001OtherATMServices
 
+Enter a new code , name and description for any other ATM Service
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

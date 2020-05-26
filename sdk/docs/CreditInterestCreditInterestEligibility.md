@@ -1,5 +1,6 @@
 # CreditInterestCreditInterestEligibility
 
+Eligibility for credit interest
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

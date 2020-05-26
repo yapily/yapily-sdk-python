@@ -4,9 +4,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **absolute** | **bool** |  | [optional] 
-**absolute_file** | [**file**](file.md) |  | [optional] 
+**absolute_file** | **file** |  | [optional] 
 **absolute_path** | **str** |  | [optional] 
-**canonical_file** | [**file**](file.md) |  | [optional] 
+**canonical_file** | **file** |  | [optional] 
 **canonical_path** | **str** |  | [optional] 
 **directory** | **bool** |  | [optional] 
 **file** | **bool** |  | [optional] 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **hidden** | **bool** |  | [optional] 
 **name** | **str** |  | [optional] 
 **parent** | **str** |  | [optional] 
-**parent_file** | [**file**](file.md) |  | [optional] 
+**parent_file** | **file** |  | [optional] 
 **path** | **str** |  | [optional] 
 **total_space** | **int** |  | [optional] 
 **usable_space** | **int** |  | [optional] 

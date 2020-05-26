@@ -1,5 +1,6 @@
 # OverdraftOtherFeeType
 
+Other fee type code which is not available in the standard code set
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------

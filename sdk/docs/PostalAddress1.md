@@ -1,5 +1,6 @@
 # PostalAddress1
 
+Information that locates and identifies a specific address, as defined by postal services or in free format text.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
