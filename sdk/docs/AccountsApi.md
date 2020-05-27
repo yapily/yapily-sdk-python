@@ -535,7 +535,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **initiate_account_request_using_post**
-> ApiResponseOfAuthorisationRequestResponse initiate_account_request_using_post(account_auth_request)
+> ApiResponseOfAuthorisationRequestResponse initiate_account_request_using_post(account_auth_request, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
 
 Initiate a new account request for user to authorize
 
@@ -564,10 +564,13 @@ with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.AccountsApi(api_client)
     account_auth_request = yapily.AccountAuthorisationRequest() # AccountAuthorisationRequest | accountAuthRequest
+psu_id = 'psu_id_example' # str | PSU ID (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
+psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
 
     try:
         # Initiate a new account request for user to authorize
-        api_response = api_instance.initiate_account_request_using_post(account_auth_request)
+        api_response = api_instance.initiate_account_request_using_post(account_auth_request, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling AccountsApi->initiate_account_request_using_post: %s\n" % e)
@@ -596,10 +599,13 @@ with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.AccountsApi(api_client)
     account_auth_request = yapily.AccountAuthorisationRequest() # AccountAuthorisationRequest | accountAuthRequest
+psu_id = 'psu_id_example' # str | PSU ID (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
+psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
 
     try:
         # Initiate a new account request for user to authorize
-        api_response = api_instance.initiate_account_request_using_post(account_auth_request)
+        api_response = api_instance.initiate_account_request_using_post(account_auth_request, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling AccountsApi->initiate_account_request_using_post: %s\n" % e)
@@ -610,6 +616,9 @@ with yapily.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_auth_request** | [**AccountAuthorisationRequest**](AccountAuthorisationRequest.md)| accountAuthRequest | 
+ **psu_id** | **str**| PSU ID | [optional] 
+ **psu_corporate_id** | **str**| PSU ID CORPORATE | [optional] 
+ **psu_ip_address** | **str**| PSU IP ADDRESS | [optional] 
 
 ### Return type
 
@@ -636,7 +645,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **re_authorise_account_using_patch**
-> ApiResponseOfAuthorisationRequestResponse re_authorise_account_using_patch(consent)
+> ApiResponseOfAuthorisationRequestResponse re_authorise_account_using_patch(consent, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
 
 Re-authorize account request
 
@@ -665,10 +674,13 @@ with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.AccountsApi(api_client)
     consent = 'consent_example' # str | Consent Token
+psu_id = 'psu_id_example' # str | PSU ID (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
+psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
 
     try:
         # Re-authorize account request
-        api_response = api_instance.re_authorise_account_using_patch(consent)
+        api_response = api_instance.re_authorise_account_using_patch(consent, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling AccountsApi->re_authorise_account_using_patch: %s\n" % e)
@@ -697,10 +709,13 @@ with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.AccountsApi(api_client)
     consent = 'consent_example' # str | Consent Token
+psu_id = 'psu_id_example' # str | PSU ID (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
+psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
 
     try:
         # Re-authorize account request
-        api_response = api_instance.re_authorise_account_using_patch(consent)
+        api_response = api_instance.re_authorise_account_using_patch(consent, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling AccountsApi->re_authorise_account_using_patch: %s\n" % e)
@@ -711,6 +726,9 @@ with yapily.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **consent** | **str**| Consent Token | 
+ **psu_id** | **str**| PSU ID | [optional] 
+ **psu_corporate_id** | **str**| PSU ID CORPORATE | [optional] 
+ **psu_ip_address** | **str**| PSU IP ADDRESS | [optional] 
 
 ### Return type
 
