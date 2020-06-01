@@ -1,6 +1,6 @@
 # yapily.OAuthApi
 
-All URIs are relative to *https://api.yapily.com*
+All URIs are relative to *https://api.yapily.com:443*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -26,8 +26,8 @@ configuration = yapily.Configuration()
 configuration.username = 'YOUR_USERNAME'
 configuration.password = 'YOUR_PASSWORD'
 
-# Defining host is optional and default to https://api.yapily.com
-configuration.host = "https://api.yapily.com"
+# Defining host is optional and default to https://api.yapily.com:443
+configuration.host = "https://api.yapily.com:443"
 
 # Enter a context with an instance of the API client
 with yapily.ApiClient(configuration) as api_client:

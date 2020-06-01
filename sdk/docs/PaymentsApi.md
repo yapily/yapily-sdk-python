@@ -1,6 +1,6 @@
 # yapily.PaymentsApi
 
-All URIs are relative to *https://api.yapily.com*
+All URIs are relative to *https://api.yapily.com:443*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **create_bulk_payment_authorisation_using_post**
-> ApiResponseOfPaymentAuthorisationRequestResponse create_bulk_payment_authorisation_using_post(payment_auth_request)
+> ApiResponseOfPaymentAuthorisationRequestResponse create_bulk_payment_authorisation_using_post(payment_auth_request, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
 
 Initiate bulk payment for user to authorise
 
@@ -36,18 +36,21 @@ configuration = yapily.Configuration()
 # Configure OAuth2 access token for authorization: tokenAuth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://api.yapily.com
-configuration.host = "https://api.yapily.com"
+# Defining host is optional and default to https://api.yapily.com:443
+configuration.host = "https://api.yapily.com:443"
 
 # Enter a context with an instance of the API client
 with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.PaymentsApi(api_client)
     payment_auth_request = yapily.BulkPaymentAuthorisationRequest() # BulkPaymentAuthorisationRequest | paymentAuthRequest
+psu_id = 'psu_id_example' # str | PSU ID (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
+psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
 
     try:
         # Initiate bulk payment for user to authorise
-        api_response = api_instance.create_bulk_payment_authorisation_using_post(payment_auth_request)
+        api_response = api_instance.create_bulk_payment_authorisation_using_post(payment_auth_request, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling PaymentsApi->create_bulk_payment_authorisation_using_post: %s\n" % e)
@@ -68,18 +71,21 @@ configuration = yapily.Configuration()
 # Configure OAuth2 access token for authorization: tokenAuth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://api.yapily.com
-configuration.host = "https://api.yapily.com"
+# Defining host is optional and default to https://api.yapily.com:443
+configuration.host = "https://api.yapily.com:443"
 
 # Enter a context with an instance of the API client
 with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.PaymentsApi(api_client)
     payment_auth_request = yapily.BulkPaymentAuthorisationRequest() # BulkPaymentAuthorisationRequest | paymentAuthRequest
+psu_id = 'psu_id_example' # str | PSU ID (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
+psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
 
     try:
         # Initiate bulk payment for user to authorise
-        api_response = api_instance.create_bulk_payment_authorisation_using_post(payment_auth_request)
+        api_response = api_instance.create_bulk_payment_authorisation_using_post(payment_auth_request, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling PaymentsApi->create_bulk_payment_authorisation_using_post: %s\n" % e)
@@ -90,6 +96,9 @@ with yapily.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **payment_auth_request** | [**BulkPaymentAuthorisationRequest**](BulkPaymentAuthorisationRequest.md)| paymentAuthRequest | 
+ **psu_id** | **str**| PSU ID | [optional] 
+ **psu_corporate_id** | **str**| PSU ID CORPORATE | [optional] 
+ **psu_ip_address** | **str**| PSU IP ADDRESS | [optional] 
 
 ### Return type
 
@@ -137,8 +146,8 @@ configuration = yapily.Configuration()
 # Configure OAuth2 access token for authorization: tokenAuth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://api.yapily.com
-configuration.host = "https://api.yapily.com"
+# Defining host is optional and default to https://api.yapily.com:443
+configuration.host = "https://api.yapily.com:443"
 
 # Enter a context with an instance of the API client
 with yapily.ApiClient(configuration) as api_client:
@@ -170,8 +179,8 @@ configuration = yapily.Configuration()
 # Configure OAuth2 access token for authorization: tokenAuth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://api.yapily.com
-configuration.host = "https://api.yapily.com"
+# Defining host is optional and default to https://api.yapily.com:443
+configuration.host = "https://api.yapily.com:443"
 
 # Enter a context with an instance of the API client
 with yapily.ApiClient(configuration) as api_client:
@@ -220,7 +229,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_payment_authorisation_using_post**
-> ApiResponseOfPaymentAuthorisationRequestResponse create_payment_authorisation_using_post(payment_auth_request)
+> ApiResponseOfPaymentAuthorisationRequestResponse create_payment_authorisation_using_post(payment_auth_request, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
 
 Initiate a payment for user to authorise
 
@@ -241,18 +250,21 @@ configuration = yapily.Configuration()
 # Configure OAuth2 access token for authorization: tokenAuth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://api.yapily.com
-configuration.host = "https://api.yapily.com"
+# Defining host is optional and default to https://api.yapily.com:443
+configuration.host = "https://api.yapily.com:443"
 
 # Enter a context with an instance of the API client
 with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.PaymentsApi(api_client)
     payment_auth_request = yapily.PaymentAuthorisationRequest() # PaymentAuthorisationRequest | paymentAuthRequest
+psu_id = 'psu_id_example' # str | PSU ID (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
+psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
 
     try:
         # Initiate a payment for user to authorise
-        api_response = api_instance.create_payment_authorisation_using_post(payment_auth_request)
+        api_response = api_instance.create_payment_authorisation_using_post(payment_auth_request, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling PaymentsApi->create_payment_authorisation_using_post: %s\n" % e)
@@ -273,18 +285,21 @@ configuration = yapily.Configuration()
 # Configure OAuth2 access token for authorization: tokenAuth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://api.yapily.com
-configuration.host = "https://api.yapily.com"
+# Defining host is optional and default to https://api.yapily.com:443
+configuration.host = "https://api.yapily.com:443"
 
 # Enter a context with an instance of the API client
 with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.PaymentsApi(api_client)
     payment_auth_request = yapily.PaymentAuthorisationRequest() # PaymentAuthorisationRequest | paymentAuthRequest
+psu_id = 'psu_id_example' # str | PSU ID (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
+psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
 
     try:
         # Initiate a payment for user to authorise
-        api_response = api_instance.create_payment_authorisation_using_post(payment_auth_request)
+        api_response = api_instance.create_payment_authorisation_using_post(payment_auth_request, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling PaymentsApi->create_payment_authorisation_using_post: %s\n" % e)
@@ -295,6 +310,9 @@ with yapily.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **payment_auth_request** | [**PaymentAuthorisationRequest**](PaymentAuthorisationRequest.md)| paymentAuthRequest | 
+ **psu_id** | **str**| PSU ID | [optional] 
+ **psu_corporate_id** | **str**| PSU ID CORPORATE | [optional] 
+ **psu_ip_address** | **str**| PSU IP ADDRESS | [optional] 
 
 ### Return type
 
@@ -321,7 +339,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_payment_authorisation_with_sort_code_using_post**
-> ApiResponseOfAuthorisationRequestResponse create_payment_authorisation_with_sort_code_using_post(payment_auth_request)
+> ApiResponseOfAuthorisationRequestResponse create_payment_authorisation_with_sort_code_using_post(payment_auth_request, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
 
 Initiate a new single payment for user to authorise
 
@@ -342,18 +360,21 @@ configuration = yapily.Configuration()
 # Configure OAuth2 access token for authorization: tokenAuth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://api.yapily.com
-configuration.host = "https://api.yapily.com"
+# Defining host is optional and default to https://api.yapily.com:443
+configuration.host = "https://api.yapily.com:443"
 
 # Enter a context with an instance of the API client
 with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.PaymentsApi(api_client)
     payment_auth_request = yapily.SortCodePaymentAuthRequest() # SortCodePaymentAuthRequest | paymentAuthRequest
+psu_id = 'psu_id_example' # str | PSU ID (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
+psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
 
     try:
         # Initiate a new single payment for user to authorise
-        api_response = api_instance.create_payment_authorisation_with_sort_code_using_post(payment_auth_request)
+        api_response = api_instance.create_payment_authorisation_with_sort_code_using_post(payment_auth_request, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling PaymentsApi->create_payment_authorisation_with_sort_code_using_post: %s\n" % e)
@@ -374,18 +395,21 @@ configuration = yapily.Configuration()
 # Configure OAuth2 access token for authorization: tokenAuth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://api.yapily.com
-configuration.host = "https://api.yapily.com"
+# Defining host is optional and default to https://api.yapily.com:443
+configuration.host = "https://api.yapily.com:443"
 
 # Enter a context with an instance of the API client
 with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.PaymentsApi(api_client)
     payment_auth_request = yapily.SortCodePaymentAuthRequest() # SortCodePaymentAuthRequest | paymentAuthRequest
+psu_id = 'psu_id_example' # str | PSU ID (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
+psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
 
     try:
         # Initiate a new single payment for user to authorise
-        api_response = api_instance.create_payment_authorisation_with_sort_code_using_post(payment_auth_request)
+        api_response = api_instance.create_payment_authorisation_with_sort_code_using_post(payment_auth_request, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling PaymentsApi->create_payment_authorisation_with_sort_code_using_post: %s\n" % e)
@@ -396,6 +420,9 @@ with yapily.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **payment_auth_request** | [**SortCodePaymentAuthRequest**](SortCodePaymentAuthRequest.md)| paymentAuthRequest | 
+ **psu_id** | **str**| PSU ID | [optional] 
+ **psu_corporate_id** | **str**| PSU ID CORPORATE | [optional] 
+ **psu_ip_address** | **str**| PSU IP ADDRESS | [optional] 
 
 ### Return type
 
@@ -443,8 +470,8 @@ configuration = yapily.Configuration()
 # Configure OAuth2 access token for authorization: tokenAuth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://api.yapily.com
-configuration.host = "https://api.yapily.com"
+# Defining host is optional and default to https://api.yapily.com:443
+configuration.host = "https://api.yapily.com:443"
 
 # Enter a context with an instance of the API client
 with yapily.ApiClient(configuration) as api_client:
@@ -476,8 +503,8 @@ configuration = yapily.Configuration()
 # Configure OAuth2 access token for authorization: tokenAuth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://api.yapily.com
-configuration.host = "https://api.yapily.com"
+# Defining host is optional and default to https://api.yapily.com:443
+configuration.host = "https://api.yapily.com:443"
 
 # Enter a context with an instance of the API client
 with yapily.ApiClient(configuration) as api_client:
@@ -547,8 +574,8 @@ configuration = yapily.Configuration()
 # Configure OAuth2 access token for authorization: tokenAuth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://api.yapily.com
-configuration.host = "https://api.yapily.com"
+# Defining host is optional and default to https://api.yapily.com:443
+configuration.host = "https://api.yapily.com:443"
 
 # Enter a context with an instance of the API client
 with yapily.ApiClient(configuration) as api_client:
@@ -580,8 +607,8 @@ configuration = yapily.Configuration()
 # Configure OAuth2 access token for authorization: tokenAuth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://api.yapily.com
-configuration.host = "https://api.yapily.com"
+# Defining host is optional and default to https://api.yapily.com:443
+configuration.host = "https://api.yapily.com:443"
 
 # Enter a context with an instance of the API client
 with yapily.ApiClient(configuration) as api_client:
@@ -651,8 +678,8 @@ configuration = yapily.Configuration()
 # Configure OAuth2 access token for authorization: tokenAuth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://api.yapily.com
-configuration.host = "https://api.yapily.com"
+# Defining host is optional and default to https://api.yapily.com:443
+configuration.host = "https://api.yapily.com:443"
 
 # Enter a context with an instance of the API client
 with yapily.ApiClient(configuration) as api_client:
@@ -684,8 +711,8 @@ configuration = yapily.Configuration()
 # Configure OAuth2 access token for authorization: tokenAuth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://api.yapily.com
-configuration.host = "https://api.yapily.com"
+# Defining host is optional and default to https://api.yapily.com:443
+configuration.host = "https://api.yapily.com:443"
 
 # Enter a context with an instance of the API client
 with yapily.ApiClient(configuration) as api_client:
@@ -754,8 +781,8 @@ configuration = yapily.Configuration()
 # Configure OAuth2 access token for authorization: tokenAuth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://api.yapily.com
-configuration.host = "https://api.yapily.com"
+# Defining host is optional and default to https://api.yapily.com:443
+configuration.host = "https://api.yapily.com:443"
 
 # Enter a context with an instance of the API client
 with yapily.ApiClient(configuration) as api_client:
@@ -787,8 +814,8 @@ configuration = yapily.Configuration()
 # Configure OAuth2 access token for authorization: tokenAuth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://api.yapily.com
-configuration.host = "https://api.yapily.com"
+# Defining host is optional and default to https://api.yapily.com:443
+configuration.host = "https://api.yapily.com:443"
 
 # Enter a context with an instance of the API client
 with yapily.ApiClient(configuration) as api_client:

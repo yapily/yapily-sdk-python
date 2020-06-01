@@ -1,6 +1,6 @@
 # yapily.ApplicationUsersApi
 
-All URIs are relative to *https://api.yapily.com*
+All URIs are relative to *https://api.yapily.com:443*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -35,8 +35,8 @@ configuration = yapily.Configuration()
 # Configure OAuth2 access token for authorization: tokenAuth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://api.yapily.com
-configuration.host = "https://api.yapily.com"
+# Defining host is optional and default to https://api.yapily.com:443
+configuration.host = "https://api.yapily.com:443"
 
 # Enter a context with an instance of the API client
 with yapily.ApiClient(configuration) as api_client:
@@ -67,8 +67,8 @@ configuration = yapily.Configuration()
 # Configure OAuth2 access token for authorization: tokenAuth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://api.yapily.com
-configuration.host = "https://api.yapily.com"
+# Defining host is optional and default to https://api.yapily.com:443
+configuration.host = "https://api.yapily.com:443"
 
 # Enter a context with an instance of the API client
 with yapily.ApiClient(configuration) as api_client:
@@ -136,8 +136,8 @@ configuration = yapily.Configuration()
 # Configure OAuth2 access token for authorization: tokenAuth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://api.yapily.com
-configuration.host = "https://api.yapily.com"
+# Defining host is optional and default to https://api.yapily.com:443
+configuration.host = "https://api.yapily.com:443"
 
 # Enter a context with an instance of the API client
 with yapily.ApiClient(configuration) as api_client:
@@ -168,8 +168,8 @@ configuration = yapily.Configuration()
 # Configure OAuth2 access token for authorization: tokenAuth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://api.yapily.com
-configuration.host = "https://api.yapily.com"
+# Defining host is optional and default to https://api.yapily.com:443
+configuration.host = "https://api.yapily.com:443"
 
 # Enter a context with an instance of the API client
 with yapily.ApiClient(configuration) as api_client:
@@ -236,8 +236,8 @@ configuration = yapily.Configuration()
 # Configure OAuth2 access token for authorization: tokenAuth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://api.yapily.com
-configuration.host = "https://api.yapily.com"
+# Defining host is optional and default to https://api.yapily.com:443
+configuration.host = "https://api.yapily.com:443"
 
 # Enter a context with an instance of the API client
 with yapily.ApiClient(configuration) as api_client:
@@ -268,8 +268,8 @@ configuration = yapily.Configuration()
 # Configure OAuth2 access token for authorization: tokenAuth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://api.yapily.com
-configuration.host = "https://api.yapily.com"
+# Defining host is optional and default to https://api.yapily.com:443
+configuration.host = "https://api.yapily.com:443"
 
 # Enter a context with an instance of the API client
 with yapily.ApiClient(configuration) as api_client:
@@ -336,8 +336,8 @@ configuration = yapily.Configuration()
 # Configure OAuth2 access token for authorization: tokenAuth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://api.yapily.com
-configuration.host = "https://api.yapily.com"
+# Defining host is optional and default to https://api.yapily.com:443
+configuration.host = "https://api.yapily.com:443"
 
 # Enter a context with an instance of the API client
 with yapily.ApiClient(configuration) as api_client:
@@ -367,8 +367,8 @@ configuration = yapily.Configuration()
 # Configure OAuth2 access token for authorization: tokenAuth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://api.yapily.com
-configuration.host = "https://api.yapily.com"
+# Defining host is optional and default to https://api.yapily.com:443
+configuration.host = "https://api.yapily.com:443"
 
 # Enter a context with an instance of the API client
 with yapily.ApiClient(configuration) as api_client:
@@ -431,8 +431,8 @@ configuration = yapily.Configuration()
 # Configure OAuth2 access token for authorization: tokenAuth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://api.yapily.com
-configuration.host = "https://api.yapily.com"
+# Defining host is optional and default to https://api.yapily.com:443
+configuration.host = "https://api.yapily.com:443"
 
 # Enter a context with an instance of the API client
 with yapily.ApiClient(configuration) as api_client:
@@ -463,8 +463,8 @@ configuration = yapily.Configuration()
 # Configure OAuth2 access token for authorization: tokenAuth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://api.yapily.com
-configuration.host = "https://api.yapily.com"
+# Defining host is optional and default to https://api.yapily.com:443
+configuration.host = "https://api.yapily.com:443"
 
 # Enter a context with an instance of the API client
 with yapily.ApiClient(configuration) as api_client:
@@ -531,8 +531,8 @@ configuration = yapily.Configuration()
 # Configure OAuth2 access token for authorization: tokenAuth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://api.yapily.com
-configuration.host = "https://api.yapily.com"
+# Defining host is optional and default to https://api.yapily.com:443
+configuration.host = "https://api.yapily.com:443"
 
 # Enter a context with an instance of the API client
 with yapily.ApiClient(configuration) as api_client:
@@ -563,8 +563,8 @@ configuration = yapily.Configuration()
 # Configure OAuth2 access token for authorization: tokenAuth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://api.yapily.com
-configuration.host = "https://api.yapily.com"
+# Defining host is optional and default to https://api.yapily.com:443
+configuration.host = "https://api.yapily.com:443"
 
 # Enter a context with an instance of the API client
 with yapily.ApiClient(configuration) as api_client:
@@ -631,8 +631,8 @@ configuration = yapily.Configuration()
 # Configure OAuth2 access token for authorization: tokenAuth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://api.yapily.com
-configuration.host = "https://api.yapily.com"
+# Defining host is optional and default to https://api.yapily.com:443
+configuration.host = "https://api.yapily.com:443"
 
 # Enter a context with an instance of the API client
 with yapily.ApiClient(configuration) as api_client:
@@ -663,8 +663,8 @@ configuration = yapily.Configuration()
 # Configure OAuth2 access token for authorization: tokenAuth
 configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
-# Defining host is optional and default to https://api.yapily.com
-configuration.host = "https://api.yapily.com"
+# Defining host is optional and default to https://api.yapily.com:443
+configuration.host = "https://api.yapily.com:443"
 
 # Enter a context with an instance of the API client
 with yapily.ApiClient(configuration) as api_client:
