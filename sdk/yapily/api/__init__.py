@@ -6,6 +6,7 @@ from __future__ import absolute_import
 from yapily.api.accounts_api import AccountsApi
 from yapily.api.application_users_api import ApplicationUsersApi
 from yapily.api.applications_api import ApplicationsApi
+from yapily.api.balances_api import BalancesApi
 from yapily.api.categories_api import CategoriesApi
 from yapily.api.consents_api import ConsentsApi
 from yapily.api.identity_api import IdentityApi
