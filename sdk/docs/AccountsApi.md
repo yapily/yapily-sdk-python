@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**get_accounts_using_get**](AccountsApi.md#get_accounts_using_get) | **GET** /accounts | Get accounts
 [**initiate_account_request_using_post**](AccountsApi.md#initiate_account_request_using_post) | **POST** /account-auth-requests | Initiate a new account request for user to authorize
 [**re_authorise_account_using_patch**](AccountsApi.md#re_authorise_account_using_patch) | **PATCH** /account-auth-requests | Re-authorize account request
+[**update_pre_authorise_account_consent_using_put**](AccountsApi.md#update_pre_authorise_account_consent_using_put) | **PUT** /account-auth-requests | Update pre authorize consent for user to authorise account
 
 
 # **get_account_direct_debits_using_get**
@@ -750,6 +751,119 @@ Name | Type | Description  | Notes
 **204** | No Content |  -  |
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_pre_authorise_account_consent_using_put**
+> ApiResponseOfAuthorisationRequestResponse update_pre_authorise_account_consent_using_put(consent, account_auth_request, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
+
+Update pre authorize consent for user to authorise account
+
+### Example
+
+* Basic Authentication (basicAuth):
+```python
+from __future__ import print_function
+import time
+import yapily
+from yapily.rest import ApiException
+from pprint import pprint
+configuration = yapily.Configuration()
+# Configure HTTP basic authorization: basicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = yapily.Configuration()
+# Configure OAuth2 access token for authorization: tokenAuth
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Defining host is optional and default to https://api.yapily.com:443
+configuration.host = "https://api.yapily.com:443"
+
+# Enter a context with an instance of the API client
+with yapily.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = yapily.AccountsApi(api_client)
+    consent = 'consent_example' # str | Consent Token
+account_auth_request = yapily.AccountAuthorisationRequest() # AccountAuthorisationRequest | accountAuthRequest
+psu_id = 'psu_id_example' # str | PSU ID (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
+psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
+
+    try:
+        # Update pre authorize consent for user to authorise account
+        api_response = api_instance.update_pre_authorise_account_consent_using_put(consent, account_auth_request, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AccountsApi->update_pre_authorise_account_consent_using_put: %s\n" % e)
+```
+
+* OAuth Authentication (tokenAuth):
+```python
+from __future__ import print_function
+import time
+import yapily
+from yapily.rest import ApiException
+from pprint import pprint
+configuration = yapily.Configuration()
+# Configure HTTP basic authorization: basicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = yapily.Configuration()
+# Configure OAuth2 access token for authorization: tokenAuth
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Defining host is optional and default to https://api.yapily.com:443
+configuration.host = "https://api.yapily.com:443"
+
+# Enter a context with an instance of the API client
+with yapily.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = yapily.AccountsApi(api_client)
+    consent = 'consent_example' # str | Consent Token
+account_auth_request = yapily.AccountAuthorisationRequest() # AccountAuthorisationRequest | accountAuthRequest
+psu_id = 'psu_id_example' # str | PSU ID (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
+psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
+
+    try:
+        # Update pre authorize consent for user to authorise account
+        api_response = api_instance.update_pre_authorise_account_consent_using_put(consent, account_auth_request, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling AccountsApi->update_pre_authorise_account_consent_using_put: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **consent** | **str**| Consent Token | 
+ **account_auth_request** | [**AccountAuthorisationRequest**](AccountAuthorisationRequest.md)| accountAuthRequest | 
+ **psu_id** | **str**| PSU ID | [optional] 
+ **psu_corporate_id** | **str**| PSU ID CORPORATE | [optional] 
+ **psu_ip_address** | **str**| PSU IP ADDRESS | [optional] 
+
+### Return type
+
+[**ApiResponseOfAuthorisationRequestResponse**](ApiResponseOfAuthorisationRequestResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=UTF-8
+ - **Accept**: application/json;charset=UTF-8
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**201** | Created |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**create_payment_with_sort_code_using_post**](PaymentsApi.md#create_payment_with_sort_code_using_post) | **POST** /payment-sortcode | Create a new single payment
 [**get_payment_status_using_get**](PaymentsApi.md#get_payment_status_using_get) | **GET** /payments/{paymentId} | Get status of a payment
 [**get_payments_using_get**](PaymentsApi.md#get_payments_using_get) | **GET** /payments/{paymentId}/details | Get payments detail
+[**update_payment_authorisation_using_put**](PaymentsApi.md#update_payment_authorisation_using_put) | **PUT** /payment-auth-requests | Update pre authorize consent for user to authorise payment
 
 
 # **create_bulk_payment_authorisation_using_post**
@@ -856,6 +857,119 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | OK |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_payment_authorisation_using_put**
+> ApiResponseOfPaymentAuthorisationRequestResponse update_payment_authorisation_using_put(consent, payment_auth_request, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
+
+Update pre authorize consent for user to authorise payment
+
+### Example
+
+* Basic Authentication (basicAuth):
+```python
+from __future__ import print_function
+import time
+import yapily
+from yapily.rest import ApiException
+from pprint import pprint
+configuration = yapily.Configuration()
+# Configure HTTP basic authorization: basicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = yapily.Configuration()
+# Configure OAuth2 access token for authorization: tokenAuth
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Defining host is optional and default to https://api.yapily.com:443
+configuration.host = "https://api.yapily.com:443"
+
+# Enter a context with an instance of the API client
+with yapily.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = yapily.PaymentsApi(api_client)
+    consent = 'consent_example' # str | Consent Token
+payment_auth_request = yapily.PaymentAuthorisationRequest() # PaymentAuthorisationRequest | paymentAuthRequest
+psu_id = 'psu_id_example' # str | PSU ID (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
+psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
+
+    try:
+        # Update pre authorize consent for user to authorise payment
+        api_response = api_instance.update_payment_authorisation_using_put(consent, payment_auth_request, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling PaymentsApi->update_payment_authorisation_using_put: %s\n" % e)
+```
+
+* OAuth Authentication (tokenAuth):
+```python
+from __future__ import print_function
+import time
+import yapily
+from yapily.rest import ApiException
+from pprint import pprint
+configuration = yapily.Configuration()
+# Configure HTTP basic authorization: basicAuth
+configuration.username = 'YOUR_USERNAME'
+configuration.password = 'YOUR_PASSWORD'
+configuration = yapily.Configuration()
+# Configure OAuth2 access token for authorization: tokenAuth
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# Defining host is optional and default to https://api.yapily.com:443
+configuration.host = "https://api.yapily.com:443"
+
+# Enter a context with an instance of the API client
+with yapily.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = yapily.PaymentsApi(api_client)
+    consent = 'consent_example' # str | Consent Token
+payment_auth_request = yapily.PaymentAuthorisationRequest() # PaymentAuthorisationRequest | paymentAuthRequest
+psu_id = 'psu_id_example' # str | PSU ID (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
+psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
+
+    try:
+        # Update pre authorize consent for user to authorise payment
+        api_response = api_instance.update_payment_authorisation_using_put(consent, payment_auth_request, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling PaymentsApi->update_payment_authorisation_using_put: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **consent** | **str**| Consent Token | 
+ **payment_auth_request** | [**PaymentAuthorisationRequest**](PaymentAuthorisationRequest.md)| paymentAuthRequest | 
+ **psu_id** | **str**| PSU ID | [optional] 
+ **psu_corporate_id** | **str**| PSU ID CORPORATE | [optional] 
+ **psu_ip_address** | **str**| PSU IP ADDRESS | [optional] 
+
+### Return type
+
+[**ApiResponseOfPaymentAuthorisationRequestResponse**](ApiResponseOfPaymentAuthorisationRequestResponse.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=UTF-8
+ - **Accept**: application/json;charset=UTF-8
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**201** | Created |  -  |
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
 **404** | Not Found |  -  |

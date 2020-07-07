@@ -17,3 +17,4 @@ from yapily.api.payments_api import PaymentsApi
 from yapily.api.statements_api import StatementsApi
 from yapily.api.transactions_api import TransactionsApi
 from yapily.api.transfers_api import TransfersApi
+from yapily.api.pre_auth_consent_controller_api import PreAuthConsentControllerApi
