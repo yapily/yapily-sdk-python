@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **before** | **datetime** |  | [optional] 
+**cursor** | **str** |  | [optional] 
 **_from** | **datetime** |  | [optional] 
 **limit** | **int** |  | [optional] 
 **offset** | **int** |  | [optional] 
