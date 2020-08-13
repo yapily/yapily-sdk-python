@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **balance** | [**Balance**](Balance.md) |  | [optional] 
 **merchant** | [**Merchant**](Merchant.md) |  | [optional] 
 **enrichment** | [**Enrichment**](Enrichment.md) |  | [optional] 
-**supplementary_data** | **str** | Additional information that can not be captured in the structured fields and/or any other specific block. | [optional] 
+**supplementary_data** | [**object**](.md) | Additional information that can not be captured in the structured fields and/or any other specific block. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
