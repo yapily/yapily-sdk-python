@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **payee** | [**Payee**](Payee.md) |  | 
 **periodic_payment** | [**PeriodicPaymentRequest**](PeriodicPaymentRequest.md) |  | [optional] 
 **international_payment** | [**InternationalPaymentRequest**](InternationalPaymentRequest.md) |  | [optional] 
+**read_refund_account** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
