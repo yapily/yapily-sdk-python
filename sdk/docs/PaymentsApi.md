@@ -126,7 +126,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_bulk_payment_using_post**
-> ApiResponseOfPaymentResponse create_bulk_payment_using_post(consent, payment_request)
+> ApiResponseOfPaymentResponse create_bulk_payment_using_post(consent, payment_request, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
 
 Create bulk payment
 
@@ -156,10 +156,13 @@ with yapily.ApiClient(configuration) as api_client:
     api_instance = yapily.PaymentsApi(api_client)
     consent = 'consent_example' # str | Consent Token
 payment_request = yapily.BulkPaymentRequest() # BulkPaymentRequest | paymentRequest
+psu_id = 'psu_id_example' # str | PSU ID (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
+psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
 
     try:
         # Create bulk payment
-        api_response = api_instance.create_bulk_payment_using_post(consent, payment_request)
+        api_response = api_instance.create_bulk_payment_using_post(consent, payment_request, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling PaymentsApi->create_bulk_payment_using_post: %s\n" % e)
@@ -189,10 +192,13 @@ with yapily.ApiClient(configuration) as api_client:
     api_instance = yapily.PaymentsApi(api_client)
     consent = 'consent_example' # str | Consent Token
 payment_request = yapily.BulkPaymentRequest() # BulkPaymentRequest | paymentRequest
+psu_id = 'psu_id_example' # str | PSU ID (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
+psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
 
     try:
         # Create bulk payment
-        api_response = api_instance.create_bulk_payment_using_post(consent, payment_request)
+        api_response = api_instance.create_bulk_payment_using_post(consent, payment_request, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling PaymentsApi->create_bulk_payment_using_post: %s\n" % e)
@@ -204,6 +210,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **consent** | **str**| Consent Token | 
  **payment_request** | [**BulkPaymentRequest**](BulkPaymentRequest.md)| paymentRequest | 
+ **psu_id** | **str**| PSU ID | [optional] 
+ **psu_corporate_id** | **str**| PSU ID CORPORATE | [optional] 
+ **psu_ip_address** | **str**| PSU IP ADDRESS | [optional] 
 
 ### Return type
 
@@ -450,7 +459,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_payment_using_post**
-> ApiResponseOfPaymentResponse create_payment_using_post(consent, payment_request)
+> ApiResponseOfPaymentResponse create_payment_using_post(consent, payment_request, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
 
 Create a payment
 
@@ -480,10 +489,13 @@ with yapily.ApiClient(configuration) as api_client:
     api_instance = yapily.PaymentsApi(api_client)
     consent = 'consent_example' # str | Consent Token
 payment_request = yapily.PaymentRequest() # PaymentRequest | paymentRequest
+psu_id = 'psu_id_example' # str | PSU ID (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
+psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
 
     try:
         # Create a payment
-        api_response = api_instance.create_payment_using_post(consent, payment_request)
+        api_response = api_instance.create_payment_using_post(consent, payment_request, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling PaymentsApi->create_payment_using_post: %s\n" % e)
@@ -513,10 +525,13 @@ with yapily.ApiClient(configuration) as api_client:
     api_instance = yapily.PaymentsApi(api_client)
     consent = 'consent_example' # str | Consent Token
 payment_request = yapily.PaymentRequest() # PaymentRequest | paymentRequest
+psu_id = 'psu_id_example' # str | PSU ID (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
+psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
 
     try:
         # Create a payment
-        api_response = api_instance.create_payment_using_post(consent, payment_request)
+        api_response = api_instance.create_payment_using_post(consent, payment_request, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling PaymentsApi->create_payment_using_post: %s\n" % e)
@@ -528,6 +543,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **consent** | **str**| Consent Token | 
  **payment_request** | [**PaymentRequest**](PaymentRequest.md)| paymentRequest | 
+ **psu_id** | **str**| PSU ID | [optional] 
+ **psu_corporate_id** | **str**| PSU ID CORPORATE | [optional] 
+ **psu_ip_address** | **str**| PSU IP ADDRESS | [optional] 
 
 ### Return type
 
@@ -554,7 +572,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_payment_with_sort_code_using_post**
-> ApiResponseOfPaymentResponse create_payment_with_sort_code_using_post(consent, payment_request)
+> ApiResponseOfPaymentResponse create_payment_with_sort_code_using_post(consent, payment_request, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
 
 Create a new single payment
 
@@ -584,10 +602,13 @@ with yapily.ApiClient(configuration) as api_client:
     api_instance = yapily.PaymentsApi(api_client)
     consent = 'consent_example' # str | Consent Token
 payment_request = yapily.SortCodePaymentRequest() # SortCodePaymentRequest | paymentRequest
+psu_id = 'psu_id_example' # str | PSU ID (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
+psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
 
     try:
         # Create a new single payment
-        api_response = api_instance.create_payment_with_sort_code_using_post(consent, payment_request)
+        api_response = api_instance.create_payment_with_sort_code_using_post(consent, payment_request, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling PaymentsApi->create_payment_with_sort_code_using_post: %s\n" % e)
@@ -617,10 +638,13 @@ with yapily.ApiClient(configuration) as api_client:
     api_instance = yapily.PaymentsApi(api_client)
     consent = 'consent_example' # str | Consent Token
 payment_request = yapily.SortCodePaymentRequest() # SortCodePaymentRequest | paymentRequest
+psu_id = 'psu_id_example' # str | PSU ID (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
+psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
 
     try:
         # Create a new single payment
-        api_response = api_instance.create_payment_with_sort_code_using_post(consent, payment_request)
+        api_response = api_instance.create_payment_with_sort_code_using_post(consent, payment_request, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling PaymentsApi->create_payment_with_sort_code_using_post: %s\n" % e)
@@ -632,6 +656,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **consent** | **str**| Consent Token | 
  **payment_request** | [**SortCodePaymentRequest**](SortCodePaymentRequest.md)| paymentRequest | 
+ **psu_id** | **str**| PSU ID | [optional] 
+ **psu_corporate_id** | **str**| PSU ID CORPORATE | [optional] 
+ **psu_ip_address** | **str**| PSU IP ADDRESS | [optional] 
 
 ### Return type
 
@@ -658,7 +685,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_payment_status_using_get**
-> ApiResponseOfPaymentResponse get_payment_status_using_get(payment_id, consent)
+> ApiResponseOfPaymentResponse get_payment_status_using_get(payment_id, consent, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
 
 Get status of a payment
 
@@ -688,10 +715,13 @@ with yapily.ApiClient(configuration) as api_client:
     api_instance = yapily.PaymentsApi(api_client)
     payment_id = 'payment_id_example' # str | paymentId
 consent = 'consent_example' # str | Consent Token
+psu_id = 'psu_id_example' # str | PSU ID (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
+psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
 
     try:
         # Get status of a payment
-        api_response = api_instance.get_payment_status_using_get(payment_id, consent)
+        api_response = api_instance.get_payment_status_using_get(payment_id, consent, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling PaymentsApi->get_payment_status_using_get: %s\n" % e)
@@ -721,10 +751,13 @@ with yapily.ApiClient(configuration) as api_client:
     api_instance = yapily.PaymentsApi(api_client)
     payment_id = 'payment_id_example' # str | paymentId
 consent = 'consent_example' # str | Consent Token
+psu_id = 'psu_id_example' # str | PSU ID (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
+psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
 
     try:
         # Get status of a payment
-        api_response = api_instance.get_payment_status_using_get(payment_id, consent)
+        api_response = api_instance.get_payment_status_using_get(payment_id, consent, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling PaymentsApi->get_payment_status_using_get: %s\n" % e)
@@ -736,6 +769,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **payment_id** | **str**| paymentId | 
  **consent** | **str**| Consent Token | 
+ **psu_id** | **str**| PSU ID | [optional] 
+ **psu_corporate_id** | **str**| PSU ID CORPORATE | [optional] 
+ **psu_ip_address** | **str**| PSU IP ADDRESS | [optional] 
 
 ### Return type
 
@@ -761,7 +797,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_payments_using_get**
-> ApiResponseOfPaymentResponses get_payments_using_get(payment_id, consent)
+> ApiResponseOfPaymentResponses get_payments_using_get(payment_id, consent, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
 
 Get payments detail
 
@@ -791,10 +827,13 @@ with yapily.ApiClient(configuration) as api_client:
     api_instance = yapily.PaymentsApi(api_client)
     payment_id = 'payment_id_example' # str | paymentId
 consent = 'consent_example' # str | Consent Token
+psu_id = 'psu_id_example' # str | PSU ID (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
+psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
 
     try:
         # Get payments detail
-        api_response = api_instance.get_payments_using_get(payment_id, consent)
+        api_response = api_instance.get_payments_using_get(payment_id, consent, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling PaymentsApi->get_payments_using_get: %s\n" % e)
@@ -824,10 +863,13 @@ with yapily.ApiClient(configuration) as api_client:
     api_instance = yapily.PaymentsApi(api_client)
     payment_id = 'payment_id_example' # str | paymentId
 consent = 'consent_example' # str | Consent Token
+psu_id = 'psu_id_example' # str | PSU ID (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
+psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
 
     try:
         # Get payments detail
-        api_response = api_instance.get_payments_using_get(payment_id, consent)
+        api_response = api_instance.get_payments_using_get(payment_id, consent, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling PaymentsApi->get_payments_using_get: %s\n" % e)
@@ -839,6 +881,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **payment_id** | **str**| paymentId | 
  **consent** | **str**| Consent Token | 
+ **psu_id** | **str**| PSU ID | [optional] 
+ **psu_corporate_id** | **str**| PSU ID CORPORATE | [optional] 
+ **psu_ip_address** | **str**| PSU IP ADDRESS | [optional] 
 
 ### Return type
 
