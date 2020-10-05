@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **code** | **int** |  | [optional] 
+**institution_error** | [**InstitutionError**](InstitutionError.md) |  | [optional] 
 **message** | **str** |  | [optional] 
 **source** | **str** |  | [optional] 
 **status** | **str** |  | [optional] 
