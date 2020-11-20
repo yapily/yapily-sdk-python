@@ -248,7 +248,7 @@ with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.ConsentsApi(api_client)
     consent_id = 'consent_id_example' # str | consentId
-force_delete = True # bool | forceDelete (optional)
+force_delete = True # bool | forceDelete (optional) (default to True)
 
     try:
         # Delete consent
@@ -281,7 +281,7 @@ with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.ConsentsApi(api_client)
     consent_id = 'consent_id_example' # str | consentId
-force_delete = True # bool | forceDelete (optional)
+force_delete = True # bool | forceDelete (optional) (default to True)
 
     try:
         # Delete consent
@@ -296,7 +296,7 @@ force_delete = True # bool | forceDelete (optional)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **consent_id** | **str**| consentId | 
- **force_delete** | **bool**| forceDelete | [optional] 
+ **force_delete** | **bool**| forceDelete | [optional] [default to True]
 
 ### Return type
 

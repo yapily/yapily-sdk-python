@@ -34,6 +34,7 @@ Name | Type | Description | Notes
 **priority** | **str** |  | [optional] 
 **exchange_rate** | [**ExchangeRateInformationResponse**](ExchangeRateInformationResponse.md) |  | [optional] 
 **refund_account** | [**RefundAccount**](RefundAccount.md) |  | [optional] 
+**bulk_amount_sum** | **float** | Control sum for bulk payments | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

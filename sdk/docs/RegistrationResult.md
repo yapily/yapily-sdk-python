@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **client_secret** | **str** |  | [optional] 
 **signing_key_store** | **str** |  | [optional] 
 **transport_key_store** | **str** |  | [optional] 
+**registration_response** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
