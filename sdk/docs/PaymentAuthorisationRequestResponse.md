@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **authorisation_url** | **str** |  | [optional] 
 **state** | **str** |  | [optional] 
 **qr_code_url** | **str** |  | [optional] 
+**authorized_at** | **datetime** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

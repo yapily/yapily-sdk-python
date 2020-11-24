@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **consent_token** | **str** |  | [optional] 
 **qr_code_url** | **str** |  | [optional] 
 **state** | **str** |  | [optional] 
+**authorized_at** | **datetime** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
