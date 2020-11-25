@@ -20,17 +20,7 @@ def main():
 
     apiClient = ApiClient(configuration)
 
-    user_api = ApplicationUsersApi(apiClient)
-
-    users_exists = user_api.get_users_using_get(filter_application_user_id=[constants.APPLICATION_USER_ID])
-    if not users_exists:
-        application_user = ApplicationUser()
-        application_user._application_user_id = constants.APPLICATION_USER_ID
-        sdk_user = user_api.add_user_using_post_with_http_info(application_user)[0]
-        print("Created new sdk user:", sdk_user.application_user_id)
-    else:
-        sdk_user = users_exists[0]
-        print("Using existing sdk user:", constants.APPLICATION_USER_ID)
+    print("\nUsing user:", constants.APPLICATION_USER_ID)
 
     accounts_api = AccountsApi(apiClient)
     account_authorisation_request = AccountAuthorisationRequest(
@@ -40,71 +30,71 @@ def main():
         one_time_token=''
     )
 
-    response = accounts_api.initiate_account_request_using_post(account_auth_request=account_authorisation_request)
+    ## Send the user to the bank to approve the request to retrieve their financial data
+    account_authorisation_response = accounts_api.initiate_account_request_using_post(account_auth_request=account_authorisation_request)
     
-    redirect_url = response.data.authorisation_url
+    ## Store the consent id
+    consent_id = account_authorisation_response.data.id
+
+    ## Send the user to the bank to approve the request to retrieve their financial data
+    redirect_url = account_authorisation_response.data.authorisation_url
     webbrowser.open(redirect_url)
 
+    ## Wait for the user to authorise before continuing 
+    input("\nTo demo transfers, make sure you authorise two accounts at the bank!")
     input("\nPress enter to continue")
     
-    def filterByStatus(consent):
-        if (consent.status == "AUTHORIZED"):
-            return True
-        else:
-            return False
 
-    consents = ConsentsApi(apiClient).get_consents_using_get(
-        filter_application_user_id=[constants.APPLICATION_USER_ID],
-        filter_institution=[constants.INSTITUTION_ID]
-    ).data
+    # Check the status of the consent object that was created using the consent id
+    consent = ConsentsApi(apiClient).get_consent_by_id_using_get(consent_id=consent_id)
 
-    authorised_consents = list(filter(filterByStatus, consents))
-    consent = authorised_consents[0]
-    consent_token = consent.consent_token
+    if (consent.data.status == 'AUTHORIZED'):
+        consent_token = consent.data.consent_token
 
-    print("Consent: " + consent_token);
+        print("\nRetrieved the account consent token: ", consent_token)
 
-    accounts = AccountsApi(ApiClient(configuration)).get_accounts_using_get(consent_token)
+        ## Retrieve the account information
+        print("\nGetting accounts: ")
+        accounts = AccountsApi(apiClient).get_accounts_using_get(consent_token)
 
-    print("\nGetting accounts: ")
-    accounts = AccountsApi(apiClient).get_accounts_using_get(consent_token)
+        print("**************ACCOUNTS******************")
+        print(accounts)
+        print("****************************************")
 
-    print("**************ACCOUNTS******************")
-    print(accounts)
-    print("****************************************")
+        if (len(accounts.data) > 1):
 
-    if (len(accounts.data) > 1):
+            institutions_api = InstitutionsApi(apiClient)
+            features = institutions_api.get_institution_using_get(constants.INSTITUTION_ID).features
+            if ("TRANSFER" in features):
+                account_id_1 = accounts.data[0].id
+                account_id_2 = accounts.data[1].id
 
-        institutions_api = InstitutionsApi(apiClient)
-        features = institutions_api.get_institution_using_get(constants.INSTITUTION_ID).features
-        if ("TRANSFER" in features):
-            account_id_1 = accounts.data[0].id
-            account_id_2 = accounts.data[1].id
-            print("\nExecuting a transfer from accout 1 [" + account_id_1 + "] to account 2 [" + account_id_2 + "]:")
-            transfers_api = TransfersApi(apiClient)
-            transfer = transfers_api.transfer_using_put(
-                consent=consent_token,
-                account_id=account_id_1,
-                transfer_request=TransferRequest(
-                    account_id=account_id_2,
-                    amount=15.00,
-                    currency='GBP',
-                    reference='Monthly savings',
-                    transfer_reference_id='123456'
+                print("\nExecuting a transfer from accout 1 [" + account_id_1 + "] to account 2 [" + account_id_2 + "]:")
+                transfers_api = TransfersApi(apiClient)
+
+                ## If more than 2 accounts were authorised and the bank supports transfers, execute a transfer between the first two accounts
+                transfer = transfers_api.transfer_using_put(
+                    consent=consent_token,
+                    account_id=account_id_1,
+                    transfer_request=TransferRequest(
+                        account_id=account_id_2,
+                        amount=15.00,
+                        currency='GBP',
+                        reference='Monthly savings',
+                        transfer_reference_id='123456'
+                    )
                 )
-            )
 
-            print("**************TRANSFERS**************");
-            print(transfer);
-            print("****************************************");
+                print("**************TRANSFERS**************")
+                print(transfer)
+                print("****************************************")
+            else:
+                print("\nCan not execute transfer for institution '" + constants.INSTITUTION_ID + "' as it does not have the required feature: 'TRANSFER'")
+
         else:
-            print("\nCan not execute transfer for institution '" + constants.INSTITUTION_ID + "' as it does not have the required feature: 'TRANSFER'")
-
+            print("\nYou need to have authorisation to 2 accounts but this Consent only has authorisation for 1. Not executing transfer.")
     else:
-        print("\nYou need to have authorisation to 2 accounts but this Consent only has authorisation for 1. Not executing transfer.")
-
-def create_callback_with_user_uuid(user_uuid):
-    return constants.CALLBACK_URL+ "?user_uuid="+user_uuid
+        print("\nThe user did not authorise sharing their financial data!")
 
 if __name__ == '__main__':
     main()
