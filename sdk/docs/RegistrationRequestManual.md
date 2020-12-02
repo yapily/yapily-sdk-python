@@ -1,11 +1,10 @@
-# RegistrationRequest
+# RegistrationRequestManual
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **client_id** | **str** |  | [optional] 
 **client_secret** | **str** |  | [optional] 
-**manual** | **bool** |  | [optional] 
 **tpp_id** | **str** |  | [optional] 
 **software_id** | **str** |  | [optional] 
 **client_name** | **str** |  | [optional] 
