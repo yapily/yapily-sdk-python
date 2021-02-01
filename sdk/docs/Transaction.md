@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **amount** | **float** | Deprecated. Use the amount value in &#x60;transactionAmount&#x60; instead | [optional] 
 **currency** | **str** | Deprecated. Use the currency value in &#x60;transactionAmount&#x60; instead | [optional] 
 **transaction_amount** | [**TransactionAmount**](TransactionAmount.md) |  | [optional] 
+**gross_amount** | [**Amount**](Amount.md) |  | [optional] 
 **currency_exchange** | [**CurrencyExchange**](CurrencyExchange.md) |  | [optional] 
 **charge_details** | [**ChargeDetails**](ChargeDetails.md) |  | [optional] 
 **reference** | **str** | Transaction reference | [optional] 
