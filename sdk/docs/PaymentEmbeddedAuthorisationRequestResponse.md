@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **qr_code_url** | **str** |  | [optional] 
 **authorized_at** | **datetime** |  | [optional] 
 **sca_methods** | [**list[ScaMethod]**](ScaMethod.md) |  | [optional] 
+**institution_consent_id** | **str** |  | [optional] 
 **selected_sca_method** | [**ScaMethod**](ScaMethod.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
