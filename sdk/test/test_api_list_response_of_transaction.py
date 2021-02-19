@@ -106,6 +106,37 @@ class TestApiListResponseOfTransaction(unittest.TestCase):
                             balance_amount = yapily.models.amount.Amount(
                                 amount = 1.337, 
                                 currency = '0', ), ), 
+                        payee_details = yapily.models.payee.Payee(
+                            name = '0', 
+                            address = yapily.models.address.Address(
+                                address_lines = [
+                                    '0'
+                                    ], 
+                                street_name = '0', 
+                                building_number = '0', 
+                                post_code = '0', 
+                                town_name = '0', 
+                                county = [
+                                    '0'
+                                    ], 
+                                address_type = 'BUSINESS', 
+                                country = '0', 
+                                department = '0', 
+                                sub_department = '0', ), 
+                            account_identifications = [
+                                yapily.models.account_identification.AccountIdentification(
+                                    type = 'SORT_CODE', 
+                                    identification = '0', )
+                                ], 
+                            merchant_id = '0', 
+                            merchant_category_code = '0', ), 
+                        payer_details = yapily.models.payer.Payer(
+                            name = '0', 
+                            account_identifications = [
+                                yapily.models.account_identification.AccountIdentification(
+                                    type = 'SORT_CODE', 
+                                    identification = '0', )
+                                ], ), 
                         merchant = yapily.models.merchant.Merchant(
                             merchant_name = '0', 
                             merchant_category_code = '0', ), 

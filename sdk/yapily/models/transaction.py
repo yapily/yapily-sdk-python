@@ -52,6 +52,8 @@ class Transaction(object):
         'iso_bank_transaction_code': 'IsoBankTransactionCode',
         'proprietary_bank_transaction_code': 'ProprietaryBankTransactionCode',
         'balance': 'Balance',
+        'payee_details': 'Payee',
+        'payer_details': 'Payer',
         'merchant': 'Merchant',
         'enrichment': 'Enrichment',
         'supplementary_data': 'object'
@@ -77,12 +79,14 @@ class Transaction(object):
         'iso_bank_transaction_code': 'isoBankTransactionCode',
         'proprietary_bank_transaction_code': 'proprietaryBankTransactionCode',
         'balance': 'balance',
+        'payee_details': 'payeeDetails',
+        'payer_details': 'payerDetails',
         'merchant': 'merchant',
         'enrichment': 'enrichment',
         'supplementary_data': 'supplementaryData'
     }
 
-    def __init__(self, id=None, date=None, booking_date_time=None, value_date_time=None, status=None, amount=None, currency=None, transaction_amount=None, gross_amount=None, currency_exchange=None, charge_details=None, reference=None, statement_references=None, description=None, transaction_information=None, address_details=None, iso_bank_transaction_code=None, proprietary_bank_transaction_code=None, balance=None, merchant=None, enrichment=None, supplementary_data=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, id=None, date=None, booking_date_time=None, value_date_time=None, status=None, amount=None, currency=None, transaction_amount=None, gross_amount=None, currency_exchange=None, charge_details=None, reference=None, statement_references=None, description=None, transaction_information=None, address_details=None, iso_bank_transaction_code=None, proprietary_bank_transaction_code=None, balance=None, payee_details=None, payer_details=None, merchant=None, enrichment=None, supplementary_data=None, local_vars_configuration=None):  # noqa: E501
         """Transaction - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -107,6 +111,8 @@ class Transaction(object):
         self._iso_bank_transaction_code = None
         self._proprietary_bank_transaction_code = None
         self._balance = None
+        self._payee_details = None
+        self._payer_details = None
         self._merchant = None
         self._enrichment = None
         self._supplementary_data = None
@@ -150,6 +156,10 @@ class Transaction(object):
             self.proprietary_bank_transaction_code = proprietary_bank_transaction_code
         if balance is not None:
             self.balance = balance
+        if payee_details is not None:
+            self.payee_details = payee_details
+        if payer_details is not None:
+            self.payer_details = payer_details
         if merchant is not None:
             self.merchant = merchant
         if enrichment is not None:
@@ -581,6 +591,48 @@ class Transaction(object):
         """
 
         self._balance = balance
+
+    @property
+    def payee_details(self):
+        """Gets the payee_details of this Transaction.  # noqa: E501
+
+
+        :return: The payee_details of this Transaction.  # noqa: E501
+        :rtype: Payee
+        """
+        return self._payee_details
+
+    @payee_details.setter
+    def payee_details(self, payee_details):
+        """Sets the payee_details of this Transaction.
+
+
+        :param payee_details: The payee_details of this Transaction.  # noqa: E501
+        :type: Payee
+        """
+
+        self._payee_details = payee_details
+
+    @property
+    def payer_details(self):
+        """Gets the payer_details of this Transaction.  # noqa: E501
+
+
+        :return: The payer_details of this Transaction.  # noqa: E501
+        :rtype: Payer
+        """
+        return self._payer_details
+
+    @payer_details.setter
+    def payer_details(self, payer_details):
+        """Sets the payer_details of this Transaction.
+
+
+        :param payer_details: The payer_details of this Transaction.  # noqa: E501
+        :type: Payer
+        """
+
+        self._payer_details = payer_details
 
     @property
     def merchant(self):

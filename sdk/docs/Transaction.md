@@ -22,6 +22,8 @@ Name | Type | Description | Notes
 **iso_bank_transaction_code** | [**IsoBankTransactionCode**](IsoBankTransactionCode.md) |  | [optional] 
 **proprietary_bank_transaction_code** | [**ProprietaryBankTransactionCode**](ProprietaryBankTransactionCode.md) |  | [optional] 
 **balance** | [**Balance**](Balance.md) |  | [optional] 
+**payee_details** | [**Payee**](Payee.md) |  | [optional] 
+**payer_details** | [**Payer**](Payer.md) |  | [optional] 
 **merchant** | [**Merchant**](Merchant.md) |  | [optional] 
 **enrichment** | [**Enrichment**](Enrichment.md) |  | [optional] 
 **supplementary_data** | [**object**](.md) | Additional information that can not be captured in the structured fields and/or any other specific block. | [optional] 
