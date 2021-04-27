@@ -10,6 +10,7 @@ from yapily.api.balances_api import BalancesApi
 from yapily.api.beneficiaries_api import BeneficiariesApi
 from yapily.api.categories_api import CategoriesApi
 from yapily.api.consents_api import ConsentsApi
+from yapily.api.embedded_accounts_api import EmbeddedAccountsApi
 from yapily.api.embedded_payments_api import EmbeddedPaymentsApi
 from yapily.api.identity_api import IdentityApi
 from yapily.api.institutions_api import InstitutionsApi

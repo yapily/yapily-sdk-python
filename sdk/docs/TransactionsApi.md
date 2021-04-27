@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get_transactions_using_get**
-> ApiListResponseOfTransaction get_transactions_using_get(consent, account_id, _with=_with, _from=_from, before=before, limit=limit, sort=sort, offset=offset, cursor=cursor)
+> ApiListResponseOfTransaction get_transactions_using_get(consent, account_id, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address, _with=_with, _from=_from, before=before, limit=limit, sort=sort, offset=offset, cursor=cursor)
 
 Get account transactions
 
@@ -38,6 +38,9 @@ with yapily.ApiClient(configuration) as api_client:
     api_instance = yapily.TransactionsApi(api_client)
     consent = 'consent_example' # str | Consent Token
 account_id = 'account_id_example' # str | accountId
+psu_id = 'psu_id_example' # str | PSU ID (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
+psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
 _with = ['_with_example'] # list[str] | with (optional)
 _from = '_from_example' # str | from (optional)
 before = 'before_example' # str | before (optional)
@@ -48,7 +51,7 @@ cursor = 'cursor_example' # str | cursor (optional)
 
     try:
         # Get account transactions
-        api_response = api_instance.get_transactions_using_get(consent, account_id, _with=_with, _from=_from, before=before, limit=limit, sort=sort, offset=offset, cursor=cursor)
+        api_response = api_instance.get_transactions_using_get(consent, account_id, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address, _with=_with, _from=_from, before=before, limit=limit, sort=sort, offset=offset, cursor=cursor)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling TransactionsApi->get_transactions_using_get: %s\n" % e)
@@ -78,6 +81,9 @@ with yapily.ApiClient(configuration) as api_client:
     api_instance = yapily.TransactionsApi(api_client)
     consent = 'consent_example' # str | Consent Token
 account_id = 'account_id_example' # str | accountId
+psu_id = 'psu_id_example' # str | PSU ID (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
+psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
 _with = ['_with_example'] # list[str] | with (optional)
 _from = '_from_example' # str | from (optional)
 before = 'before_example' # str | before (optional)
@@ -88,7 +94,7 @@ cursor = 'cursor_example' # str | cursor (optional)
 
     try:
         # Get account transactions
-        api_response = api_instance.get_transactions_using_get(consent, account_id, _with=_with, _from=_from, before=before, limit=limit, sort=sort, offset=offset, cursor=cursor)
+        api_response = api_instance.get_transactions_using_get(consent, account_id, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address, _with=_with, _from=_from, before=before, limit=limit, sort=sort, offset=offset, cursor=cursor)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling TransactionsApi->get_transactions_using_get: %s\n" % e)
@@ -100,6 +106,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **consent** | **str**| Consent Token | 
  **account_id** | **str**| accountId | 
+ **psu_id** | **str**| PSU ID | [optional] 
+ **psu_corporate_id** | **str**| PSU ID CORPORATE | [optional] 
+ **psu_ip_address** | **str**| PSU IP ADDRESS | [optional] 
  **_with** | [**list[str]**](str.md)| with | [optional] 
  **_from** | **str**| from | [optional] 
  **before** | **str**| before | [optional] 

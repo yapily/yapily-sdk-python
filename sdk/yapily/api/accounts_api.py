@@ -425,6 +425,9 @@ class AccountsApi(object):
         :param async_req bool: execute request asynchronously
         :param str consent: Consent Token (required)
         :param str account_id: accountId (required)
+        :param str psu_id: PSU ID
+        :param str psu_corporate_id: PSU ID CORPORATE
+        :param str psu_ip_address: PSU IP ADDRESS
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -450,6 +453,9 @@ class AccountsApi(object):
         :param async_req bool: execute request asynchronously
         :param str consent: Consent Token (required)
         :param str account_id: accountId (required)
+        :param str psu_id: PSU ID
+        :param str psu_corporate_id: PSU ID CORPORATE
+        :param str psu_ip_address: PSU IP ADDRESS
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -468,7 +474,10 @@ class AccountsApi(object):
 
         all_params = [
             'consent',
-            'account_id'
+            'account_id',
+            'psu_id',
+            'psu_corporate_id',
+            'psu_ip_address'
         ]
         all_params.extend(
             [
@@ -507,6 +516,12 @@ class AccountsApi(object):
         header_params = {}
         if 'consent' in local_var_params:
             header_params['consent'] = local_var_params['consent']  # noqa: E501
+        if 'psu_id' in local_var_params:
+            header_params['psu-id'] = local_var_params['psu_id']  # noqa: E501
+        if 'psu_corporate_id' in local_var_params:
+            header_params['psu-corporate-id'] = local_var_params['psu_corporate_id']  # noqa: E501
+        if 'psu_ip_address' in local_var_params:
+            header_params['psu-ip-address'] = local_var_params['psu_ip_address']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -545,6 +560,9 @@ class AccountsApi(object):
 
         :param async_req bool: execute request asynchronously
         :param str consent: Consent Token (required)
+        :param str psu_id: PSU ID
+        :param str psu_corporate_id: PSU ID CORPORATE
+        :param str psu_ip_address: PSU IP ADDRESS
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -569,6 +587,9 @@ class AccountsApi(object):
 
         :param async_req bool: execute request asynchronously
         :param str consent: Consent Token (required)
+        :param str psu_id: PSU ID
+        :param str psu_corporate_id: PSU ID CORPORATE
+        :param str psu_ip_address: PSU IP ADDRESS
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -586,7 +607,10 @@ class AccountsApi(object):
         local_var_params = locals()
 
         all_params = [
-            'consent'
+            'consent',
+            'psu_id',
+            'psu_corporate_id',
+            'psu_ip_address'
         ]
         all_params.extend(
             [
@@ -619,6 +643,12 @@ class AccountsApi(object):
         header_params = {}
         if 'consent' in local_var_params:
             header_params['consent'] = local_var_params['consent']  # noqa: E501
+        if 'psu_id' in local_var_params:
+            header_params['psu-id'] = local_var_params['psu_id']  # noqa: E501
+        if 'psu_corporate_id' in local_var_params:
+            header_params['psu-corporate-id'] = local_var_params['psu_corporate_id']  # noqa: E501
+        if 'psu_ip_address' in local_var_params:
+            header_params['psu-ip-address'] = local_var_params['psu_ip_address']  # noqa: E501
 
         form_params = []
         local_var_files = {}

@@ -333,7 +333,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_account_using_get**
-> ApiResponseOfAccount get_account_using_get(consent, account_id)
+> ApiResponseOfAccount get_account_using_get(consent, account_id, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
 
 Get account
 
@@ -363,10 +363,13 @@ with yapily.ApiClient(configuration) as api_client:
     api_instance = yapily.AccountsApi(api_client)
     consent = 'consent_example' # str | Consent Token
 account_id = 'account_id_example' # str | accountId
+psu_id = 'psu_id_example' # str | PSU ID (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
+psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
 
     try:
         # Get account
-        api_response = api_instance.get_account_using_get(consent, account_id)
+        api_response = api_instance.get_account_using_get(consent, account_id, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling AccountsApi->get_account_using_get: %s\n" % e)
@@ -396,10 +399,13 @@ with yapily.ApiClient(configuration) as api_client:
     api_instance = yapily.AccountsApi(api_client)
     consent = 'consent_example' # str | Consent Token
 account_id = 'account_id_example' # str | accountId
+psu_id = 'psu_id_example' # str | PSU ID (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
+psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
 
     try:
         # Get account
-        api_response = api_instance.get_account_using_get(consent, account_id)
+        api_response = api_instance.get_account_using_get(consent, account_id, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling AccountsApi->get_account_using_get: %s\n" % e)
@@ -411,6 +417,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **consent** | **str**| Consent Token | 
  **account_id** | **str**| accountId | 
+ **psu_id** | **str**| PSU ID | [optional] 
+ **psu_corporate_id** | **str**| PSU ID CORPORATE | [optional] 
+ **psu_ip_address** | **str**| PSU IP ADDRESS | [optional] 
 
 ### Return type
 
@@ -436,7 +445,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_accounts_using_get**
-> ApiListResponseOfAccount get_accounts_using_get(consent)
+> ApiListResponseOfAccount get_accounts_using_get(consent, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
 
 Get accounts
 
@@ -465,10 +474,13 @@ with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.AccountsApi(api_client)
     consent = 'consent_example' # str | Consent Token
+psu_id = 'psu_id_example' # str | PSU ID (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
+psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
 
     try:
         # Get accounts
-        api_response = api_instance.get_accounts_using_get(consent)
+        api_response = api_instance.get_accounts_using_get(consent, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling AccountsApi->get_accounts_using_get: %s\n" % e)
@@ -497,10 +509,13 @@ with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.AccountsApi(api_client)
     consent = 'consent_example' # str | Consent Token
+psu_id = 'psu_id_example' # str | PSU ID (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
+psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
 
     try:
         # Get accounts
-        api_response = api_instance.get_accounts_using_get(consent)
+        api_response = api_instance.get_accounts_using_get(consent, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling AccountsApi->get_accounts_using_get: %s\n" % e)
@@ -511,6 +526,9 @@ with yapily.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **consent** | **str**| Consent Token | 
+ **psu_id** | **str**| PSU ID | [optional] 
+ **psu_corporate_id** | **str**| PSU ID CORPORATE | [optional] 
+ **psu_ip_address** | **str**| PSU IP ADDRESS | [optional] 
 
 ### Return type
 

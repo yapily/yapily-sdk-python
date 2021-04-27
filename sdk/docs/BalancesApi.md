@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get_account_balances_using_get**
-> ApiResponseOfBalances get_account_balances_using_get(consent, account_id)
+> ApiResponseOfBalances get_account_balances_using_get(consent, account_id, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
 
 Get account balances
 
@@ -38,10 +38,13 @@ with yapily.ApiClient(configuration) as api_client:
     api_instance = yapily.BalancesApi(api_client)
     consent = 'consent_example' # str | Consent Token
 account_id = 'account_id_example' # str | accountId
+psu_id = 'psu_id_example' # str | PSU ID (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
+psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
 
     try:
         # Get account balances
-        api_response = api_instance.get_account_balances_using_get(consent, account_id)
+        api_response = api_instance.get_account_balances_using_get(consent, account_id, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling BalancesApi->get_account_balances_using_get: %s\n" % e)
@@ -71,10 +74,13 @@ with yapily.ApiClient(configuration) as api_client:
     api_instance = yapily.BalancesApi(api_client)
     consent = 'consent_example' # str | Consent Token
 account_id = 'account_id_example' # str | accountId
+psu_id = 'psu_id_example' # str | PSU ID (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
+psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
 
     try:
         # Get account balances
-        api_response = api_instance.get_account_balances_using_get(consent, account_id)
+        api_response = api_instance.get_account_balances_using_get(consent, account_id, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling BalancesApi->get_account_balances_using_get: %s\n" % e)
@@ -86,6 +92,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **consent** | **str**| Consent Token | 
  **account_id** | **str**| accountId | 
+ **psu_id** | **str**| PSU ID | [optional] 
+ **psu_corporate_id** | **str**| PSU ID CORPORATE | [optional] 
+ **psu_ip_address** | **str**| PSU IP ADDRESS | [optional] 
 
 ### Return type
 

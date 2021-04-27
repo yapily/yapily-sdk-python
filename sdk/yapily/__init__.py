@@ -24,6 +24,7 @@ from yapily.api.balances_api import BalancesApi
 from yapily.api.beneficiaries_api import BeneficiariesApi
 from yapily.api.categories_api import CategoriesApi
 from yapily.api.consents_api import ConsentsApi
+from yapily.api.embedded_accounts_api import EmbeddedAccountsApi
 from yapily.api.embedded_payments_api import EmbeddedPaymentsApi
 from yapily.api.identity_api import IdentityApi
 from yapily.api.institutions_api import InstitutionsApi
@@ -49,6 +50,7 @@ from yapily.models.atm_open_data_response import ATMOpenDataResponse
 from yapily.models.account import Account
 from yapily.models.account_authorisation_request import AccountAuthorisationRequest
 from yapily.models.account_balance import AccountBalance
+from yapily.models.account_embedded_authorisation_request import AccountEmbeddedAuthorisationRequest
 from yapily.models.account_identification import AccountIdentification
 from yapily.models.account_info import AccountInfo
 from yapily.models.account_name import AccountName
@@ -70,6 +72,7 @@ from yapily.models.api_list_response_of_payment_response import ApiListResponseO
 from yapily.models.api_list_response_of_transaction import ApiListResponseOfTransaction
 from yapily.models.api_response_of_account import ApiResponseOfAccount
 from yapily.models.api_response_of_account_statement import ApiResponseOfAccountStatement
+from yapily.models.api_response_of_authorisation_embedded_request_response import ApiResponseOfAuthorisationEmbeddedRequestResponse
 from yapily.models.api_response_of_authorisation_request_response import ApiResponseOfAuthorisationRequestResponse
 from yapily.models.api_response_of_balances import ApiResponseOfBalances
 from yapily.models.api_response_of_bulk_user_delete_details import ApiResponseOfBulkUserDeleteDetails
@@ -91,6 +94,7 @@ from yapily.models.api_response_of_transfer_response import ApiResponseOfTransfe
 from yapily.models.api_response_of_user_delete_response import ApiResponseOfUserDeleteResponse
 from yapily.models.application import Application
 from yapily.models.application_user import ApplicationUser
+from yapily.models.authorisation_embedded_request_response import AuthorisationEmbeddedRequestResponse
 from yapily.models.authorisation_request_response import AuthorisationRequestResponse
 from yapily.models.balance import Balance
 from yapily.models.balances import Balances
