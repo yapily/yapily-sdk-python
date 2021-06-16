@@ -11,7 +11,7 @@ Method | HTTP request | Description
 [**create_payment_using_post**](PaymentsApi.md#create_payment_using_post) | **POST** /payments | Create a payment
 [**create_payment_with_sort_code_using_post**](PaymentsApi.md#create_payment_with_sort_code_using_post) | **POST** /payment-sortcode | Create a new single payment
 [**get_payment_status_using_get**](PaymentsApi.md#get_payment_status_using_get) | **GET** /payments/{paymentId} | Get status of a payment
-[**get_payments_using_get**](PaymentsApi.md#get_payments_using_get) | **GET** /payments/{paymentId}/details | Get payments detail
+[**get_payments_using_get**](PaymentsApi.md#get_payments_using_get) | **GET** /payments/{paymentId}/details | Get payments details
 [**update_payment_authorisation_using_put**](PaymentsApi.md#update_payment_authorisation_using_put) | **PUT** /payment-auth-requests | Update pre authorize consent for user to authorise payment
 
 
@@ -45,10 +45,10 @@ with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.PaymentsApi(api_client)
     payment_auth_request = yapily.BulkPaymentAuthorisationRequest() # BulkPaymentAuthorisationRequest | paymentAuthRequest
-x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optional)
-psu_id = 'psu_id_example' # str | PSU ID (optional)
-psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
-psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
+x_yapily_api_version = 'x_yapily_api_version_example' # str | __Optional__. Determines the API version to use. Valid values are `1.0` or `2.0-ALPHA`. Defaults to `1.0` (optional)
+psu_id = 'psu_id_example' # str | __Conditional__. Represents the user's login ID for the `Institution` to a personal account. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | __Conditional__. Represents the user's login ID for the `Institution` to a business account. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
+psu_ip_address = 'psu_ip_address_example' # str | __Conditional__. The IP address of the PSU. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
 
     try:
         # Initiate bulk payment for user to authorise
@@ -81,10 +81,10 @@ with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.PaymentsApi(api_client)
     payment_auth_request = yapily.BulkPaymentAuthorisationRequest() # BulkPaymentAuthorisationRequest | paymentAuthRequest
-x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optional)
-psu_id = 'psu_id_example' # str | PSU ID (optional)
-psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
-psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
+x_yapily_api_version = 'x_yapily_api_version_example' # str | __Optional__. Determines the API version to use. Valid values are `1.0` or `2.0-ALPHA`. Defaults to `1.0` (optional)
+psu_id = 'psu_id_example' # str | __Conditional__. Represents the user's login ID for the `Institution` to a personal account. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | __Conditional__. Represents the user's login ID for the `Institution` to a business account. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
+psu_ip_address = 'psu_ip_address_example' # str | __Conditional__. The IP address of the PSU. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
 
     try:
         # Initiate bulk payment for user to authorise
@@ -99,10 +99,10 @@ psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **payment_auth_request** | [**BulkPaymentAuthorisationRequest**](BulkPaymentAuthorisationRequest.md)| paymentAuthRequest | 
- **x_yapily_api_version** | **str**| Api Version | [optional] 
- **psu_id** | **str**| PSU ID | [optional] 
- **psu_corporate_id** | **str**| PSU ID CORPORATE | [optional] 
- **psu_ip_address** | **str**| PSU IP ADDRESS | [optional] 
+ **x_yapily_api_version** | **str**| __Optional__. Determines the API version to use. Valid values are &#x60;1.0&#x60; or &#x60;2.0-ALPHA&#x60;. Defaults to &#x60;1.0&#x60; | [optional] 
+ **psu_id** | **str**| __Conditional__. Represents the user&#39;s login ID for the &#x60;Institution&#x60; to a personal account. &lt;br&gt;&lt;br&gt;See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. | [optional] 
+ **psu_corporate_id** | **str**| __Conditional__. Represents the user&#39;s login ID for the &#x60;Institution&#x60; to a business account. &lt;br&gt;&lt;br&gt;See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. | [optional] 
+ **psu_ip_address** | **str**| __Conditional__. The IP address of the PSU. &lt;br&gt;&lt;br&gt;See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. | [optional] 
 
 ### Return type
 
@@ -157,12 +157,12 @@ configuration.host = "https://api.yapily.com:443"
 with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.PaymentsApi(api_client)
-    consent = 'consent_example' # str | Consent Token
+    consent = 'consent_example' # str | __Mandatory__. The `consent-token` containing the user's authorisation to make the request.
 payment_request = yapily.BulkPaymentRequest() # BulkPaymentRequest | paymentRequest
-x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optional)
-psu_id = 'psu_id_example' # str | PSU ID (optional)
-psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
-psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
+x_yapily_api_version = 'x_yapily_api_version_example' # str | __Optional__. Determines the API version to use. Valid values are `1.0` or `2.0-ALPHA`. Defaults to `1.0` (optional)
+psu_id = 'psu_id_example' # str | __Conditional__. Represents the user's login ID for the `Institution` to a personal account. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | __Conditional__. Represents the user's login ID for the `Institution` to a business account. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
+psu_ip_address = 'psu_ip_address_example' # str | __Conditional__. The IP address of the PSU. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
 
     try:
         # Create bulk payment
@@ -194,12 +194,12 @@ configuration.host = "https://api.yapily.com:443"
 with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.PaymentsApi(api_client)
-    consent = 'consent_example' # str | Consent Token
+    consent = 'consent_example' # str | __Mandatory__. The `consent-token` containing the user's authorisation to make the request.
 payment_request = yapily.BulkPaymentRequest() # BulkPaymentRequest | paymentRequest
-x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optional)
-psu_id = 'psu_id_example' # str | PSU ID (optional)
-psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
-psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
+x_yapily_api_version = 'x_yapily_api_version_example' # str | __Optional__. Determines the API version to use. Valid values are `1.0` or `2.0-ALPHA`. Defaults to `1.0` (optional)
+psu_id = 'psu_id_example' # str | __Conditional__. Represents the user's login ID for the `Institution` to a personal account. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | __Conditional__. Represents the user's login ID for the `Institution` to a business account. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
+psu_ip_address = 'psu_ip_address_example' # str | __Conditional__. The IP address of the PSU. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
 
     try:
         # Create bulk payment
@@ -213,12 +213,12 @@ psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **consent** | **str**| Consent Token | 
+ **consent** | **str**| __Mandatory__. The &#x60;consent-token&#x60; containing the user&#39;s authorisation to make the request. | 
  **payment_request** | [**BulkPaymentRequest**](BulkPaymentRequest.md)| paymentRequest | 
- **x_yapily_api_version** | **str**| Api Version | [optional] 
- **psu_id** | **str**| PSU ID | [optional] 
- **psu_corporate_id** | **str**| PSU ID CORPORATE | [optional] 
- **psu_ip_address** | **str**| PSU IP ADDRESS | [optional] 
+ **x_yapily_api_version** | **str**| __Optional__. Determines the API version to use. Valid values are &#x60;1.0&#x60; or &#x60;2.0-ALPHA&#x60;. Defaults to &#x60;1.0&#x60; | [optional] 
+ **psu_id** | **str**| __Conditional__. Represents the user&#39;s login ID for the &#x60;Institution&#x60; to a personal account. &lt;br&gt;&lt;br&gt;See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. | [optional] 
+ **psu_corporate_id** | **str**| __Conditional__. Represents the user&#39;s login ID for the &#x60;Institution&#x60; to a business account. &lt;br&gt;&lt;br&gt;See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. | [optional] 
+ **psu_ip_address** | **str**| __Conditional__. The IP address of the PSU. &lt;br&gt;&lt;br&gt;See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. | [optional] 
 
 ### Return type
 
@@ -274,10 +274,10 @@ with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.PaymentsApi(api_client)
     payment_auth_request = yapily.PaymentAuthorisationRequest() # PaymentAuthorisationRequest | paymentAuthRequest
-x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optional)
-psu_id = 'psu_id_example' # str | PSU ID (optional)
-psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
-psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
+x_yapily_api_version = 'x_yapily_api_version_example' # str | __Optional__. Determines the API version to use. Valid values are `1.0` or `2.0-ALPHA`. Defaults to `1.0` (optional)
+psu_id = 'psu_id_example' # str | __Conditional__. Represents the user's login ID for the `Institution` to a personal account. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | __Conditional__. Represents the user's login ID for the `Institution` to a business account. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
+psu_ip_address = 'psu_ip_address_example' # str | __Conditional__. The IP address of the PSU. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
 
     try:
         # Initiate a payment for user to authorise
@@ -310,10 +310,10 @@ with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.PaymentsApi(api_client)
     payment_auth_request = yapily.PaymentAuthorisationRequest() # PaymentAuthorisationRequest | paymentAuthRequest
-x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optional)
-psu_id = 'psu_id_example' # str | PSU ID (optional)
-psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
-psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
+x_yapily_api_version = 'x_yapily_api_version_example' # str | __Optional__. Determines the API version to use. Valid values are `1.0` or `2.0-ALPHA`. Defaults to `1.0` (optional)
+psu_id = 'psu_id_example' # str | __Conditional__. Represents the user's login ID for the `Institution` to a personal account. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | __Conditional__. Represents the user's login ID for the `Institution` to a business account. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
+psu_ip_address = 'psu_ip_address_example' # str | __Conditional__. The IP address of the PSU. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
 
     try:
         # Initiate a payment for user to authorise
@@ -328,10 +328,10 @@ psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **payment_auth_request** | [**PaymentAuthorisationRequest**](PaymentAuthorisationRequest.md)| paymentAuthRequest | 
- **x_yapily_api_version** | **str**| Api Version | [optional] 
- **psu_id** | **str**| PSU ID | [optional] 
- **psu_corporate_id** | **str**| PSU ID CORPORATE | [optional] 
- **psu_ip_address** | **str**| PSU IP ADDRESS | [optional] 
+ **x_yapily_api_version** | **str**| __Optional__. Determines the API version to use. Valid values are &#x60;1.0&#x60; or &#x60;2.0-ALPHA&#x60;. Defaults to &#x60;1.0&#x60; | [optional] 
+ **psu_id** | **str**| __Conditional__. Represents the user&#39;s login ID for the &#x60;Institution&#x60; to a personal account. &lt;br&gt;&lt;br&gt;See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. | [optional] 
+ **psu_corporate_id** | **str**| __Conditional__. Represents the user&#39;s login ID for the &#x60;Institution&#x60; to a business account. &lt;br&gt;&lt;br&gt;See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. | [optional] 
+ **psu_ip_address** | **str**| __Conditional__. The IP address of the PSU. &lt;br&gt;&lt;br&gt;See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. | [optional] 
 
 ### Return type
 
@@ -387,10 +387,10 @@ with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.PaymentsApi(api_client)
     payment_auth_request = yapily.SortCodePaymentAuthRequest() # SortCodePaymentAuthRequest | paymentAuthRequest
-x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optional)
-psu_id = 'psu_id_example' # str | PSU ID (optional)
-psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
-psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
+x_yapily_api_version = 'x_yapily_api_version_example' # str | __Optional__. Determines the API version to use. Valid values are `1.0` or `2.0-ALPHA`. Defaults to `1.0` (optional)
+psu_id = 'psu_id_example' # str | __Conditional__. Represents the user's login ID for the `Institution` to a personal account. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | __Conditional__. Represents the user's login ID for the `Institution` to a business account. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
+psu_ip_address = 'psu_ip_address_example' # str | __Conditional__. The IP address of the PSU. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
 
     try:
         # Initiate a new single payment for user to authorise
@@ -423,10 +423,10 @@ with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.PaymentsApi(api_client)
     payment_auth_request = yapily.SortCodePaymentAuthRequest() # SortCodePaymentAuthRequest | paymentAuthRequest
-x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optional)
-psu_id = 'psu_id_example' # str | PSU ID (optional)
-psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
-psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
+x_yapily_api_version = 'x_yapily_api_version_example' # str | __Optional__. Determines the API version to use. Valid values are `1.0` or `2.0-ALPHA`. Defaults to `1.0` (optional)
+psu_id = 'psu_id_example' # str | __Conditional__. Represents the user's login ID for the `Institution` to a personal account. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | __Conditional__. Represents the user's login ID for the `Institution` to a business account. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
+psu_ip_address = 'psu_ip_address_example' # str | __Conditional__. The IP address of the PSU. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
 
     try:
         # Initiate a new single payment for user to authorise
@@ -441,10 +441,10 @@ psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **payment_auth_request** | [**SortCodePaymentAuthRequest**](SortCodePaymentAuthRequest.md)| paymentAuthRequest | 
- **x_yapily_api_version** | **str**| Api Version | [optional] 
- **psu_id** | **str**| PSU ID | [optional] 
- **psu_corporate_id** | **str**| PSU ID CORPORATE | [optional] 
- **psu_ip_address** | **str**| PSU IP ADDRESS | [optional] 
+ **x_yapily_api_version** | **str**| __Optional__. Determines the API version to use. Valid values are &#x60;1.0&#x60; or &#x60;2.0-ALPHA&#x60;. Defaults to &#x60;1.0&#x60; | [optional] 
+ **psu_id** | **str**| __Conditional__. Represents the user&#39;s login ID for the &#x60;Institution&#x60; to a personal account. &lt;br&gt;&lt;br&gt;See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. | [optional] 
+ **psu_corporate_id** | **str**| __Conditional__. Represents the user&#39;s login ID for the &#x60;Institution&#x60; to a business account. &lt;br&gt;&lt;br&gt;See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. | [optional] 
+ **psu_ip_address** | **str**| __Conditional__. The IP address of the PSU. &lt;br&gt;&lt;br&gt;See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. | [optional] 
 
 ### Return type
 
@@ -499,12 +499,12 @@ configuration.host = "https://api.yapily.com:443"
 with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.PaymentsApi(api_client)
-    consent = 'consent_example' # str | Consent Token
+    consent = 'consent_example' # str | __Mandatory__. The `consent-token` containing the user's authorisation to make the request.
 payment_request = yapily.PaymentRequest() # PaymentRequest | paymentRequest
-x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optional)
-psu_id = 'psu_id_example' # str | PSU ID (optional)
-psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
-psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
+x_yapily_api_version = 'x_yapily_api_version_example' # str | __Optional__. Determines the API version to use. Valid values are `1.0` or `2.0-ALPHA`. Defaults to `1.0` (optional)
+psu_id = 'psu_id_example' # str | __Conditional__. Represents the user's login ID for the `Institution` to a personal account. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | __Conditional__. Represents the user's login ID for the `Institution` to a business account. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
+psu_ip_address = 'psu_ip_address_example' # str | __Conditional__. The IP address of the PSU. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
 
     try:
         # Create a payment
@@ -536,12 +536,12 @@ configuration.host = "https://api.yapily.com:443"
 with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.PaymentsApi(api_client)
-    consent = 'consent_example' # str | Consent Token
+    consent = 'consent_example' # str | __Mandatory__. The `consent-token` containing the user's authorisation to make the request.
 payment_request = yapily.PaymentRequest() # PaymentRequest | paymentRequest
-x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optional)
-psu_id = 'psu_id_example' # str | PSU ID (optional)
-psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
-psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
+x_yapily_api_version = 'x_yapily_api_version_example' # str | __Optional__. Determines the API version to use. Valid values are `1.0` or `2.0-ALPHA`. Defaults to `1.0` (optional)
+psu_id = 'psu_id_example' # str | __Conditional__. Represents the user's login ID for the `Institution` to a personal account. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | __Conditional__. Represents the user's login ID for the `Institution` to a business account. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
+psu_ip_address = 'psu_ip_address_example' # str | __Conditional__. The IP address of the PSU. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
 
     try:
         # Create a payment
@@ -555,12 +555,12 @@ psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **consent** | **str**| Consent Token | 
+ **consent** | **str**| __Mandatory__. The &#x60;consent-token&#x60; containing the user&#39;s authorisation to make the request. | 
  **payment_request** | [**PaymentRequest**](PaymentRequest.md)| paymentRequest | 
- **x_yapily_api_version** | **str**| Api Version | [optional] 
- **psu_id** | **str**| PSU ID | [optional] 
- **psu_corporate_id** | **str**| PSU ID CORPORATE | [optional] 
- **psu_ip_address** | **str**| PSU IP ADDRESS | [optional] 
+ **x_yapily_api_version** | **str**| __Optional__. Determines the API version to use. Valid values are &#x60;1.0&#x60; or &#x60;2.0-ALPHA&#x60;. Defaults to &#x60;1.0&#x60; | [optional] 
+ **psu_id** | **str**| __Conditional__. Represents the user&#39;s login ID for the &#x60;Institution&#x60; to a personal account. &lt;br&gt;&lt;br&gt;See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. | [optional] 
+ **psu_corporate_id** | **str**| __Conditional__. Represents the user&#39;s login ID for the &#x60;Institution&#x60; to a business account. &lt;br&gt;&lt;br&gt;See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. | [optional] 
+ **psu_ip_address** | **str**| __Conditional__. The IP address of the PSU. &lt;br&gt;&lt;br&gt;See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. | [optional] 
 
 ### Return type
 
@@ -615,12 +615,12 @@ configuration.host = "https://api.yapily.com:443"
 with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.PaymentsApi(api_client)
-    consent = 'consent_example' # str | Consent Token
+    consent = 'consent_example' # str | __Mandatory__. The `consent-token` containing the user's authorisation to make the request.
 payment_request = yapily.SortCodePaymentRequest() # SortCodePaymentRequest | paymentRequest
-x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optional)
-psu_id = 'psu_id_example' # str | PSU ID (optional)
-psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
-psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
+x_yapily_api_version = 'x_yapily_api_version_example' # str | __Optional__. Determines the API version to use. Valid values are `1.0` or `2.0-ALPHA`. Defaults to `1.0` (optional)
+psu_id = 'psu_id_example' # str | __Conditional__. Represents the user's login ID for the `Institution` to a personal account. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | __Conditional__. Represents the user's login ID for the `Institution` to a business account. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
+psu_ip_address = 'psu_ip_address_example' # str | __Conditional__. The IP address of the PSU. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
 
     try:
         # Create a new single payment
@@ -652,12 +652,12 @@ configuration.host = "https://api.yapily.com:443"
 with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.PaymentsApi(api_client)
-    consent = 'consent_example' # str | Consent Token
+    consent = 'consent_example' # str | __Mandatory__. The `consent-token` containing the user's authorisation to make the request.
 payment_request = yapily.SortCodePaymentRequest() # SortCodePaymentRequest | paymentRequest
-x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optional)
-psu_id = 'psu_id_example' # str | PSU ID (optional)
-psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
-psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
+x_yapily_api_version = 'x_yapily_api_version_example' # str | __Optional__. Determines the API version to use. Valid values are `1.0` or `2.0-ALPHA`. Defaults to `1.0` (optional)
+psu_id = 'psu_id_example' # str | __Conditional__. Represents the user's login ID for the `Institution` to a personal account. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | __Conditional__. Represents the user's login ID for the `Institution` to a business account. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
+psu_ip_address = 'psu_ip_address_example' # str | __Conditional__. The IP address of the PSU. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
 
     try:
         # Create a new single payment
@@ -671,12 +671,12 @@ psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **consent** | **str**| Consent Token | 
+ **consent** | **str**| __Mandatory__. The &#x60;consent-token&#x60; containing the user&#39;s authorisation to make the request. | 
  **payment_request** | [**SortCodePaymentRequest**](SortCodePaymentRequest.md)| paymentRequest | 
- **x_yapily_api_version** | **str**| Api Version | [optional] 
- **psu_id** | **str**| PSU ID | [optional] 
- **psu_corporate_id** | **str**| PSU ID CORPORATE | [optional] 
- **psu_ip_address** | **str**| PSU IP ADDRESS | [optional] 
+ **x_yapily_api_version** | **str**| __Optional__. Determines the API version to use. Valid values are &#x60;1.0&#x60; or &#x60;2.0-ALPHA&#x60;. Defaults to &#x60;1.0&#x60; | [optional] 
+ **psu_id** | **str**| __Conditional__. Represents the user&#39;s login ID for the &#x60;Institution&#x60; to a personal account. &lt;br&gt;&lt;br&gt;See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. | [optional] 
+ **psu_corporate_id** | **str**| __Conditional__. Represents the user&#39;s login ID for the &#x60;Institution&#x60; to a business account. &lt;br&gt;&lt;br&gt;See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. | [optional] 
+ **psu_ip_address** | **str**| __Conditional__. The IP address of the PSU. &lt;br&gt;&lt;br&gt;See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. | [optional] 
 
 ### Return type
 
@@ -731,12 +731,12 @@ configuration.host = "https://api.yapily.com:443"
 with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.PaymentsApi(api_client)
-    payment_id = 'payment_id_example' # str | Payment Id
-consent = 'consent_example' # str | Consent Token
-x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optional)
-psu_id = 'psu_id_example' # str | PSU ID (optional)
-psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
-psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
+    payment_id = 'payment_id_example' # str | __Mandatory__. The payment Id of the payment.
+consent = 'consent_example' # str | __Mandatory__. The `consent-token` containing the user's authorisation to make the request.
+x_yapily_api_version = 'x_yapily_api_version_example' # str | __Optional__. Determines the API version to use. Valid values are `1.0` or `2.0-ALPHA`. Defaults to `1.0` (optional)
+psu_id = 'psu_id_example' # str | __Conditional__. Represents the user's login ID for the `Institution` to a personal account. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | __Conditional__. Represents the user's login ID for the `Institution` to a business account. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
+psu_ip_address = 'psu_ip_address_example' # str | __Conditional__. The IP address of the PSU. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
 
     try:
         # Get status of a payment
@@ -768,12 +768,12 @@ configuration.host = "https://api.yapily.com:443"
 with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.PaymentsApi(api_client)
-    payment_id = 'payment_id_example' # str | Payment Id
-consent = 'consent_example' # str | Consent Token
-x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optional)
-psu_id = 'psu_id_example' # str | PSU ID (optional)
-psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
-psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
+    payment_id = 'payment_id_example' # str | __Mandatory__. The payment Id of the payment.
+consent = 'consent_example' # str | __Mandatory__. The `consent-token` containing the user's authorisation to make the request.
+x_yapily_api_version = 'x_yapily_api_version_example' # str | __Optional__. Determines the API version to use. Valid values are `1.0` or `2.0-ALPHA`. Defaults to `1.0` (optional)
+psu_id = 'psu_id_example' # str | __Conditional__. Represents the user's login ID for the `Institution` to a personal account. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | __Conditional__. Represents the user's login ID for the `Institution` to a business account. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
+psu_ip_address = 'psu_ip_address_example' # str | __Conditional__. The IP address of the PSU. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
 
     try:
         # Get status of a payment
@@ -787,12 +787,12 @@ psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payment_id** | **str**| Payment Id | 
- **consent** | **str**| Consent Token | 
- **x_yapily_api_version** | **str**| Api Version | [optional] 
- **psu_id** | **str**| PSU ID | [optional] 
- **psu_corporate_id** | **str**| PSU ID CORPORATE | [optional] 
- **psu_ip_address** | **str**| PSU IP ADDRESS | [optional] 
+ **payment_id** | **str**| __Mandatory__. The payment Id of the payment. | 
+ **consent** | **str**| __Mandatory__. The &#x60;consent-token&#x60; containing the user&#39;s authorisation to make the request. | 
+ **x_yapily_api_version** | **str**| __Optional__. Determines the API version to use. Valid values are &#x60;1.0&#x60; or &#x60;2.0-ALPHA&#x60;. Defaults to &#x60;1.0&#x60; | [optional] 
+ **psu_id** | **str**| __Conditional__. Represents the user&#39;s login ID for the &#x60;Institution&#x60; to a personal account. &lt;br&gt;&lt;br&gt;See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. | [optional] 
+ **psu_corporate_id** | **str**| __Conditional__. Represents the user&#39;s login ID for the &#x60;Institution&#x60; to a business account. &lt;br&gt;&lt;br&gt;See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. | [optional] 
+ **psu_ip_address** | **str**| __Conditional__. The IP address of the PSU. &lt;br&gt;&lt;br&gt;See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. | [optional] 
 
 ### Return type
 
@@ -820,7 +820,7 @@ Name | Type | Description  | Notes
 # **get_payments_using_get**
 > ApiResponseOfPaymentResponses get_payments_using_get(payment_id, consent, x_yapily_api_version=x_yapily_api_version, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
 
-Get payments detail
+Get payments details
 
 ### Example
 
@@ -846,15 +846,15 @@ configuration.host = "https://api.yapily.com:443"
 with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.PaymentsApi(api_client)
-    payment_id = 'payment_id_example' # str | Payment Id
-consent = 'consent_example' # str | Consent Token
-x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optional)
-psu_id = 'psu_id_example' # str | PSU ID (optional)
-psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
-psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
+    payment_id = 'payment_id_example' # str | __Mandatory__. The payment Id of the payment.
+consent = 'consent_example' # str | __Mandatory__. The `consent-token` containing the user's authorisation to make the request.
+x_yapily_api_version = 'x_yapily_api_version_example' # str | __Optional__. Determines the API version to use. Valid values are `1.0` or `2.0-ALPHA`. Defaults to `1.0` (optional)
+psu_id = 'psu_id_example' # str | __Conditional__. Represents the user's login ID for the `Institution` to a personal account. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | __Conditional__. Represents the user's login ID for the `Institution` to a business account. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
+psu_ip_address = 'psu_ip_address_example' # str | __Conditional__. The IP address of the PSU. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
 
     try:
-        # Get payments detail
+        # Get payments details
         api_response = api_instance.get_payments_using_get(payment_id, consent, x_yapily_api_version=x_yapily_api_version, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
         pprint(api_response)
     except ApiException as e:
@@ -883,15 +883,15 @@ configuration.host = "https://api.yapily.com:443"
 with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.PaymentsApi(api_client)
-    payment_id = 'payment_id_example' # str | Payment Id
-consent = 'consent_example' # str | Consent Token
-x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optional)
-psu_id = 'psu_id_example' # str | PSU ID (optional)
-psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
-psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
+    payment_id = 'payment_id_example' # str | __Mandatory__. The payment Id of the payment.
+consent = 'consent_example' # str | __Mandatory__. The `consent-token` containing the user's authorisation to make the request.
+x_yapily_api_version = 'x_yapily_api_version_example' # str | __Optional__. Determines the API version to use. Valid values are `1.0` or `2.0-ALPHA`. Defaults to `1.0` (optional)
+psu_id = 'psu_id_example' # str | __Conditional__. Represents the user's login ID for the `Institution` to a personal account. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | __Conditional__. Represents the user's login ID for the `Institution` to a business account. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
+psu_ip_address = 'psu_ip_address_example' # str | __Conditional__. The IP address of the PSU. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
 
     try:
-        # Get payments detail
+        # Get payments details
         api_response = api_instance.get_payments_using_get(payment_id, consent, x_yapily_api_version=x_yapily_api_version, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
         pprint(api_response)
     except ApiException as e:
@@ -902,12 +902,12 @@ psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payment_id** | **str**| Payment Id | 
- **consent** | **str**| Consent Token | 
- **x_yapily_api_version** | **str**| Api Version | [optional] 
- **psu_id** | **str**| PSU ID | [optional] 
- **psu_corporate_id** | **str**| PSU ID CORPORATE | [optional] 
- **psu_ip_address** | **str**| PSU IP ADDRESS | [optional] 
+ **payment_id** | **str**| __Mandatory__. The payment Id of the payment. | 
+ **consent** | **str**| __Mandatory__. The &#x60;consent-token&#x60; containing the user&#39;s authorisation to make the request. | 
+ **x_yapily_api_version** | **str**| __Optional__. Determines the API version to use. Valid values are &#x60;1.0&#x60; or &#x60;2.0-ALPHA&#x60;. Defaults to &#x60;1.0&#x60; | [optional] 
+ **psu_id** | **str**| __Conditional__. Represents the user&#39;s login ID for the &#x60;Institution&#x60; to a personal account. &lt;br&gt;&lt;br&gt;See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. | [optional] 
+ **psu_corporate_id** | **str**| __Conditional__. Represents the user&#39;s login ID for the &#x60;Institution&#x60; to a business account. &lt;br&gt;&lt;br&gt;See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. | [optional] 
+ **psu_ip_address** | **str**| __Conditional__. The IP address of the PSU. &lt;br&gt;&lt;br&gt;See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. | [optional] 
 
 ### Return type
 
@@ -961,12 +961,12 @@ configuration.host = "https://api.yapily.com:443"
 with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.PaymentsApi(api_client)
-    consent = 'consent_example' # str | Consent Token
+    consent = 'consent_example' # str | __Mandatory__. The `consent-token` containing the user's authorisation to make the request.
 payment_auth_request = yapily.PaymentAuthorisationRequest() # PaymentAuthorisationRequest | paymentAuthRequest
-x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optional)
-psu_id = 'psu_id_example' # str | PSU ID (optional)
-psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
-psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
+x_yapily_api_version = 'x_yapily_api_version_example' # str | __Optional__. Determines the API version to use. Valid values are `1.0` or `2.0-ALPHA`. Defaults to `1.0` (optional)
+psu_id = 'psu_id_example' # str | __Conditional__. Represents the user's login ID for the `Institution` to a personal account. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | __Conditional__. Represents the user's login ID for the `Institution` to a business account. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
+psu_ip_address = 'psu_ip_address_example' # str | __Conditional__. The IP address of the PSU. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
 
     try:
         # Update pre authorize consent for user to authorise payment
@@ -998,12 +998,12 @@ configuration.host = "https://api.yapily.com:443"
 with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.PaymentsApi(api_client)
-    consent = 'consent_example' # str | Consent Token
+    consent = 'consent_example' # str | __Mandatory__. The `consent-token` containing the user's authorisation to make the request.
 payment_auth_request = yapily.PaymentAuthorisationRequest() # PaymentAuthorisationRequest | paymentAuthRequest
-x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optional)
-psu_id = 'psu_id_example' # str | PSU ID (optional)
-psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
-psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
+x_yapily_api_version = 'x_yapily_api_version_example' # str | __Optional__. Determines the API version to use. Valid values are `1.0` or `2.0-ALPHA`. Defaults to `1.0` (optional)
+psu_id = 'psu_id_example' # str | __Conditional__. Represents the user's login ID for the `Institution` to a personal account. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | __Conditional__. Represents the user's login ID for the `Institution` to a business account. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
+psu_ip_address = 'psu_ip_address_example' # str | __Conditional__. The IP address of the PSU. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
 
     try:
         # Update pre authorize consent for user to authorise payment
@@ -1017,12 +1017,12 @@ psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **consent** | **str**| Consent Token | 
+ **consent** | **str**| __Mandatory__. The &#x60;consent-token&#x60; containing the user&#39;s authorisation to make the request. | 
  **payment_auth_request** | [**PaymentAuthorisationRequest**](PaymentAuthorisationRequest.md)| paymentAuthRequest | 
- **x_yapily_api_version** | **str**| Api Version | [optional] 
- **psu_id** | **str**| PSU ID | [optional] 
- **psu_corporate_id** | **str**| PSU ID CORPORATE | [optional] 
- **psu_ip_address** | **str**| PSU IP ADDRESS | [optional] 
+ **x_yapily_api_version** | **str**| __Optional__. Determines the API version to use. Valid values are &#x60;1.0&#x60; or &#x60;2.0-ALPHA&#x60;. Defaults to &#x60;1.0&#x60; | [optional] 
+ **psu_id** | **str**| __Conditional__. Represents the user&#39;s login ID for the &#x60;Institution&#x60; to a personal account. &lt;br&gt;&lt;br&gt;See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. | [optional] 
+ **psu_corporate_id** | **str**| __Conditional__. Represents the user&#39;s login ID for the &#x60;Institution&#x60; to a business account. &lt;br&gt;&lt;br&gt;See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. | [optional] 
+ **psu_ip_address** | **str**| __Conditional__. The IP address of the PSU. &lt;br&gt;&lt;br&gt;See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. | [optional] 
 
 ### Return type
 

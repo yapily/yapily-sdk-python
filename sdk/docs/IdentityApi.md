@@ -36,8 +36,8 @@ configuration.host = "https://api.yapily.com:443"
 with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.IdentityApi(api_client)
-    consent = 'consent_example' # str | Consent Token
-x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optional)
+    consent = 'consent_example' # str | __Mandatory__. The `consent-token` containing the user's authorisation to make the request.
+x_yapily_api_version = 'x_yapily_api_version_example' # str | __Optional__. Determines the API version to use. Valid values are `1.0` or `2.0-ALPHA`. Defaults to `1.0` (optional)
 
     try:
         # Get identity
@@ -69,8 +69,8 @@ configuration.host = "https://api.yapily.com:443"
 with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.IdentityApi(api_client)
-    consent = 'consent_example' # str | Consent Token
-x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optional)
+    consent = 'consent_example' # str | __Mandatory__. The `consent-token` containing the user's authorisation to make the request.
+x_yapily_api_version = 'x_yapily_api_version_example' # str | __Optional__. Determines the API version to use. Valid values are `1.0` or `2.0-ALPHA`. Defaults to `1.0` (optional)
 
     try:
         # Get identity
@@ -84,8 +84,8 @@ x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optio
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **consent** | **str**| Consent Token | 
- **x_yapily_api_version** | **str**| Api Version | [optional] 
+ **consent** | **str**| __Mandatory__. The &#x60;consent-token&#x60; containing the user&#39;s authorisation to make the request. | 
+ **x_yapily_api_version** | **str**| __Optional__. Determines the API version to use. Valid values are &#x60;1.0&#x60; or &#x60;2.0-ALPHA&#x60;. Defaults to &#x60;1.0&#x60; | [optional] 
 
 ### Return type
 

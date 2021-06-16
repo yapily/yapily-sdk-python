@@ -43,7 +43,7 @@ with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.ApplicationUsersApi(api_client)
     new_application_user = yapily.NewApplicationUser() # NewApplicationUser | newApplicationUser
-x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optional)
+x_yapily_api_version = 'x_yapily_api_version_example' # str | __Optional__. Determines the API version to use. Valid values are `1.0` or `2.0-ALPHA`. Defaults to `1.0` (optional)
 
     try:
         # Add an application user
@@ -76,7 +76,7 @@ with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.ApplicationUsersApi(api_client)
     new_application_user = yapily.NewApplicationUser() # NewApplicationUser | newApplicationUser
-x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optional)
+x_yapily_api_version = 'x_yapily_api_version_example' # str | __Optional__. Determines the API version to use. Valid values are `1.0` or `2.0-ALPHA`. Defaults to `1.0` (optional)
 
     try:
         # Add an application user
@@ -91,7 +91,7 @@ x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optio
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **new_application_user** | [**NewApplicationUser**](NewApplicationUser.md)| newApplicationUser | 
- **x_yapily_api_version** | **str**| Api Version | [optional] 
+ **x_yapily_api_version** | **str**| __Optional__. Determines the API version to use. Valid values are &#x60;1.0&#x60; or &#x60;2.0-ALPHA&#x60;. Defaults to &#x60;1.0&#x60; | [optional] 
 
 ### Return type
 
@@ -146,8 +146,8 @@ configuration.host = "https://api.yapily.com:443"
 with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.ApplicationUsersApi(api_client)
-    user_uuid = 'user_uuid_example' # str | User uuid
-x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optional)
+    user_uuid = 'user_uuid_example' # str | __Mandatory__. The Yapily generated UUID for the user.
+x_yapily_api_version = 'x_yapily_api_version_example' # str | __Optional__. Determines the API version to use. Valid values are `1.0` or `2.0-ALPHA`. Defaults to `1.0` (optional)
 
     try:
         # Delete an application user and sub-resources (including consent resources on institution APIs if they exist)
@@ -179,8 +179,8 @@ configuration.host = "https://api.yapily.com:443"
 with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.ApplicationUsersApi(api_client)
-    user_uuid = 'user_uuid_example' # str | User uuid
-x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optional)
+    user_uuid = 'user_uuid_example' # str | __Mandatory__. The Yapily generated UUID for the user.
+x_yapily_api_version = 'x_yapily_api_version_example' # str | __Optional__. Determines the API version to use. Valid values are `1.0` or `2.0-ALPHA`. Defaults to `1.0` (optional)
 
     try:
         # Delete an application user and sub-resources (including consent resources on institution APIs if they exist)
@@ -194,8 +194,8 @@ x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optio
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_uuid** | **str**| User uuid | 
- **x_yapily_api_version** | **str**| Api Version | [optional] 
+ **user_uuid** | **str**| __Mandatory__. The Yapily generated UUID for the user. | 
+ **x_yapily_api_version** | **str**| __Optional__. Determines the API version to use. Valid values are &#x60;1.0&#x60; or &#x60;2.0-ALPHA&#x60;. Defaults to &#x60;1.0&#x60; | [optional] 
 
 ### Return type
 
@@ -444,8 +444,8 @@ configuration.host = "https://api.yapily.com:443"
 with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.ApplicationUsersApi(api_client)
-    user_uuid = 'user_uuid_example' # str | User uuid
-x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optional)
+    user_uuid = 'user_uuid_example' # str | __Mandatory__. The Yapily generated UUID for the user.
+x_yapily_api_version = 'x_yapily_api_version_example' # str | __Optional__. Determines the API version to use. Valid values are `1.0` or `2.0-ALPHA`. Defaults to `1.0` (optional)
 
     try:
         # Get an application user
@@ -477,8 +477,8 @@ configuration.host = "https://api.yapily.com:443"
 with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.ApplicationUsersApi(api_client)
-    user_uuid = 'user_uuid_example' # str | User uuid
-x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optional)
+    user_uuid = 'user_uuid_example' # str | __Mandatory__. The Yapily generated UUID for the user.
+x_yapily_api_version = 'x_yapily_api_version_example' # str | __Optional__. Determines the API version to use. Valid values are `1.0` or `2.0-ALPHA`. Defaults to `1.0` (optional)
 
     try:
         # Get an application user
@@ -492,8 +492,8 @@ x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optio
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_uuid** | **str**| User uuid | 
- **x_yapily_api_version** | **str**| Api Version | [optional] 
+ **user_uuid** | **str**| __Mandatory__. The Yapily generated UUID for the user. | 
+ **x_yapily_api_version** | **str**| __Optional__. Determines the API version to use. Valid values are &#x60;1.0&#x60; or &#x60;2.0-ALPHA&#x60;. Defaults to &#x60;1.0&#x60; | [optional] 
 
 ### Return type
 
@@ -547,8 +547,8 @@ configuration.host = "https://api.yapily.com:443"
 with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.ApplicationUsersApi(api_client)
-    x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optional)
-filter_application_user_id = ['filter_application_user_id_example'] # list[str] | Filter users by the provided application user Id (applicationUserId) when the user was created. (optional)
+    x_yapily_api_version = 'x_yapily_api_version_example' # str | __Optional__. Determines the API version to use. Valid values are `1.0` or `2.0-ALPHA`. Defaults to `1.0` (optional)
+filter_application_user_id = ['filter_application_user_id_example'] # list[str] | __Optional__. Filter records based on the list of `applicationUserId` users provided. (optional)
 
     try:
         # Get application users
@@ -580,8 +580,8 @@ configuration.host = "https://api.yapily.com:443"
 with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.ApplicationUsersApi(api_client)
-    x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optional)
-filter_application_user_id = ['filter_application_user_id_example'] # list[str] | Filter users by the provided application user Id (applicationUserId) when the user was created. (optional)
+    x_yapily_api_version = 'x_yapily_api_version_example' # str | __Optional__. Determines the API version to use. Valid values are `1.0` or `2.0-ALPHA`. Defaults to `1.0` (optional)
+filter_application_user_id = ['filter_application_user_id_example'] # list[str] | __Optional__. Filter records based on the list of `applicationUserId` users provided. (optional)
 
     try:
         # Get application users
@@ -595,8 +595,8 @@ filter_application_user_id = ['filter_application_user_id_example'] # list[str] 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **x_yapily_api_version** | **str**| Api Version | [optional] 
- **filter_application_user_id** | [**list[str]**](str.md)| Filter users by the provided application user Id (applicationUserId) when the user was created. | [optional] 
+ **x_yapily_api_version** | **str**| __Optional__. Determines the API version to use. Valid values are &#x60;1.0&#x60; or &#x60;2.0-ALPHA&#x60;. Defaults to &#x60;1.0&#x60; | [optional] 
+ **filter_application_user_id** | [**list[str]**](str.md)| __Optional__. Filter records based on the list of &#x60;applicationUserId&#x60; users provided. | [optional] 
 
 ### Return type
 

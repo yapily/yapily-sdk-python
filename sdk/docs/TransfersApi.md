@@ -36,9 +36,9 @@ configuration.host = "https://api.yapily.com:443"
 with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.TransfersApi(api_client)
-    consent = 'consent_example' # str | Consent Token
-account_id = 'account_id_example' # str | Account Id
-x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optional)
+    consent = 'consent_example' # str | __Mandatory__. The `consent-token` containing the user's authorisation to make the request.
+account_id = 'account_id_example' # str | __Mandatory__. The account Id of the user's bank account.
+x_yapily_api_version = 'x_yapily_api_version_example' # str | __Optional__. Determines the API version to use. Valid values are `1.0` or `2.0-ALPHA`. Defaults to `1.0` (optional)
 transfer_request = yapily.TransferRequest() # TransferRequest | transferRequest (optional)
 
     try:
@@ -71,9 +71,9 @@ configuration.host = "https://api.yapily.com:443"
 with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.TransfersApi(api_client)
-    consent = 'consent_example' # str | Consent Token
-account_id = 'account_id_example' # str | Account Id
-x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optional)
+    consent = 'consent_example' # str | __Mandatory__. The `consent-token` containing the user's authorisation to make the request.
+account_id = 'account_id_example' # str | __Mandatory__. The account Id of the user's bank account.
+x_yapily_api_version = 'x_yapily_api_version_example' # str | __Optional__. Determines the API version to use. Valid values are `1.0` or `2.0-ALPHA`. Defaults to `1.0` (optional)
 transfer_request = yapily.TransferRequest() # TransferRequest | transferRequest (optional)
 
     try:
@@ -88,9 +88,9 @@ transfer_request = yapily.TransferRequest() # TransferRequest | transferRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **consent** | **str**| Consent Token | 
- **account_id** | **str**| Account Id | 
- **x_yapily_api_version** | **str**| Api Version | [optional] 
+ **consent** | **str**| __Mandatory__. The &#x60;consent-token&#x60; containing the user&#39;s authorisation to make the request. | 
+ **account_id** | **str**| __Mandatory__. The account Id of the user&#39;s bank account. | 
+ **x_yapily_api_version** | **str**| __Optional__. Determines the API version to use. Valid values are &#x60;1.0&#x60; or &#x60;2.0-ALPHA&#x60;. Defaults to &#x60;1.0&#x60; | [optional] 
  **transfer_request** | [**TransferRequest**](TransferRequest.md)| transferRequest | [optional] 
 
 ### Return type

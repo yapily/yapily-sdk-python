@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **initiate_embedded_account_request_using_post**
-> ApiResponseOfAuthorisationEmbeddedRequestResponse initiate_embedded_account_request_using_post(account_auth_request, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
+> ApiResponseOfAuthorisationEmbeddedRequestResponse initiate_embedded_account_request_using_post(account_auth_request, x_yapily_api_version=x_yapily_api_version, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
 
 Initiate a new embedded account request for user to authorize
 
@@ -38,13 +38,14 @@ with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.EmbeddedAccountsApi(api_client)
     account_auth_request = yapily.AccountEmbeddedAuthorisationRequest() # AccountEmbeddedAuthorisationRequest | accountAuthRequest
-psu_id = 'psu_id_example' # str | PSU ID (optional)
-psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
-psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
+x_yapily_api_version = 'x_yapily_api_version_example' # str | __Optional__. Determines the API version to use. Valid values are `1.0` or `2.0-ALPHA`. Defaults to `1.0` (optional)
+psu_id = 'psu_id_example' # str | __Conditional__. Represents the user's login ID for the `Institution` to a personal account. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | __Conditional__. Represents the user's login ID for the `Institution` to a business account. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
+psu_ip_address = 'psu_ip_address_example' # str | __Conditional__. The IP address of the PSU. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
 
     try:
         # Initiate a new embedded account request for user to authorize
-        api_response = api_instance.initiate_embedded_account_request_using_post(account_auth_request, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
+        api_response = api_instance.initiate_embedded_account_request_using_post(account_auth_request, x_yapily_api_version=x_yapily_api_version, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling EmbeddedAccountsApi->initiate_embedded_account_request_using_post: %s\n" % e)
@@ -73,13 +74,14 @@ with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.EmbeddedAccountsApi(api_client)
     account_auth_request = yapily.AccountEmbeddedAuthorisationRequest() # AccountEmbeddedAuthorisationRequest | accountAuthRequest
-psu_id = 'psu_id_example' # str | PSU ID (optional)
-psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
-psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
+x_yapily_api_version = 'x_yapily_api_version_example' # str | __Optional__. Determines the API version to use. Valid values are `1.0` or `2.0-ALPHA`. Defaults to `1.0` (optional)
+psu_id = 'psu_id_example' # str | __Conditional__. Represents the user's login ID for the `Institution` to a personal account. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | __Conditional__. Represents the user's login ID for the `Institution` to a business account. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
+psu_ip_address = 'psu_ip_address_example' # str | __Conditional__. The IP address of the PSU. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
 
     try:
         # Initiate a new embedded account request for user to authorize
-        api_response = api_instance.initiate_embedded_account_request_using_post(account_auth_request, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
+        api_response = api_instance.initiate_embedded_account_request_using_post(account_auth_request, x_yapily_api_version=x_yapily_api_version, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling EmbeddedAccountsApi->initiate_embedded_account_request_using_post: %s\n" % e)
@@ -90,9 +92,10 @@ psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_auth_request** | [**AccountEmbeddedAuthorisationRequest**](AccountEmbeddedAuthorisationRequest.md)| accountAuthRequest | 
- **psu_id** | **str**| PSU ID | [optional] 
- **psu_corporate_id** | **str**| PSU ID CORPORATE | [optional] 
- **psu_ip_address** | **str**| PSU IP ADDRESS | [optional] 
+ **x_yapily_api_version** | **str**| __Optional__. Determines the API version to use. Valid values are &#x60;1.0&#x60; or &#x60;2.0-ALPHA&#x60;. Defaults to &#x60;1.0&#x60; | [optional] 
+ **psu_id** | **str**| __Conditional__. Represents the user&#39;s login ID for the &#x60;Institution&#x60; to a personal account. &lt;br&gt;&lt;br&gt;See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. | [optional] 
+ **psu_corporate_id** | **str**| __Conditional__. Represents the user&#39;s login ID for the &#x60;Institution&#x60; to a business account. &lt;br&gt;&lt;br&gt;See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. | [optional] 
+ **psu_ip_address** | **str**| __Conditional__. The IP address of the PSU. &lt;br&gt;&lt;br&gt;See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. | [optional] 
 
 ### Return type
 
@@ -119,7 +122,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_embedded_account_request_using_put**
-> ApiResponseOfAuthorisationEmbeddedRequestResponse update_embedded_account_request_using_put(consent_id, account_auth_request, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
+> ApiResponseOfAuthorisationEmbeddedRequestResponse update_embedded_account_request_using_put(consent_id, account_auth_request, x_yapily_api_version=x_yapily_api_version, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
 
 Update an embedded account request with SCA info
 
@@ -147,15 +150,16 @@ configuration.host = "https://api.yapily.com:443"
 with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.EmbeddedAccountsApi(api_client)
-    consent_id = 'consent_id_example' # str | consentId
+    consent_id = 'consent_id_example' # str | __Mandatory__. The consent Id of the `Consent` to update.
 account_auth_request = yapily.AccountEmbeddedAuthorisationRequest() # AccountEmbeddedAuthorisationRequest | accountAuthRequest
-psu_id = 'psu_id_example' # str | PSU ID (optional)
-psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
-psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
+x_yapily_api_version = 'x_yapily_api_version_example' # str | __Optional__. Determines the API version to use. Valid values are `1.0` or `2.0-ALPHA`. Defaults to `1.0` (optional)
+psu_id = 'psu_id_example' # str | __Conditional__. Represents the user's login ID for the `Institution` to a personal account. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | __Conditional__. Represents the user's login ID for the `Institution` to a business account. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
+psu_ip_address = 'psu_ip_address_example' # str | __Conditional__. The IP address of the PSU. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
 
     try:
         # Update an embedded account request with SCA info
-        api_response = api_instance.update_embedded_account_request_using_put(consent_id, account_auth_request, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
+        api_response = api_instance.update_embedded_account_request_using_put(consent_id, account_auth_request, x_yapily_api_version=x_yapily_api_version, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling EmbeddedAccountsApi->update_embedded_account_request_using_put: %s\n" % e)
@@ -183,15 +187,16 @@ configuration.host = "https://api.yapily.com:443"
 with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.EmbeddedAccountsApi(api_client)
-    consent_id = 'consent_id_example' # str | consentId
+    consent_id = 'consent_id_example' # str | __Mandatory__. The consent Id of the `Consent` to update.
 account_auth_request = yapily.AccountEmbeddedAuthorisationRequest() # AccountEmbeddedAuthorisationRequest | accountAuthRequest
-psu_id = 'psu_id_example' # str | PSU ID (optional)
-psu_corporate_id = 'psu_corporate_id_example' # str | PSU ID CORPORATE (optional)
-psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
+x_yapily_api_version = 'x_yapily_api_version_example' # str | __Optional__. Determines the API version to use. Valid values are `1.0` or `2.0-ALPHA`. Defaults to `1.0` (optional)
+psu_id = 'psu_id_example' # str | __Conditional__. Represents the user's login ID for the `Institution` to a personal account. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
+psu_corporate_id = 'psu_corporate_id_example' # str | __Conditional__. Represents the user's login ID for the `Institution` to a business account. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
+psu_ip_address = 'psu_ip_address_example' # str | __Conditional__. The IP address of the PSU. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
 
     try:
         # Update an embedded account request with SCA info
-        api_response = api_instance.update_embedded_account_request_using_put(consent_id, account_auth_request, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
+        api_response = api_instance.update_embedded_account_request_using_put(consent_id, account_auth_request, x_yapily_api_version=x_yapily_api_version, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling EmbeddedAccountsApi->update_embedded_account_request_using_put: %s\n" % e)
@@ -201,11 +206,12 @@ psu_ip_address = 'psu_ip_address_example' # str | PSU IP ADDRESS (optional)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **consent_id** | **str**| consentId | 
+ **consent_id** | **str**| __Mandatory__. The consent Id of the &#x60;Consent&#x60; to update. | 
  **account_auth_request** | [**AccountEmbeddedAuthorisationRequest**](AccountEmbeddedAuthorisationRequest.md)| accountAuthRequest | 
- **psu_id** | **str**| PSU ID | [optional] 
- **psu_corporate_id** | **str**| PSU ID CORPORATE | [optional] 
- **psu_ip_address** | **str**| PSU IP ADDRESS | [optional] 
+ **x_yapily_api_version** | **str**| __Optional__. Determines the API version to use. Valid values are &#x60;1.0&#x60; or &#x60;2.0-ALPHA&#x60;. Defaults to &#x60;1.0&#x60; | [optional] 
+ **psu_id** | **str**| __Conditional__. Represents the user&#39;s login ID for the &#x60;Institution&#x60; to a personal account. &lt;br&gt;&lt;br&gt;See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. | [optional] 
+ **psu_corporate_id** | **str**| __Conditional__. Represents the user&#39;s login ID for the &#x60;Institution&#x60; to a business account. &lt;br&gt;&lt;br&gt;See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. | [optional] 
+ **psu_ip_address** | **str**| __Conditional__. The IP address of the PSU. &lt;br&gt;&lt;br&gt;See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. | [optional] 
 
 ### Return type
 

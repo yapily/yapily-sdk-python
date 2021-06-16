@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get_categories_using_get**
-> ApiListResponseOfCategory get_categories_using_get(country)
+> ApiListResponseOfCategory get_categories_using_get(country, x_yapily_api_version=x_yapily_api_version)
 
 Retrieves a list of categories returned by the Yapily Categorisation engine for a given locale
 
@@ -36,11 +36,12 @@ configuration.host = "https://api.yapily.com:443"
 with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.CategoriesApi(api_client)
-    country = 'country_example' # str | country
+    country = 'country_example' # str | __Mandatory__. The 2 letter country code e.g. 'GB'.
+x_yapily_api_version = 'x_yapily_api_version_example' # str | __Optional__. Determines the API version to use. Valid values are `1.0` or `2.0-ALPHA`. Defaults to `1.0` (optional)
 
     try:
         # Retrieves a list of categories returned by the Yapily Categorisation engine for a given locale
-        api_response = api_instance.get_categories_using_get(country)
+        api_response = api_instance.get_categories_using_get(country, x_yapily_api_version=x_yapily_api_version)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling CategoriesApi->get_categories_using_get: %s\n" % e)
@@ -68,11 +69,12 @@ configuration.host = "https://api.yapily.com:443"
 with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.CategoriesApi(api_client)
-    country = 'country_example' # str | country
+    country = 'country_example' # str | __Mandatory__. The 2 letter country code e.g. 'GB'.
+x_yapily_api_version = 'x_yapily_api_version_example' # str | __Optional__. Determines the API version to use. Valid values are `1.0` or `2.0-ALPHA`. Defaults to `1.0` (optional)
 
     try:
         # Retrieves a list of categories returned by the Yapily Categorisation engine for a given locale
-        api_response = api_instance.get_categories_using_get(country)
+        api_response = api_instance.get_categories_using_get(country, x_yapily_api_version=x_yapily_api_version)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling CategoriesApi->get_categories_using_get: %s\n" % e)
@@ -82,7 +84,8 @@ with yapily.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **country** | **str**| country | 
+ **country** | **str**| __Mandatory__. The 2 letter country code e.g. &#39;GB&#39;. | 
+ **x_yapily_api_version** | **str**| __Optional__. Determines the API version to use. Valid values are &#x60;1.0&#x60; or &#x60;2.0-ALPHA&#x60;. Defaults to &#x60;1.0&#x60; | [optional] 
 
 ### Return type
 

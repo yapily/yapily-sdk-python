@@ -1,16 +1,16 @@
-# yapily.BeneficiariesApi
+# yapily.ApplicationApi
 
 All URIs are relative to *https://api.yapily.com:443*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_beneficiaries_using_get**](BeneficiariesApi.md#get_beneficiaries_using_get) | **GET** /accounts/{accountId}/beneficiaries | Get beneficiaries
+[**get_application_me_using_get**](ApplicationApi.md#get_application_me_using_get) | **GET** /me | Returns the details of the application that owns the request credentials
 
 
-# **get_beneficiaries_using_get**
-> ApiResponseOfListOfBeneficiary get_beneficiaries_using_get(account_id, consent, x_yapily_api_version=x_yapily_api_version)
+# **get_application_me_using_get**
+> Application get_application_me_using_get(x_yapily_api_version=x_yapily_api_version)
 
-Get beneficiaries
+Returns the details of the application that owns the request credentials
 
 ### Example
 
@@ -35,17 +35,15 @@ configuration.host = "https://api.yapily.com:443"
 # Enter a context with an instance of the API client
 with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = yapily.BeneficiariesApi(api_client)
-    account_id = 'account_id_example' # str | Account Id
-consent = 'consent_example' # str | Consent Token
-x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optional)
+    api_instance = yapily.ApplicationApi(api_client)
+    x_yapily_api_version = 'x_yapily_api_version_example' # str | __Optional__. Determines the API version to use. Valid values are `1.0` or `2.0-ALPHA`. Defaults to `1.0` (optional)
 
     try:
-        # Get beneficiaries
-        api_response = api_instance.get_beneficiaries_using_get(account_id, consent, x_yapily_api_version=x_yapily_api_version)
+        # Returns the details of the application that owns the request credentials
+        api_response = api_instance.get_application_me_using_get(x_yapily_api_version=x_yapily_api_version)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling BeneficiariesApi->get_beneficiaries_using_get: %s\n" % e)
+        print("Exception when calling ApplicationApi->get_application_me_using_get: %s\n" % e)
 ```
 
 * OAuth Authentication (tokenAuth):
@@ -69,30 +67,26 @@ configuration.host = "https://api.yapily.com:443"
 # Enter a context with an instance of the API client
 with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = yapily.BeneficiariesApi(api_client)
-    account_id = 'account_id_example' # str | Account Id
-consent = 'consent_example' # str | Consent Token
-x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optional)
+    api_instance = yapily.ApplicationApi(api_client)
+    x_yapily_api_version = 'x_yapily_api_version_example' # str | __Optional__. Determines the API version to use. Valid values are `1.0` or `2.0-ALPHA`. Defaults to `1.0` (optional)
 
     try:
-        # Get beneficiaries
-        api_response = api_instance.get_beneficiaries_using_get(account_id, consent, x_yapily_api_version=x_yapily_api_version)
+        # Returns the details of the application that owns the request credentials
+        api_response = api_instance.get_application_me_using_get(x_yapily_api_version=x_yapily_api_version)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling BeneficiariesApi->get_beneficiaries_using_get: %s\n" % e)
+        print("Exception when calling ApplicationApi->get_application_me_using_get: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **str**| Account Id | 
- **consent** | **str**| Consent Token | 
- **x_yapily_api_version** | **str**| Api Version | [optional] 
+ **x_yapily_api_version** | **str**| __Optional__. Determines the API version to use. Valid values are &#x60;1.0&#x60; or &#x60;2.0-ALPHA&#x60;. Defaults to &#x60;1.0&#x60; | [optional] 
 
 ### Return type
 
-[**ApiResponseOfListOfBeneficiary**](ApiResponseOfListOfBeneficiary.md)
+[**Application**](Application.md)
 
 ### Authorization
 

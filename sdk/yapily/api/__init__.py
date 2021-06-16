@@ -4,10 +4,9 @@ from __future__ import absolute_import
 
 # import apis into api package
 from yapily.api.accounts_api import AccountsApi
+from yapily.api.application_api import ApplicationApi
 from yapily.api.application_users_api import ApplicationUsersApi
-from yapily.api.applications_api import ApplicationsApi
 from yapily.api.balances_api import BalancesApi
-from yapily.api.beneficiaries_api import BeneficiariesApi
 from yapily.api.categories_api import CategoriesApi
 from yapily.api.consents_api import ConsentsApi
 from yapily.api.embedded_accounts_api import EmbeddedAccountsApi

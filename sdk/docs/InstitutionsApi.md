@@ -38,7 +38,7 @@ configuration.host = "https://api.yapily.com:443"
 with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.InstitutionsApi(api_client)
-    x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optional)
+    x_yapily_api_version = 'x_yapily_api_version_example' # str | __Optional__. Determines the API version to use. Valid values are `1.0` or `2.0-ALPHA`. Defaults to `1.0` (optional)
 
     try:
         # Retrieve details for Yapily's institution features
@@ -70,7 +70,7 @@ configuration.host = "https://api.yapily.com:443"
 with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.InstitutionsApi(api_client)
-    x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optional)
+    x_yapily_api_version = 'x_yapily_api_version_example' # str | __Optional__. Determines the API version to use. Valid values are `1.0` or `2.0-ALPHA`. Defaults to `1.0` (optional)
 
     try:
         # Retrieve details for Yapily's institution features
@@ -84,7 +84,7 @@ with yapily.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **x_yapily_api_version** | **str**| Api Version | [optional] 
+ **x_yapily_api_version** | **str**| __Optional__. Determines the API version to use. Valid values are &#x60;1.0&#x60; or &#x60;2.0-ALPHA&#x60;. Defaults to &#x60;1.0&#x60; | [optional] 
 
 ### Return type
 
@@ -138,8 +138,8 @@ configuration.host = "https://api.yapily.com:443"
 with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.InstitutionsApi(api_client)
-    institution_id = 'institution_id_example' # str | Institution Id
-x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optional)
+    institution_id = 'institution_id_example' # str | __Mandatory__. The Yapily institution Id for the `Institution`.
+x_yapily_api_version = 'x_yapily_api_version_example' # str | __Optional__. Determines the API version to use. Valid values are `1.0` or `2.0-ALPHA`. Defaults to `1.0` (optional)
 
     try:
         # Retrieves details of a specific institution available in Yapily
@@ -171,8 +171,8 @@ configuration.host = "https://api.yapily.com:443"
 with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.InstitutionsApi(api_client)
-    institution_id = 'institution_id_example' # str | Institution Id
-x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optional)
+    institution_id = 'institution_id_example' # str | __Mandatory__. The Yapily institution Id for the `Institution`.
+x_yapily_api_version = 'x_yapily_api_version_example' # str | __Optional__. Determines the API version to use. Valid values are `1.0` or `2.0-ALPHA`. Defaults to `1.0` (optional)
 
     try:
         # Retrieves details of a specific institution available in Yapily
@@ -186,8 +186,8 @@ x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optio
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **institution_id** | **str**| Institution Id | 
- **x_yapily_api_version** | **str**| Api Version | [optional] 
+ **institution_id** | **str**| __Mandatory__. The Yapily institution Id for the &#x60;Institution&#x60;. | 
+ **x_yapily_api_version** | **str**| __Optional__. Determines the API version to use. Valid values are &#x60;1.0&#x60; or &#x60;2.0-ALPHA&#x60;. Defaults to &#x60;1.0&#x60; | [optional] 
 
 ### Return type
 
@@ -241,7 +241,7 @@ configuration.host = "https://api.yapily.com:443"
 with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.InstitutionsApi(api_client)
-    x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optional)
+    x_yapily_api_version = 'x_yapily_api_version_example' # str | __Optional__. Determines the API version to use. Valid values are `1.0` or `2.0-ALPHA`. Defaults to `1.0` (optional)
 
     try:
         # Retrieves the list of institutions available in Yapily
@@ -273,7 +273,7 @@ configuration.host = "https://api.yapily.com:443"
 with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.InstitutionsApi(api_client)
-    x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optional)
+    x_yapily_api_version = 'x_yapily_api_version_example' # str | __Optional__. Determines the API version to use. Valid values are `1.0` or `2.0-ALPHA`. Defaults to `1.0` (optional)
 
     try:
         # Retrieves the list of institutions available in Yapily
@@ -287,7 +287,7 @@ with yapily.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **x_yapily_api_version** | **str**| Api Version | [optional] 
+ **x_yapily_api_version** | **str**| __Optional__. Determines the API version to use. Valid values are &#x60;1.0&#x60; or &#x60;2.0-ALPHA&#x60;. Defaults to &#x60;1.0&#x60; | [optional] 
 
 ### Return type
 

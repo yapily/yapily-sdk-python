@@ -38,10 +38,10 @@ configuration.host = "https://api.yapily.com:443"
 with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.StatementsApi(api_client)
-    consent = 'consent_example' # str | Consent Token
-account_id = 'account_id_example' # str | Account Id
-statement_id = 'statement_id_example' # str | Statement Id
-x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optional)
+    consent = 'consent_example' # str | __Mandatory__. The `consent-token` containing the user's authorisation to make the request.
+account_id = 'account_id_example' # str | __Mandatory__. The account Id of the user's bank account.
+statement_id = 'statement_id_example' # str | __Mandatory__. The statement Id of the statement file.
+x_yapily_api_version = 'x_yapily_api_version_example' # str | __Optional__. Determines the API version to use. Valid values are `1.0` or `2.0-ALPHA`. Defaults to `1.0` (optional)
 
     try:
         # Get account statement file
@@ -73,10 +73,10 @@ configuration.host = "https://api.yapily.com:443"
 with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.StatementsApi(api_client)
-    consent = 'consent_example' # str | Consent Token
-account_id = 'account_id_example' # str | Account Id
-statement_id = 'statement_id_example' # str | Statement Id
-x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optional)
+    consent = 'consent_example' # str | __Mandatory__. The `consent-token` containing the user's authorisation to make the request.
+account_id = 'account_id_example' # str | __Mandatory__. The account Id of the user's bank account.
+statement_id = 'statement_id_example' # str | __Mandatory__. The statement Id of the statement file.
+x_yapily_api_version = 'x_yapily_api_version_example' # str | __Optional__. Determines the API version to use. Valid values are `1.0` or `2.0-ALPHA`. Defaults to `1.0` (optional)
 
     try:
         # Get account statement file
@@ -90,10 +90,10 @@ x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optio
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **consent** | **str**| Consent Token | 
- **account_id** | **str**| Account Id | 
- **statement_id** | **str**| Statement Id | 
- **x_yapily_api_version** | **str**| Api Version | [optional] 
+ **consent** | **str**| __Mandatory__. The &#x60;consent-token&#x60; containing the user&#39;s authorisation to make the request. | 
+ **account_id** | **str**| __Mandatory__. The account Id of the user&#39;s bank account. | 
+ **statement_id** | **str**| __Mandatory__. The statement Id of the statement file. | 
+ **x_yapily_api_version** | **str**| __Optional__. Determines the API version to use. Valid values are &#x60;1.0&#x60; or &#x60;2.0-ALPHA&#x60;. Defaults to &#x60;1.0&#x60; | [optional] 
 
 ### Return type
 
@@ -147,10 +147,10 @@ configuration.host = "https://api.yapily.com:443"
 with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.StatementsApi(api_client)
-    consent = 'consent_example' # str | Consent Token
-account_id = 'account_id_example' # str | Account Id
-statement_id = 'statement_id_example' # str | Statement Id
-x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optional)
+    consent = 'consent_example' # str | __Mandatory__. The `consent-token` containing the user's authorisation to make the request.
+account_id = 'account_id_example' # str | __Mandatory__. The account Id of the user's bank account.
+statement_id = 'statement_id_example' # str | __Mandatory__. The statement Id of the statement file.
+x_yapily_api_version = 'x_yapily_api_version_example' # str | __Optional__. Determines the API version to use. Valid values are `1.0` or `2.0-ALPHA`. Defaults to `1.0` (optional)
 
     try:
         # Get account statement
@@ -182,10 +182,10 @@ configuration.host = "https://api.yapily.com:443"
 with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.StatementsApi(api_client)
-    consent = 'consent_example' # str | Consent Token
-account_id = 'account_id_example' # str | Account Id
-statement_id = 'statement_id_example' # str | Statement Id
-x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optional)
+    consent = 'consent_example' # str | __Mandatory__. The `consent-token` containing the user's authorisation to make the request.
+account_id = 'account_id_example' # str | __Mandatory__. The account Id of the user's bank account.
+statement_id = 'statement_id_example' # str | __Mandatory__. The statement Id of the statement file.
+x_yapily_api_version = 'x_yapily_api_version_example' # str | __Optional__. Determines the API version to use. Valid values are `1.0` or `2.0-ALPHA`. Defaults to `1.0` (optional)
 
     try:
         # Get account statement
@@ -199,10 +199,10 @@ x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optio
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **consent** | **str**| Consent Token | 
- **account_id** | **str**| Account Id | 
- **statement_id** | **str**| Statement Id | 
- **x_yapily_api_version** | **str**| Api Version | [optional] 
+ **consent** | **str**| __Mandatory__. The &#x60;consent-token&#x60; containing the user&#39;s authorisation to make the request. | 
+ **account_id** | **str**| __Mandatory__. The account Id of the user&#39;s bank account. | 
+ **statement_id** | **str**| __Mandatory__. The statement Id of the statement file. | 
+ **x_yapily_api_version** | **str**| __Optional__. Determines the API version to use. Valid values are &#x60;1.0&#x60; or &#x60;2.0-ALPHA&#x60;. Defaults to &#x60;1.0&#x60; | [optional] 
 
 ### Return type
 
@@ -256,14 +256,14 @@ configuration.host = "https://api.yapily.com:443"
 with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.StatementsApi(api_client)
-    consent = 'consent_example' # str | Consent Token
-account_id = 'account_id_example' # str | Account Id
-x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optional)
-_from = '_from_example' # str | from (optional)
-before = 'before_example' # str | before (optional)
-limit = 56 # int | limit (optional)
-sort = 'sort_example' # str | sort (optional)
-offset = 56 # int | offset (optional)
+    consent = 'consent_example' # str | __Mandatory__. The `consent-token` containing the user's authorisation to make the request.
+account_id = 'account_id_example' # str | __Mandatory__. The account Id of the user's bank account.
+x_yapily_api_version = 'x_yapily_api_version_example' # str | __Optional__. Determines the API version to use. Valid values are `1.0` or `2.0-ALPHA`. Defaults to `1.0` (optional)
+_from = '_from_example' # str | __Optional__. Returned transactions will be on or after this date (yyyy-MM-dd'T'HH:mm:ss.SSSZ).  (optional)
+before = 'before_example' # str | __Optional__. Returned transactions will be on or before this date (yyyy-MM-dd'T'HH:mm:ss.SSSZ). (optional)
+limit = 56 # int | __Optional__. The maximum number of transaction records to be returned. Must be between 0 and 1000. (optional)
+sort = 'sort_example' # str | __Optional__. Sort transaction records by date ascending with 'date' or descending with '-date'. The default sort order is descending (optional)
+offset = 56 # int | __Optional__. The number of transaction records to be skipped. Used primarily with paginated results. (optional)
 
     try:
         # Get account statements
@@ -295,14 +295,14 @@ configuration.host = "https://api.yapily.com:443"
 with yapily.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = yapily.StatementsApi(api_client)
-    consent = 'consent_example' # str | Consent Token
-account_id = 'account_id_example' # str | Account Id
-x_yapily_api_version = 'x_yapily_api_version_example' # str | Api Version (optional)
-_from = '_from_example' # str | from (optional)
-before = 'before_example' # str | before (optional)
-limit = 56 # int | limit (optional)
-sort = 'sort_example' # str | sort (optional)
-offset = 56 # int | offset (optional)
+    consent = 'consent_example' # str | __Mandatory__. The `consent-token` containing the user's authorisation to make the request.
+account_id = 'account_id_example' # str | __Mandatory__. The account Id of the user's bank account.
+x_yapily_api_version = 'x_yapily_api_version_example' # str | __Optional__. Determines the API version to use. Valid values are `1.0` or `2.0-ALPHA`. Defaults to `1.0` (optional)
+_from = '_from_example' # str | __Optional__. Returned transactions will be on or after this date (yyyy-MM-dd'T'HH:mm:ss.SSSZ).  (optional)
+before = 'before_example' # str | __Optional__. Returned transactions will be on or before this date (yyyy-MM-dd'T'HH:mm:ss.SSSZ). (optional)
+limit = 56 # int | __Optional__. The maximum number of transaction records to be returned. Must be between 0 and 1000. (optional)
+sort = 'sort_example' # str | __Optional__. Sort transaction records by date ascending with 'date' or descending with '-date'. The default sort order is descending (optional)
+offset = 56 # int | __Optional__. The number of transaction records to be skipped. Used primarily with paginated results. (optional)
 
     try:
         # Get account statements
@@ -316,14 +316,14 @@ offset = 56 # int | offset (optional)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **consent** | **str**| Consent Token | 
- **account_id** | **str**| Account Id | 
- **x_yapily_api_version** | **str**| Api Version | [optional] 
- **_from** | **str**| from | [optional] 
- **before** | **str**| before | [optional] 
- **limit** | **int**| limit | [optional] 
- **sort** | **str**| sort | [optional] 
- **offset** | **int**| offset | [optional] 
+ **consent** | **str**| __Mandatory__. The &#x60;consent-token&#x60; containing the user&#39;s authorisation to make the request. | 
+ **account_id** | **str**| __Mandatory__. The account Id of the user&#39;s bank account. | 
+ **x_yapily_api_version** | **str**| __Optional__. Determines the API version to use. Valid values are &#x60;1.0&#x60; or &#x60;2.0-ALPHA&#x60;. Defaults to &#x60;1.0&#x60; | [optional] 
+ **_from** | **str**| __Optional__. Returned transactions will be on or after this date (yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ).  | [optional] 
+ **before** | **str**| __Optional__. Returned transactions will be on or before this date (yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ). | [optional] 
+ **limit** | **int**| __Optional__. The maximum number of transaction records to be returned. Must be between 0 and 1000. | [optional] 
+ **sort** | **str**| __Optional__. Sort transaction records by date ascending with &#39;date&#39; or descending with &#39;-date&#39;. The default sort order is descending | [optional] 
+ **offset** | **int**| __Optional__. The number of transaction records to be skipped. Used primarily with paginated results. | [optional] 
 
 ### Return type
 
