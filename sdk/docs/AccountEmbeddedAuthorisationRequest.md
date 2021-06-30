@@ -8,8 +8,9 @@ Name | Type | Description | Notes
 **forward_parameters** | **list[str]** |  | [optional] 
 **institution_id** | **str** |  | 
 **callback** | **str** |  | 
-**one_time_token** | **bool** |  | 
+**redirect** | [**RedirectRequest**](RedirectRequest.md) |  | [optional] 
 **account_request** | [**AccountRequest**](AccountRequest.md) |  | [optional] 
+**one_time_token** | **bool** |  | 
 **user_credentials** | [**UserCredentials**](UserCredentials.md) |  | [optional] 
 **selected_sca_method** | [**ScaMethod**](ScaMethod.md) |  | [optional] 
 **sca_code** | **str** |  | [optional] 

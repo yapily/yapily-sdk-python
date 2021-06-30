@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **forward_parameters** | **list[str]** |  | [optional] 
 **institution_id** | **str** |  | 
 **callback** | **str** |  | 
+**redirect** | [**RedirectRequest**](RedirectRequest.md) |  | [optional] 
 **one_time_token** | **bool** |  | 
 **total_max_amount** | **float** |  | [optional] 
 **total_max_amount_frequency** | **str** |  | [optional] 

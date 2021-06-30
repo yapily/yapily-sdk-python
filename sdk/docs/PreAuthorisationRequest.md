@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **forward_parameters** | **list[str]** |  | [optional] 
 **institution_id** | **str** |  | 
 **callback** | **str** |  | 
+**redirect** | [**RedirectRequest**](RedirectRequest.md) |  | [optional] 
 **one_time_token** | **bool** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

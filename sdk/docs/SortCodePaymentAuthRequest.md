@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **forward_parameters** | **list[str]** |  | [optional] 
 **institution_id** | **str** |  | 
 **callback** | **str** |  | 
+**redirect** | [**RedirectRequest**](RedirectRequest.md) |  | [optional] 
 **one_time_token** | **bool** |  | 
 **payment_request** | [**SortCodePaymentRequest**](SortCodePaymentRequest.md) |  | 
 

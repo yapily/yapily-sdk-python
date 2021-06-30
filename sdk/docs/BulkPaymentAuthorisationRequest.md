@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **institution_id** | **str** |  | 
 **callback** | **str** |  | 
 **one_time_token** | **bool** |  | 
+**redirect** | [**RedirectRequest**](RedirectRequest.md) |  | [optional] 
 **payment_request** | [**BulkPaymentRequest**](BulkPaymentRequest.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
