@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **state** | **str** |  | [optional] 
 **qr_code_url** | **str** |  | [optional] 
 **authorized_at** | **datetime** |  | [optional] 
+**explanation** | **str** |  | [optional] 
 **sca_methods** | [**list[ScaMethod]**](ScaMethod.md) |  | [optional] 
 **institution_consent_id** | **str** |  | [optional] 
 **selected_sca_method** | [**ScaMethod**](ScaMethod.md) |  | [optional] 
