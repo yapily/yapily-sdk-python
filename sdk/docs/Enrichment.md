@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **categorisation** | [**Categorisation**](Categorisation.md) |  | [optional] 
 **transaction_hash** | [**TransactionHash**](TransactionHash.md) |  | [optional] 
 **cleansed_description** | **str** | CleansedDescription | [optional] 
-**merchant** | [**Merchant**](Merchant.md) |  | [optional] 
+**merchant** | [**EnrichmentMerchant**](EnrichmentMerchant.md) |  | [optional] 
 **location** | **str** | Location | [optional] 
 **payment_processor** | **str** | PaymentProcessor | [optional] 
 **corrected_date** | **datetime** | CorrectedDate | [optional] 
