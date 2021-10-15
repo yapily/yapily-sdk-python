@@ -3,11 +3,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**uuid** | **str** | User UUID | [optional] 
-**application_uuid** | **str** |  | [optional] 
 **application_user_id** | **str** |  | [optional] 
-**reference_id** | **str** |  | [optional] 
+**application_uuid** | **str** |  | [optional] 
 **institution_consents** | [**list[InstitutionConsent]**](InstitutionConsent.md) |  | [optional] 
+**reference_id** | **str** |  | [optional] 
+**uuid** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
