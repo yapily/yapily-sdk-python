@@ -76,7 +76,7 @@ def main():
         ## Retrieve the transactions for the first account
         print("\nGetting transactions for account ", accounts.data[0].id + ": ")
         transactionsApi = TransactionsApi(apiClient)
-        transactions = transactionsApi.get_transactions_using_get(consent_token, accounts.data[0]._id)
+        transactions = transactionsApi.get_transactions_using_get(accounts.data[0]._id, consent_token)
 
         print("**************TRANSACTIONS**************")
         print(transactions)

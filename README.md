@@ -92,7 +92,7 @@ accounts = accountsApi.get_accounts_using_get(consent_token)
 
 ```python
 transactionsApi = TransactionsApi(apiClient)
-transactions = transactionsApi.get_transactions_using_get(consent_token, accounts.data[0]._id)
+transactions = transactionsApi.get_transactions_using_get(accounts.data[0]._id, consent_token)
 ```
 
 - Returning user identity details
