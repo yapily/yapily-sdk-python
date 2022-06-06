@@ -1,5 +1,6 @@
 # PaymentResponse
 
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
@@ -7,7 +8,7 @@ Name | Type | Description | Notes
 **institution_consent_id** | **str** |  | [optional] 
 **payment_idempotency_id** | **str** |  | [optional] 
 **payment_lifecycle_id** | **str** |  | [optional] 
-**status** | **str** |  | [optional] 
+**status** | [**PaymentStatus**](PaymentStatus.md) |  | [optional] 
 **status_details** | [**PaymentStatusDetails**](PaymentStatusDetails.md) |  | [optional] 
 **payer** | [**Payer**](Payer.md) |  | [optional] 
 **payee_details** | [**Payee**](Payee.md) |  | [optional] 
@@ -25,16 +26,17 @@ Name | Type | Description | Notes
 **number_of_payments** | **int** |  | [optional] 
 **previous_payment_amount** | [**Amount**](Amount.md) |  | [optional] 
 **previous_payment_date_time** | **datetime** |  | [optional] 
-**charge_details** | [**list[ChargeDetails]**](ChargeDetails.md) |  | [optional] 
+**charge_details** | [**[PaymentChargeDetails]**](PaymentChargeDetails.md) |  | [optional] 
 **scheduled_payment_type** | **str** |  | [optional] 
 **scheduled_payment_date_time** | **datetime** |  | [optional] 
 **frequency** | [**FrequencyResponse**](FrequencyResponse.md) |  | [optional] 
 **currency_of_transfer** | **str** |  | [optional] 
 **purpose** | **str** |  | [optional] 
-**priority** | **str** |  | [optional] 
+**priority** | [**PriorityCodeEnum**](PriorityCodeEnum.md) |  | [optional] 
 **exchange_rate** | [**ExchangeRateInformationResponse**](ExchangeRateInformationResponse.md) |  | [optional] 
 **refund_account** | [**RefundAccount**](RefundAccount.md) |  | [optional] 
-**bulk_amount_sum** | **float** | Control sum for bulk payments | [optional] 
+**bulk_amount_sum** | **float** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

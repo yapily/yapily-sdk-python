@@ -3,9 +3,8 @@ import uuid
 import constants
 from yapily import ApiClient
 from yapily import Configuration
-from yapily import ApplicationUsersApi
-from yapily import ApplicationUser
-from yapily import NewApplicationUser
+from yapily.apis import UsersApi
+from yapily.models import NewApplicationUser
 
 def main():
 
@@ -15,23 +14,23 @@ def main():
 
     apiClient = ApiClient(configuration)
 
-    user_api = ApplicationUsersApi(apiClient)
-    app_user_id = "A"
+    user_api = UsersApi(apiClient)
+    app_user_id = "B"
     
     print("\nCreated User with application user Id '" + app_user_id + "':")
-    user = user_api.add_user_using_post(new_application_user(app_user_id))
+    user = user_api.add_user(new_application_user(app_user_id))
     print(user)
 
     print("\nGetting all users with the application user id: '" + app_user_id + "':")
-    application_users = user_api.get_users_using_get(
+    application_users = user_api.get_users(
         filter_application_user_id=[app_user_id]
     )
     print(application_users)
 
     print("\nDeleting the user with application user id '" + app_user_id + "'")
-    user_api.delete_user_using_delete(user._uuid)
+    user_api.delete_user(user.uuid)
 
-    for user in user_api.get_users_using_get(filter_application_user_id=[app_user_id]):
+    for user in user_api.get_users(filter_application_user_id=[app_user_id]):
         print(user._uuid)
 
 

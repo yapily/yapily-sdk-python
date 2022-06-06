@@ -1,5 +1,5 @@
 import constants
-from yapily import InstitutionsApi
+from yapily.apis import InstitutionsApi
 from yapily import ApiClient
 from yapily import Configuration
 
@@ -12,13 +12,13 @@ if __name__ == '__main__':
     apiClient = ApiClient(configuration)
 
     institutionsApi = InstitutionsApi(apiClient)
-    institutions = institutionsApi.get_institutions_using_get()
+    institutions = institutionsApi.get_institutions()
 
     print("GET /institutions")
     for institution in institutions.data:
-        print(institution._id)
+        print(institution.id)
 
     print("\nGET /institution/{{institution-id}}")
-    institution = institutionsApi.get_institution_using_get(institutions.data[0]._id)
+    institution = institutionsApi.get_institution(institutions.data[0].id)
 
-    print(institution._id)
+    print(institution.id)

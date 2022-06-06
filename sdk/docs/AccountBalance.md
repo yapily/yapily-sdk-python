@@ -1,13 +1,15 @@
 # AccountBalance
 
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | [optional] 
-**date_time** | **datetime** | Timestamp of the last change of the balance amount | [optional] 
+**type** | [**AccountBalanceType**](AccountBalanceType.md) |  | [optional] 
+**date_time** | **datetime** | Date and time of the reported balance. | [optional] 
 **balance_amount** | [**Amount**](Amount.md) |  | [optional] 
-**credit_line_included** | **bool** | Indicates whether or not the credit line is included in the balance | [optional] 
-**credit_lines** | [**list[CreditLine]**](CreditLine.md) |  | [optional] 
+**credit_line_included** | **bool** | _Optional_. Indicates whether any credit lines are included in the balance. | [optional] 
+**credit_lines** | [**[CreditLine]**](CreditLine.md) | _Optional_. Specifies the type of balance. | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

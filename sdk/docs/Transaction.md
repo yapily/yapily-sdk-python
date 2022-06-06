@@ -1,32 +1,34 @@
 # Transaction
 
+
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** | Transaction Id returned by the institution if present | [optional] 
-**date** | **datetime** | Transaction date as defined by the institution | [optional] 
-**booking_date_time** | **datetime** | Date and (if available) time that transaction is posted | [optional] 
-**value_date_time** | **datetime** | The actual or expected date and time transaction is cleared | [optional] 
-**status** | **str** | The status of the transaction | [optional] 
-**amount** | **float** | Deprecated. Use the amount value in &#x60;transactionAmount&#x60; instead | [optional] 
-**currency** | **str** | Deprecated. Use the currency value in &#x60;transactionAmount&#x60; instead | [optional] 
-**transaction_amount** | [**TransactionAmount**](TransactionAmount.md) |  | [optional] 
+**id** | **str** |  | [optional] 
+**date** | **datetime** |  | [optional] 
+**booking_date_time** | **datetime** |  | [optional] 
+**value_date_time** | **datetime** |  | [optional] 
+**status** | [**TransactionStatusEnum**](TransactionStatusEnum.md) |  | [optional] 
+**amount** | **float** |  | [optional] 
+**currency** | **str** |  | [optional] 
+**transaction_amount** | [**Amount**](Amount.md) |  | [optional] 
 **gross_amount** | [**Amount**](Amount.md) |  | [optional] 
 **currency_exchange** | [**CurrencyExchange**](CurrencyExchange.md) |  | [optional] 
-**charge_details** | [**ChargeDetails**](ChargeDetails.md) |  | [optional] 
-**reference** | **str** | Transaction reference | [optional] 
-**statement_references** | [**list[StatementReference]**](StatementReference.md) |  | [optional] 
-**description** | **str** | Unstructured text containing details of the transaction. Usage varies according to the institution | [optional] 
-**transaction_information** | **list[str]** | Further information related to the transaction. Usage varies according to the institution | [optional] 
+**charge_details** | [**TransactionChargeDetails**](TransactionChargeDetails.md) |  | [optional] 
+**reference** | **str** |  | [optional] 
+**statement_references** | [**[StatementReference]**](StatementReference.md) |  | [optional] 
+**description** | **str** |  | [optional] 
+**transaction_information** | **[str]** |  | [optional] 
 **address_details** | [**AddressDetails**](AddressDetails.md) |  | [optional] 
 **iso_bank_transaction_code** | [**IsoBankTransactionCode**](IsoBankTransactionCode.md) |  | [optional] 
 **proprietary_bank_transaction_code** | [**ProprietaryBankTransactionCode**](ProprietaryBankTransactionCode.md) |  | [optional] 
-**balance** | [**Balance**](Balance.md) |  | [optional] 
+**balance** | [**TransactionBalance**](TransactionBalance.md) |  | [optional] 
 **payee_details** | [**Payee**](Payee.md) |  | [optional] 
 **payer_details** | [**Payer**](Payer.md) |  | [optional] 
 **merchant** | [**Merchant**](Merchant.md) |  | [optional] 
 **enrichment** | [**Enrichment**](Enrichment.md) |  | [optional] 
-**supplementary_data** | [**object**](.md) | Additional information that can not be captured in the structured fields and/or any other specific block. | [optional] 
+**supplementary_data** | **{str: (bool, date, datetime, dict, float, int, list, str, none_type)}** |  | [optional] 
+**any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

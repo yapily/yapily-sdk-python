@@ -1,10 +1,7 @@
-# Yapily Python SDK - Deprecated :no_entry:
-[![GitHub version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=gh&type=6&v=1.378.0&x2=0)](http://badge.fury.io/gh/boennemann%2Fbadges)
+# Yapily Python SDK
+[![GitHub version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=gh&type=6&v=1.379.0&x2=0)](http://badge.fury.io/gh/boennemann%2Fbadges)
 
-This SDK is now deprecated by our recommended approach to autogenerate client libraries from our OpenAPI Specification file.  See our [yapily-openapi repo](https://github.com/yapily/yapily-openapi).
-
-This SDK was generated using [Swagger Code Generator](https://github.com/swagger-api/swagger-codegen). The SDK can be used as a module in your code and the examples demonstrate how to connect
-to financial institutions integrated with Yapily.
+This SDK library was generated using [OpenApi Generator](https://github.com/OpenAPITools/openapi-generator). The SDK can be used as a module in your code and the examples demonstrate how to connect to financial institutions integrated with Yapily.
 
 ## Requirements
 
