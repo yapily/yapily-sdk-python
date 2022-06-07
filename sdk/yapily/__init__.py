@@ -11,7 +11,7 @@
 """
 
 
-__version__ = "1.379.0"
+__version__ = "1.410.0"
 
 # import ApiClient
 from yapily.api_client import ApiClient
