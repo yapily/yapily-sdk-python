@@ -1,6 +1,6 @@
 # Amount
 
-__Mandatory__. The `Amount` object that contains the amount and currency of the payment.
+__Mandatory__. Monetary Amount.
 
 ## Properties
 Name | Type | Description | Notes

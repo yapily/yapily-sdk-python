@@ -63,16 +63,12 @@ with yapily.ApiClient(configuration) as api_client:
                         ),
                     ],
                     address=Address(
-                        address_lines=[
-                            "Ardenham Court",
-                        ],
+                        address_lines=["Ardenham Court"],
                         street_name="Oxford Road",
                         building_number="45",
                         post_code="HP19 3EQ",
                         town_name="Aylesbury",
-                        county=[
-                            "Buckinghamshire",
-                        ],
+                        county=["Buckinghamshire"],
                         country="GB",
                         department="Unit 2",
                         sub_department="Floor 3",
@@ -91,16 +87,12 @@ with yapily.ApiClient(configuration) as api_client:
                         ),
                     ],
                     address=Address(
-                        address_lines=[
-                            "Ardenham Court",
-                        ],
+                        address_lines=["Ardenham Court"],
                         street_name="Oxford Road",
                         building_number="45",
                         post_code="HP19 3EQ",
                         town_name="Aylesbury",
-                        county=[
-                            "Buckinghamshire",
-                        ],
+                        county=["Buckinghamshire"],
                         country="GB",
                         department="Unit 2",
                         sub_department="Floor 3",
@@ -261,16 +253,12 @@ with yapily.ApiClient(configuration) as api_client:
                 ),
             ],
             address=Address(
-                address_lines=[
-                    "Ardenham Court",
-                ],
+                address_lines=["Ardenham Court"],
                 street_name="Oxford Road",
                 building_number="45",
                 post_code="HP19 3EQ",
                 town_name="Aylesbury",
-                county=[
-                    "Buckinghamshire",
-                ],
+                county=["Buckinghamshire"],
                 country="GB",
                 department="Unit 2",
                 sub_department="Floor 3",
@@ -289,16 +277,12 @@ with yapily.ApiClient(configuration) as api_client:
                 ),
             ],
             address=Address(
-                address_lines=[
-                    "Ardenham Court",
-                ],
+                address_lines=["Ardenham Court"],
                 street_name="Oxford Road",
                 building_number="45",
                 post_code="HP19 3EQ",
                 town_name="Aylesbury",
-                county=[
-                    "Buckinghamshire",
-                ],
+                county=["Buckinghamshire"],
                 country="GB",
                 department="Unit 2",
                 sub_department="Floor 3",

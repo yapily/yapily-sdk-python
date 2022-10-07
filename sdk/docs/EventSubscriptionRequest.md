@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**event_type_id** | **str** | Used to identify event subscription | 
+**event_type_id** | **str** | Unique identifier of the event type (for which notifications will be sent) | 
 **notification** | [**Notification**](Notification.md) |  | 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 

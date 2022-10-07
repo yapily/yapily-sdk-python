@@ -23,3 +23,5 @@ from yapily.api.institutions_api import InstitutionsApi
 from yapily.api.notifications_api import NotificationsApi
 from yapily.api.payments_api import PaymentsApi
 from yapily.api.users_api import UsersApi
+from yapily.api.variable_recurring_payments_api import VariableRecurringPaymentsApi
+from yapily.api.virtual_accounts_api import VirtualAccountsApi

@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**event_type_id** | **str** | Event type Id. | 
+**event_type_id** | **str** | Unique identifier of the event type (for which notifications will be sent) | 
 **application_id** | **str** | Application related to event subscription. | 
 **created** | **str** | Creation date of event subscription. | 
 **notification** | [**Notification**](Notification.md) |  | 

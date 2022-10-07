@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_consent_with_code**](ConsentsApi.md#create_consent_with_code) | **POST** /consent-auth-code | Exchange OAuth2 Code
 [**delete**](ConsentsApi.md#delete) | **DELETE** /consents/{consentId} | Delete Consent
+[**extend_consent**](ConsentsApi.md#extend_consent) | **POST** /consents/{consentId}/extend | Extend Consent
 [**get_consent_by_id**](ConsentsApi.md#get_consent_by_id) | **GET** /consents/{consentId} | Get Consent
 [**get_consent_by_single_access_consent**](ConsentsApi.md#get_consent_by_single_access_consent) | **POST** /consent-one-time-token | Exchange One Time Token
 [**get_consents**](ConsentsApi.md#get_consents) | **GET** /consents | Get Consents
@@ -182,6 +183,92 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Ok |  -  |
+**0** | Error Response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **extend_consent**
+> ApiResponseOfConsent extend_consent(consent_id, extend_consent_request)
+
+Extend Consent
+
+Used to indicate to Yapily that reconfirmation has occurred for a given Consent, and to update lastUpdatedAt and reconfirmBy for that Consent. Returns the Consent.
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import time
+import yapily
+from yapily.api import consents_api
+from yapily.model.api_response_of_consent import ApiResponseOfConsent
+from yapily.model.extend_consent_request import ExtendConsentRequest
+from yapily.model.api_error_response import ApiErrorResponse
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.yapily.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = yapily.Configuration(
+    host = "https://api.yapily.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = yapily.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Enter a context with an instance of the API client
+with yapily.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = consents_api.ConsentsApi(api_client)
+    consent_id = "consentId_example" # str | __Mandatory__. The consent Id of the `Consent` to update.
+    extend_consent_request = ExtendConsentRequest(
+        last_confirmed_at=dateutil_parser('2022-08-16T10:59:53.288Z'),
+    ) # ExtendConsentRequest | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Extend Consent
+        api_response = api_instance.extend_consent(consent_id, extend_consent_request)
+        pprint(api_response)
+    except yapily.ApiException as e:
+        print("Exception when calling ConsentsApi->extend_consent: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **consent_id** | **str**| __Mandatory__. The consent Id of the &#x60;Consent&#x60; to update. |
+ **extend_consent_request** | [**ExtendConsentRequest**](ExtendConsentRequest.md)|  |
+
+### Return type
+
+[**ApiResponseOfConsent**](ApiResponseOfConsent.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json;charset=UTF-8
+ - **Accept**: application/json;charset=UTF-8
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Created |  -  |
+**400** | Error Response. The supplied lastConfirmedAt date, Consent type, or Consent status is invalid. |  -  |
 **0** | Error Response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

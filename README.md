@@ -1,5 +1,5 @@
 # Yapily Python SDK
-[![GitHub version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=gh&type=6&v=1.410.0&x2=0)](http://badge.fury.io/gh/boennemann%2Fbadges)
+[![GitHub version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=gh&type=6&v=&x2=0)](http://badge.fury.io/gh/boennemann%2Fbadges)
 
 This SDK library was generated using [OpenApi Generator](https://github.com/OpenAPITools/openapi-generator). The SDK can be used as a module in your code and the examples demonstrate how to connect to financial institutions integrated with Yapily.
 
