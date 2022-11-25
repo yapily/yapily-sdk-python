@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**_self** | **str** |  | [optional] 
+**self** | **str** |  | [optional] 
 **first** | **str** |  | [optional] 
 **last** | **str** |  | [optional] 
 **next** | **str** |  | [optional] 

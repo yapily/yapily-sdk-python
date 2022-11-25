@@ -487,7 +487,7 @@ with yapily.ApiClient(configuration) as api_client:
     filter_status = [
         "filter[status]_example",
     ] # [str] | __Optional__. Filter records based on the list of `Consent` [statuses](https://docs.yapily.com/api/reference/#operation/getConsents!c=200&path=data/status&t=response). (optional)
-    _from = "from_example" # str | __Optional__. Returned transactions will be on or after this date (yyyy-MM-dd'T'HH:mm:ss.SSSZ).  (optional)
+    from = "from_example" # str | __Optional__. Returned transactions will be on or after this date (yyyy-MM-dd'T'HH:mm:ss.SSSZ).  (optional)
     before = "before_example" # str | __Optional__. Returned transactions will be on or before this date (yyyy-MM-dd'T'HH:mm:ss.SSSZ). (optional)
     limit = 1 # int | __Optional__. The maximum number of transaction records to be returned. Must be between 0 and 1000. (optional)
     offset = 0 # int | __Optional__. The number of transaction records to be skipped. Used primarily with paginated results. (optional) if omitted the server will use the default value of 0
@@ -511,7 +511,7 @@ Name | Type | Description  | Notes
  **filter_user_uuid** | **[str]**| __Optional__. Filter records based on the list of &#x60;userUuid&#x60; users provided. | [optional]
  **filter_institution** | **[str]**| __Optional__. Filter records based on the list of &#x60;Institution&#x60; provided. | [optional]
  **filter_status** | **[str]**| __Optional__. Filter records based on the list of &#x60;Consent&#x60; [statuses](https://docs.yapily.com/api/reference/#operation/getConsents!c&#x3D;200&amp;path&#x3D;data/status&amp;t&#x3D;response). | [optional]
- **_from** | **str**| __Optional__. Returned transactions will be on or after this date (yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ).  | [optional]
+ **from** | **str**| __Optional__. Returned transactions will be on or after this date (yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ).  | [optional]
  **before** | **str**| __Optional__. Returned transactions will be on or before this date (yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ). | [optional]
  **limit** | **int**| __Optional__. The maximum number of transaction records to be returned. Must be between 0 and 1000. | [optional]
  **offset** | **int**| __Optional__. The number of transaction records to be skipped. Used primarily with paginated results. | [optional] if omitted the server will use the default value of 0

@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**get_beneficiaries**](FinancialDataApi.md#get_beneficiaries) | **GET** /accounts/{accountId}/beneficiaries | Get Account Beneficiaries
 [**get_categories**](FinancialDataApi.md#get_categories) | **GET** /categories/{country} | Get Categories
 [**get_identity**](FinancialDataApi.md#get_identity) | **GET** /identity | Get Identity
+[**get_real_time_transactions**](FinancialDataApi.md#get_real_time_transactions) | **GET** /accounts/{accountId}/real-time/transactions | Get Real Time Account Transactions
 [**get_statement**](FinancialDataApi.md#get_statement) | **GET** /accounts/{accountId}/statements/{statementId} | Get Account Statement
 [**get_statement_file**](FinancialDataApi.md#get_statement_file) | **GET** /accounts/{accountId}/statements/{statementId}/file | Get Account Statement File
 [**get_statements**](FinancialDataApi.md#get_statements) | **GET** /accounts/{accountId}/statements | Get Account Statements
@@ -863,6 +864,112 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_real_time_transactions**
+> ApiListResponseOfRealTimeTransaction get_real_time_transactions(account_id, consent)
+
+Get Real Time Account Transactions
+
+Used to get the account transactions for an account in real time with cursor pagination<br><br>Feature: `ACCOUNT_TRANSACTIONS`
+
+### Example
+
+* Basic Authentication (basicAuth):
+
+```python
+import time
+import yapily
+from yapily.api import financial_data_api
+from yapily.model.api_response_error import ApiResponseError
+from yapily.model.api_list_response_of_real_time_transaction import ApiListResponseOfRealTimeTransaction
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.yapily.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = yapily.Configuration(
+    host = "https://api.yapily.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = yapily.Configuration(
+    username = 'YOUR_USERNAME',
+    password = 'YOUR_PASSWORD'
+)
+
+# Enter a context with an instance of the API client
+with yapily.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = financial_data_api.FinancialDataApi(api_client)
+    account_id = "accountId_example" # str | __Mandatory__. The account Id of the user's bank account.
+    consent = "{consentToken}" # str | __Mandatory__. The `consent-token` containing the user's authorisation to make the request.
+    psu_id = "psu-id_example" # str | __Conditional__. Represents the user's login ID for the `Institution` to a personal account. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
+    psu_corporate_id = "psu-corporate-id_example" # str | __Conditional__. Represents the user's login ID for the `Institution` to a business account. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
+    psu_ip_address = "psu-ip-address_example" # str | __Conditional__. The IP address of the PSU. <br><br>See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. (optional)
+    from = "from_example" # str | __Optional__. Returned transactions will be on or after this date (yyyy-MM-dd'T'HH:mm:ss.SSSZ). (optional)
+    before = "before_example" # str | __Optional__. Returned transactions will be on or before this date (yyyy-MM-dd'T'HH:mm:ss.SSSZ). (optional)
+    cursor = "cursor_example" # str | __Optional__. The cursor token supplied by a previous call. The cursor represents a location in the data set. (optional)
+    raw = True # bool | __Optional__. Used to obtain the raw request and response to and from the <code>Institution</code>. (optional)
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Get Real Time Account Transactions
+        api_response = api_instance.get_real_time_transactions(account_id, consent)
+        pprint(api_response)
+    except yapily.ApiException as e:
+        print("Exception when calling FinancialDataApi->get_real_time_transactions: %s\n" % e)
+
+    # example passing only required values which don't have defaults set
+    # and optional values
+    try:
+        # Get Real Time Account Transactions
+        api_response = api_instance.get_real_time_transactions(account_id, consent, psu_id=psu_id, psu_corporate_id=psu_corporate_id, psu_ip_address=psu_ip_address, _from=_from, before=before, cursor=cursor, raw=raw)
+        pprint(api_response)
+    except yapily.ApiException as e:
+        print("Exception when calling FinancialDataApi->get_real_time_transactions: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_id** | **str**| __Mandatory__. The account Id of the user&#39;s bank account. |
+ **consent** | **str**| __Mandatory__. The &#x60;consent-token&#x60; containing the user&#39;s authorisation to make the request. |
+ **psu_id** | **str**| __Conditional__. Represents the user&#39;s login ID for the &#x60;Institution&#x60; to a personal account. &lt;br&gt;&lt;br&gt;See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. | [optional]
+ **psu_corporate_id** | **str**| __Conditional__. Represents the user&#39;s login ID for the &#x60;Institution&#x60; to a business account. &lt;br&gt;&lt;br&gt;See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. | [optional]
+ **psu_ip_address** | **str**| __Conditional__. The IP address of the PSU. &lt;br&gt;&lt;br&gt;See [PSU identifiers](https://docs.yapily.com/knowledge/psu_identifiers/) to see if this header is required. | [optional]
+ **from** | **str**| __Optional__. Returned transactions will be on or after this date (yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ). | [optional]
+ **before** | **str**| __Optional__. Returned transactions will be on or before this date (yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ). | [optional]
+ **cursor** | **str**| __Optional__. The cursor token supplied by a previous call. The cursor represents a location in the data set. | [optional]
+ **raw** | **bool**| __Optional__. Used to obtain the raw request and response to and from the &lt;code&gt;Institution&lt;/code&gt;. | [optional]
+
+### Return type
+
+[**ApiListResponseOfRealTimeTransaction**](ApiListResponseOfRealTimeTransaction.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json;charset=UTF-8
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+**401** | Error Response |  -  |
+**0** | Error Response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_statement**
 > ApiResponseOfAccountStatement get_statement(consent, account_id, statement_id)
 
@@ -1094,7 +1201,7 @@ with yapily.ApiClient(configuration) as api_client:
     api_instance = financial_data_api.FinancialDataApi(api_client)
     consent = "{consentToken}" # str | __Mandatory__. The `consent-token` containing the user's authorisation to make the request.
     account_id = "accountId_example" # str | __Mandatory__. The account Id of the user's bank account.
-    _from = "from_example" # str | __Optional__. Returned transactions will be on or after this date (yyyy-MM-dd'T'HH:mm:ss.SSSZ).  (optional)
+    from = "from_example" # str | __Optional__. Returned transactions will be on or after this date (yyyy-MM-dd'T'HH:mm:ss.SSSZ).  (optional)
     before = "before_example" # str | __Optional__. Returned transactions will be on or before this date (yyyy-MM-dd'T'HH:mm:ss.SSSZ). (optional)
     limit = 1 # int | __Optional__. The maximum number of transaction records to be returned. Must be between 0 and 1000. (optional)
     sort = SortEnum("date") # SortEnum | __Optional__. Sort transaction records by date ascending with 'date' or descending with '-date'. The default sort order is descending (optional)
@@ -1126,7 +1233,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **consent** | **str**| __Mandatory__. The &#x60;consent-token&#x60; containing the user&#39;s authorisation to make the request. |
  **account_id** | **str**| __Mandatory__. The account Id of the user&#39;s bank account. |
- **_from** | **str**| __Optional__. Returned transactions will be on or after this date (yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ).  | [optional]
+ **from** | **str**| __Optional__. Returned transactions will be on or after this date (yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ).  | [optional]
  **before** | **str**| __Optional__. Returned transactions will be on or before this date (yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ). | [optional]
  **limit** | **int**| __Optional__. The maximum number of transaction records to be returned. Must be between 0 and 1000. | [optional]
  **sort** | **SortEnum**| __Optional__. Sort transaction records by date ascending with &#39;date&#39; or descending with &#39;-date&#39;. The default sort order is descending | [optional]
@@ -1201,10 +1308,10 @@ with yapily.ApiClient(configuration) as api_client:
     psu_id = "psu-id_example" # str | __Conditional__. Represents the user's login ID for the `Institution` to a personal account. <br><br>See [PSU identifiers](https://docs.yapily.com/pages/knowledge/open-banking/psu_identifiers/) to see if this header is required. (optional)
     psu_corporate_id = "psu-corporate-id_example" # str | __Conditional__. Represents the user's login ID for the `Institution` to a business account. <br><br>See [PSU identifiers](https://docs.yapily.com/pages/knowledge/open-banking/psu_identifiers/) to see if this header is required. (optional)
     psu_ip_address = "psu-ip-address_example" # str | __Conditional__. The IP address of the PSU. <br><br>See [PSU identifiers](https://docs.yapily.com/pages/knowledge/open-banking/psu_identifiers/) to see if this header is required. (optional)
-    _with = [
+    with = [
         "with_example",
     ] # [str] | __Optional__. Can be `categories` or `merchant`. When set, will include enrichment data in the transactions returned. <br><br>Enrichment data is optional, e.g. when 'merchant' enrichment data is requested, the enrichment response will include merchant data only if it can be evaluated from the transaction. (optional)
-    _from = "from_example" # str | __Optional__. Returned transactions will be on or after this date (yyyy-MM-dd'T'HH:mm:ss.SSSZ).  (optional)
+    from = "from_example" # str | __Optional__. Returned transactions will be on or after this date (yyyy-MM-dd'T'HH:mm:ss.SSSZ).  (optional)
     before = "before_example" # str | __Optional__. Returned transactions will be on or before this date (yyyy-MM-dd'T'HH:mm:ss.SSSZ). (optional)
     limit = 1 # int | __Optional__. The maximum number of transaction records to be returned. Must be between 0 and 1000. (optional)
     sort = SortEnum("date") # SortEnum | __Optional__. Sort transaction records by date ascending with 'date' or descending with '-date'. The default sort order is descending (optional)
@@ -1240,8 +1347,8 @@ Name | Type | Description  | Notes
  **psu_id** | **str**| __Conditional__. Represents the user&#39;s login ID for the &#x60;Institution&#x60; to a personal account. &lt;br&gt;&lt;br&gt;See [PSU identifiers](https://docs.yapily.com/pages/knowledge/open-banking/psu_identifiers/) to see if this header is required. | [optional]
  **psu_corporate_id** | **str**| __Conditional__. Represents the user&#39;s login ID for the &#x60;Institution&#x60; to a business account. &lt;br&gt;&lt;br&gt;See [PSU identifiers](https://docs.yapily.com/pages/knowledge/open-banking/psu_identifiers/) to see if this header is required. | [optional]
  **psu_ip_address** | **str**| __Conditional__. The IP address of the PSU. &lt;br&gt;&lt;br&gt;See [PSU identifiers](https://docs.yapily.com/pages/knowledge/open-banking/psu_identifiers/) to see if this header is required. | [optional]
- **_with** | **[str]**| __Optional__. Can be &#x60;categories&#x60; or &#x60;merchant&#x60;. When set, will include enrichment data in the transactions returned. &lt;br&gt;&lt;br&gt;Enrichment data is optional, e.g. when &#39;merchant&#39; enrichment data is requested, the enrichment response will include merchant data only if it can be evaluated from the transaction. | [optional]
- **_from** | **str**| __Optional__. Returned transactions will be on or after this date (yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ).  | [optional]
+ **with** | **[str]**| __Optional__. Can be &#x60;categories&#x60; or &#x60;merchant&#x60;. When set, will include enrichment data in the transactions returned. &lt;br&gt;&lt;br&gt;Enrichment data is optional, e.g. when &#39;merchant&#39; enrichment data is requested, the enrichment response will include merchant data only if it can be evaluated from the transaction. | [optional]
+ **from** | **str**| __Optional__. Returned transactions will be on or after this date (yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ).  | [optional]
  **before** | **str**| __Optional__. Returned transactions will be on or before this date (yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSSZ). | [optional]
  **limit** | **int**| __Optional__. The maximum number of transaction records to be returned. Must be between 0 and 1000. | [optional]
  **sort** | **SortEnum**| __Optional__. Sort transaction records by date ascending with &#39;date&#39; or descending with &#39;-date&#39;. The default sort order is descending | [optional]

@@ -31,6 +31,8 @@ docs/ApiListResponseOfEventSubscriptionResponse.md
 docs/ApiListResponseOfFeatureDetails.md
 docs/ApiListResponseOfInstitution.md
 docs/ApiListResponseOfPaymentResponse.md
+docs/ApiListResponseOfRealTimeTransaction.md
+docs/ApiListResponseOfRealTimeTransactionLinks.md
 docs/ApiListResponseOfTransaction.md
 docs/ApiListResponseOfVirtualAccount.md
 docs/ApiListResponseOfVirtualAccountBeneficiary.md
@@ -188,6 +190,7 @@ docs/ProprietaryBankTransactionCode.md
 docs/RateTypeEnum.md
 docs/RawRequest.md
 docs/RawResponse.md
+docs/RealTimeTransaction.md
 docs/RedirectRequest.md
 docs/RefundAccount.md
 docs/ResponseForwardedData.md
@@ -280,6 +283,8 @@ test/test_api_list_response_of_event_subscription_response.py
 test/test_api_list_response_of_feature_details.py
 test/test_api_list_response_of_institution.py
 test/test_api_list_response_of_payment_response.py
+test/test_api_list_response_of_real_time_transaction.py
+test/test_api_list_response_of_real_time_transaction_links.py
 test/test_api_list_response_of_transaction.py
 test/test_api_list_response_of_virtual_account.py
 test/test_api_list_response_of_virtual_account_beneficiary.py
@@ -437,6 +442,7 @@ test/test_proprietary_bank_transaction_code.py
 test/test_rate_type_enum.py
 test/test_raw_request.py
 test/test_raw_response.py
+test/test_real_time_transaction.py
 test/test_redirect_request.py
 test/test_refund_account.py
 test/test_response_forwarded_data.py
@@ -542,6 +548,8 @@ yapily/model/api_list_response_of_event_subscription_response.py
 yapily/model/api_list_response_of_feature_details.py
 yapily/model/api_list_response_of_institution.py
 yapily/model/api_list_response_of_payment_response.py
+yapily/model/api_list_response_of_real_time_transaction.py
+yapily/model/api_list_response_of_real_time_transaction_links.py
 yapily/model/api_list_response_of_transaction.py
 yapily/model/api_list_response_of_virtual_account.py
 yapily/model/api_list_response_of_virtual_account_beneficiary.py
@@ -691,6 +699,7 @@ yapily/model/proprietary_bank_transaction_code.py
 yapily/model/rate_type_enum.py
 yapily/model/raw_request.py
 yapily/model/raw_response.py
+yapily/model/real_time_transaction.py
 yapily/model/redirect_request.py
 yapily/model/refund_account.py
 yapily/model/response_forwarded_data.py
